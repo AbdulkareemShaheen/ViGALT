@@ -1,0 +1,733 @@
+{
+  "folder_number": 20,
+  "image_file": "61lJC9zcMGL._AC_SX679_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "A chair has a high, rounded back, integrated curved arms, and white upholstery, with a separate rectangular white cushion against the backrest and vertical channel stitching. It has a separate rectangular seat cushion and a black adjustment lever beneath the seat on the left side, and rests on a white five-spoke wheeled base with black-and-white casters. A desk and laptop are positioned behind the chair.",
+      "relevancy": {
+        "total_claims": 10,
+        "relevant_claims": 8,
+        "supplementary_claims": 0,
+        "visual_only_claims": 2,
+        "relevancy_rate": 0.8,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "High, rounded back",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Integrated curved arms",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "White upholstery",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Separate rectangular white cushion against the backrest with vertical channel stitching",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Separate rectangular seat cushion",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Black adjustment lever beneath the seat on the left side",
+            "label": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "White five-spoke wheeled base",
+            "label": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Black-and-white casters",
+            "label": "R"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "A desk positioned behind the chair",
+            "label": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A laptop positioned behind the chair",
+            "label": "V"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 10,
+          "relevant_claims": 8,
+          "irrelevant_claims": 2,
+          "raw_novel_claims": 4,
+          "relevant_novel_claims": 2,
+          "irrelevant_novel_claims": 2,
+          "unavoidable_repetition_claims": 5,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.2,
+          "raw_novelty_rate": 0.4,
+          "unavoidable_repetition_rate": 0.5,
+          "avoidable_redundancy_rate": 0.1,
+          "redundancy_rate": 0.6
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "High, rounded back",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Integrated curved arms",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "White upholstery",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Separate rectangular white cushion against the backrest with vertical channel stitching",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Separate rectangular seat cushion",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Black adjustment lever beneath the seat on the left side",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "White five-spoke wheeled base",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Black-and-white casters",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "A desk positioned behind the chair",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A laptop positioned behind the chair",
+            "relevance_code": "V"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "High, rounded back",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "Medium Back Office Chair"
+              },
+              {
+                "field": "product_details.Back Style",
+                "value": "Solid Back"
+              }
+            ],
+            "reason": "The DOM establishes that the chair has a medium, solid back, but does not represent a high or rounded back."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Integrated curved arms",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Arm Style",
+                "value": "Armless"
+              }
+            ],
+            "reason": "The DOM contains no information describing integrated or curved arms; it only identifies the chair as armless."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "White upholstery",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "White"
+              },
+              {
+                "field": "product_details.Material Type",
+                "value": "Velvet, Foam"
+              }
+            ],
+            "reason": "The DOM already gives the chair's colour as white and identifies upholstery-related materials. Repeating that the upholstery is white adds no necessary information."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Separate rectangular white cushion against the backrest with vertical channel stitching",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "White"
+              },
+              {
+                "field": "product_details.Cushion Style",
+                "value": "Boxed Edge"
+              },
+              {
+                "field": "product_details.Back Style",
+                "value": "Solid Back"
+              }
+            ],
+            "reason": "The DOM overlaps on the chair being white and having a cushion and back, but does not describe a separate rectangular back cushion or vertical channel stitching. Repeating these terms is needed to anchor the new cushion details to the backrest."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Separate rectangular seat cushion",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Cushion Style",
+                "value": "Boxed Edge"
+              },
+              {
+                "field": "product_details.Seat Material Type",
+                "value": "Foam"
+              }
+            ],
+            "reason": "The DOM establishes that the chair has a cushion and seat material, but not that the seat cushion is separate and rectangular. Referring to the seat cushion is necessary to locate the new construction details."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Black adjustment lever beneath the seat on the left side",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Special Features",
+                "value": "Height adjustment, Rotation"
+              },
+              {
+                "field": "feature_bullets",
+                "value": "The chair is height adjustable and equipped with high-density foam for optimal comfort and support."
+              },
+              {
+                "field": "product_details.Seat Material Type",
+                "value": "Foam"
+              }
+            ],
+            "reason": "The DOM establishes an adjustment function and a seat, but not a lever or its colour and location. Mentioning the adjustment lever and seat anchors the new physical-control details to the chair's existing adjustment feature."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "White five-spoke wheeled base",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "White"
+              },
+              {
+                "field": "product_details.Furniture Base Movement",
+                "value": "Swivel"
+              }
+            ],
+            "reason": "The DOM already identifies the chair as white and having a swivel base, but does not describe five spokes or wheels. Repeating the base and colour information is needed to specify the newly described base configuration."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Black-and-white casters",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "White"
+              }
+            ],
+            "reason": "The DOM establishes white as the chair colour but provides no caster information or black-and-white colour combination. The repeated white colour is necessary to express the contrasting caster appearance."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "A desk positioned behind the chair",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a desk or its position relative to the chair."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A laptop positioned behind the chair",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a laptop or its position relative to the chair."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 10,
+        "subjective_claims": 0,
+        "total_claims": 10,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The chair has a high, rounded back.",
+            "label": "OBJECTIVE",
+            "reason": "The backrest extends well above the seat and has a visibly rounded upper outline."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The chair has integrated curved arms.",
+            "label": "OBJECTIVE",
+            "reason": "Curved armrests visibly connect to the chair body on both sides."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The chair has white upholstery.",
+            "label": "OBJECTIVE",
+            "reason": "The chair's visible upholstered surfaces are white or off-white."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A separate rectangular white cushion rests against the backrest.",
+            "label": "OBJECTIVE",
+            "reason": "A distinct light-colored rectangular cushion is visibly placed in front of the backrest."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The chair has vertical channel stitching.",
+            "label": "OBJECTIVE",
+            "reason": "Vertical stitched padded channels are visibly present on the backrest and inner sides of the arms."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The chair has a separate rectangular seat cushion.",
+            "label": "OBJECTIVE",
+            "reason": "The seat shows a distinct, separately outlined light-colored cushion with a rectangular rounded shape."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A black adjustment lever is beneath the seat on the left side.",
+            "label": "OBJECTIVE",
+            "reason": "A black lever is visibly located below the seat toward the chair's left side in the image."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The chair rests on a white five-spoke wheeled base.",
+            "label": "OBJECTIVE",
+            "reason": "The visible base is white, has five radiating spokes, and includes wheels."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "The casters are black and white.",
+            "label": "OBJECTIVE",
+            "reason": "The visible caster wheels have black outer portions and white accents."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A desk and laptop are positioned behind the chair.",
+            "label": "OBJECTIVE",
+            "reason": "A desk surface and an open laptop are visibly shown in the background behind the chair."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 65,
+        "relevant_novel_claims": 2,
+        "efficiency_per_100_words": 3.0769
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "A modern white upholstered office chair with a high, channel-stitched back, padded armrests, and a matching cushion sits on a five-star wheeled base. Behind it is a light wood desk with an open laptop displaying a vivid pink-and-purple screen, cabinetry to the left, and a wood floor.",
+      "relevancy": {
+        "total_claims": 11,
+        "relevant_claims": 4,
+        "supplementary_claims": 0,
+        "visual_only_claims": 7,
+        "relevancy_rate": 0.36363636363636365,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Modern white upholstered office chair",
+            "label": "V"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "High channel-stitched back on the chair",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Padded armrests on the chair",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Matching cushion on the chair",
+            "label": "V"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Five-star wheeled base under the chair",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Light wood desk behind the chair",
+            "label": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Open laptop on the desk",
+            "label": "V"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Vivid pink-and-purple screen on the laptop",
+            "label": "V"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Cabinetry to the left of the desk",
+            "label": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Wood floor",
+            "label": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "The chair sits on the five-star wheeled base",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 11,
+          "relevant_claims": 4,
+          "irrelevant_claims": 7,
+          "raw_novel_claims": 10,
+          "relevant_novel_claims": 4,
+          "irrelevant_novel_claims": 6,
+          "unavoidable_repetition_claims": 0,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.36363636363636365,
+          "raw_novelty_rate": 0.9090909090909091,
+          "unavoidable_repetition_rate": 0.0,
+          "avoidable_redundancy_rate": 0.09090909090909091,
+          "redundancy_rate": 0.09090909090909091
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Modern white upholstered office chair",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "High channel-stitched back on the chair",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Padded armrests on the chair",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Matching cushion on the chair",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Five-star wheeled base under the chair",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Light wood desk behind the chair",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Open laptop on the desk",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Vivid pink-and-purple screen on the laptop",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Cabinetry to the left of the desk",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Wood floor",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "The chair sits on the five-star wheeled base",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Modern white upholstered office chair",
+            "relevance_code": "V",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Style Name",
+                "value": "Modern"
+              },
+              {
+                "field": "product_details.Colour",
+                "value": "White"
+              },
+              {
+                "field": "product_details.Form Factor",
+                "value": "Modern Office Chair"
+              },
+              {
+                "field": "product_details.Material Type",
+                "value": "Velvet, Foam"
+              }
+            ],
+            "reason": "The DOM already identifies the product as a modern white office chair with velvet and foam materials, sufficiently conveying an upholstered chair. Repeating this adds no necessary information."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "High channel-stitched back on the chair",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Back Style",
+                "value": "Solid Back"
+              }
+            ],
+            "reason": "Although the DOM identifies a solid chair back, it does not describe a high back or channel stitching."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Padded armrests on the chair",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Arm Style",
+                "value": "Armless"
+              }
+            ],
+            "reason": "The DOM contains no information representing padded armrests; it instead lists the chair's arm style as armless."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Matching cushion on the chair",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Cushion Style",
+                "value": "Boxed Edge"
+              }
+            ],
+            "reason": "The DOM specifies a boxed-edge cushion style but does not state that there is a separate matching cushion on the chair."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Five-star wheeled base under the chair",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Furniture Base Movement",
+                "value": "Swivel"
+              }
+            ],
+            "reason": "The DOM indicates swivel movement but does not specify a five-star base or wheels."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Light wood desk behind the chair",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "No desk, its light wood material or colour, or its position behind the chair is represented in the DOM."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Open laptop on the desk",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a laptop, whether it is open, or a desk."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Vivid pink-and-purple screen on the laptop",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no laptop screen or information about vivid pink-and-purple screen colours."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Cabinetry to the left of the desk",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention cabinetry, a desk, or their relative placement."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Wood floor",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets",
+                "value": "VERSATILE USE - Suitable for hard floors, this chair can be used in various environments, including offices, living rooms and makeup spaces."
+              }
+            ],
+            "reason": "The DOM only says the chair is suitable for hard floors; it does not identify a wood floor."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "The chair sits on the five-star wheeled base",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Furniture Base Movement",
+                "value": "Swivel"
+              }
+            ],
+            "reason": "The DOM identifies the product as a chair with swivel movement but does not state that it has a five-star wheeled base or that the chair sits on one."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 0.9230769230769231,
+        "objective_claims": 12,
+        "subjective_claims": 1,
+        "total_claims": 13,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The chair has a modern design.",
+            "label": "SUBJECTIVE",
+            "reason": "“Modern” is a stylistic classification and evaluative interpretation rather than a directly verifiable physical feature."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The chair is white.",
+            "label": "OBJECTIVE",
+            "reason": "The chair’s white color is directly visible in the image."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The chair is upholstered.",
+            "label": "OBJECTIVE",
+            "reason": "The visible fabric-covered, cushioned seat, back, and arms show upholstery construction."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The chair has a high back.",
+            "label": "OBJECTIVE",
+            "reason": "The backrest visibly extends well above the seat and armrests."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The chair back has vertical channel stitching.",
+            "label": "OBJECTIVE",
+            "reason": "Multiple vertical stitched channels are clearly visible on the backrest."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The chair has padded armrests.",
+            "label": "OBJECTIVE",
+            "reason": "The armrests visibly have thick, cushioned forms."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The chair includes a matching cushion.",
+            "label": "OBJECTIVE",
+            "reason": "A separate cushion in a similar light color is visibly placed against the chair back."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The chair has a five-star wheeled base.",
+            "label": "OBJECTIVE",
+            "reason": "Five radiating base legs and caster wheels are visible beneath the chair."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "A light wood desk is behind the chair.",
+            "label": "OBJECTIVE",
+            "reason": "A desk with a light wood top is visibly positioned in the background behind the chair."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "An open laptop is on the desk.",
+            "label": "OBJECTIVE",
+            "reason": "An open laptop is clearly visible resting on the desk."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "The laptop screen displays pink and purple colors.",
+            "label": "OBJECTIVE",
+            "reason": "Pink and purple imagery is directly visible on the laptop screen."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Cabinetry appears to the left of the chair.",
+            "label": "OBJECTIVE",
+            "reason": "White cabinet units are visibly located on the left side of the image."
+          },
+          {
+            "claim_id": "C13",
+            "claim": "The room has a wood floor.",
+            "label": "OBJECTIVE",
+            "reason": "Wood-grain flooring is clearly visible beneath the chair."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 47,
+        "relevant_novel_claims": 4,
+        "efficiency_per_100_words": 8.5106
+      }
+    }
+  }
+}

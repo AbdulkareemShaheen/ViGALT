@@ -1,0 +1,411 @@
+{
+  "folder_number": 1,
+  "image_file": "513U83g30sL._AC_SX679_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "A T-shirt shown from the front, with short sleeves and a crew neckline. A small gray Under Armour logo is on the wearer's upper left chest.",
+      "relevancy": {
+        "total_claims": 4,
+        "relevant_claims": 4,
+        "supplementary_claims": 0,
+        "visual_only_claims": 0,
+        "relevancy_rate": 1.0,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "T-shirt",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Short sleeves",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Crew neckline",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Small gray Under Armour logo on the wearer's upper left chest",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 4,
+          "relevant_claims": 4,
+          "irrelevant_claims": 0,
+          "raw_novel_claims": 1,
+          "relevant_novel_claims": 1,
+          "irrelevant_novel_claims": 0,
+          "unavoidable_repetition_claims": 0,
+          "avoidable_redundancy_claims": 3,
+          "novelty_rate": 0.25,
+          "raw_novelty_rate": 0.25,
+          "unavoidable_repetition_rate": 0.0,
+          "avoidable_redundancy_rate": 0.75,
+          "redundancy_rate": 0.75
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "T-shirt",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Short sleeves",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Crew neckline",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Small gray Under Armour logo on the wearer's upper left chest",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "T-shirt",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "Under Armour Tech 2.0 T-Shirt - SS21"
+              },
+              {
+                "field": "product_details.Shirt Form Type",
+                "value": "T-Shirt"
+              }
+            ],
+            "reason": "The DOM explicitly identifies the product as a T-shirt, so this adds no new semantic information."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Short sleeves",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Sleeve Type",
+                "value": "Short Sleeve"
+              },
+              {
+                "field": "product_details.Sleeve Length Description",
+                "value": "Short Sleeve"
+              }
+            ],
+            "reason": "The DOM explicitly states that the shirt has short sleeves, so repeating this provides no necessary additional information."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Crew neckline",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Neck Style",
+                "value": "Crew Neck"
+              }
+            ],
+            "reason": "A crew neckline is already directly represented by the DOM's crew-neck style information."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Small gray Under Armour logo on the wearer's upper left chest",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "brand",
+                "value": "Under Armour"
+              },
+              {
+                "field": "product_details.Colour",
+                "value": "White/Gray"
+              }
+            ],
+            "reason": "Although the DOM identifies the brand and overall colorway, it does not state that a logo is present, its small size, gray color, or its placement on the upper left chest."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 4,
+        "subjective_claims": 0,
+        "total_claims": 4,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The T-shirt is shown from the front.",
+            "label": "OBJECTIVE",
+            "reason": "The front-facing view of the garment is directly visible in the image."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The T-shirt has short sleeves.",
+            "label": "OBJECTIVE",
+            "reason": "The sleeves visibly end above the elbow, which is directly observable."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The T-shirt has a crew neckline.",
+            "label": "OBJECTIVE",
+            "reason": "The image visibly shows a round, close-fitting neckline without a collar."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A small gray Under Armour logo is on the wearer's upper left chest.",
+            "label": "OBJECTIVE",
+            "reason": "A small gray Under Armour symbol is visibly present on the upper left chest area from the wearer's perspective."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 26,
+        "relevant_novel_claims": 1,
+        "efficiency_per_100_words": 3.8462
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "A white short-sleeve crew-neck Under Armour T-shirt with a small gray logo on the upper chest, shown against a plain white background.",
+      "relevancy": {
+        "total_claims": 6,
+        "relevant_claims": 5,
+        "supplementary_claims": 0,
+        "visual_only_claims": 1,
+        "relevancy_rate": 0.8333333333333334,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "White T-shirt",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Short sleeves",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Crew-neck neckline",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Under Armour T-shirt",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Small gray logo on the upper chest",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Plain white background",
+            "label": "V"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 6,
+          "relevant_claims": 5,
+          "irrelevant_claims": 1,
+          "raw_novel_claims": 2,
+          "relevant_novel_claims": 1,
+          "irrelevant_novel_claims": 1,
+          "unavoidable_repetition_claims": 0,
+          "avoidable_redundancy_claims": 4,
+          "novelty_rate": 0.16666666666666666,
+          "raw_novelty_rate": 0.3333333333333333,
+          "unavoidable_repetition_rate": 0.0,
+          "avoidable_redundancy_rate": 0.6666666666666666,
+          "redundancy_rate": 0.6666666666666666
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "White T-shirt",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Short sleeves",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Crew-neck neckline",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Under Armour T-shirt",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Small gray logo on the upper chest",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Plain white background",
+            "relevance_code": "V"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "White T-shirt",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "White/Gray"
+              },
+              {
+                "field": "product_details.Shirt Form Type",
+                "value": "T-Shirt"
+              }
+            ],
+            "reason": "The DOM already identifies the garment as a white/gray T-shirt, so this adds no necessary new information."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Short sleeves",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Sleeve Type",
+                "value": "Short Sleeve"
+              },
+              {
+                "field": "product_details.Sleeve Length Description",
+                "value": "Short Sleeve"
+              }
+            ],
+            "reason": "The DOM explicitly states that the shirt has short sleeves; repeating this provides no additional semantic information."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Crew-neck neckline",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Neck Style",
+                "value": "Crew Neck"
+              }
+            ],
+            "reason": "The crew-neck style is already explicitly represented in the DOM."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Under Armour T-shirt",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "brand",
+                "value": "Under Armour"
+              },
+              {
+                "field": "product_details.Shirt Form Type",
+                "value": "T-Shirt"
+              }
+            ],
+            "reason": "The DOM already provides both the Under Armour brand and the product type as a T-shirt."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Small gray logo on the upper chest",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "White/Gray"
+              },
+              {
+                "field": "brand",
+                "value": "Under Armour"
+              }
+            ],
+            "reason": "Although the DOM identifies the brand and a white/gray colorway, it does not state that a logo is present, its small size, gray color, or upper-chest placement."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Plain white background",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information describing the image background or whether it is plain white."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 6,
+        "subjective_claims": 0,
+        "total_claims": 6,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The T-shirt is white.",
+            "label": "OBJECTIVE",
+            "reason": "The garment's white color is directly visible in the image."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The T-shirt has short sleeves.",
+            "label": "OBJECTIVE",
+            "reason": "The sleeves visibly end above the elbows."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The T-shirt has a crew neck.",
+            "label": "OBJECTIVE",
+            "reason": "A round, close-fitting neckline without a collar is directly visible."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The T-shirt is an Under Armour T-shirt.",
+            "label": "OBJECTIVE",
+            "reason": "The visible chest logo is recognizable as the Under Armour logo."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The T-shirt has a small gray logo on the upper chest.",
+            "label": "OBJECTIVE",
+            "reason": "A small gray logo is visibly placed on the upper chest area."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The T-shirt is shown against a plain white background.",
+            "label": "OBJECTIVE",
+            "reason": "The image background appears uniformly white and without visible scenery or other objects."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 22,
+        "relevant_novel_claims": 1,
+        "efficiency_per_100_words": 4.5455
+      }
+    }
+  }
+}

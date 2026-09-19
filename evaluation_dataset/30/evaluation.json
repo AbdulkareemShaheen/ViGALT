@@ -1,0 +1,573 @@
+{
+  "folder_number": 30,
+  "image_file": "71rBw3HHr1L._AC_SX679_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "Round mirror with a continuous warm-white illuminated ring just inside the black outer rim. Diffuse warm glow radiates from behind the mirror around its outer edge, and three icons appear near the lower center of the reflective surface.",
+      "relevancy": {
+        "total_claims": 5,
+        "relevant_claims": 5,
+        "supplementary_claims": 0,
+        "visual_only_claims": 0,
+        "relevancy_rate": 1.0,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Round mirror",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Continuous warm-white illuminated ring just inside the black outer rim",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Black outer rim",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Diffuse warm glow radiates from behind the mirror around its outer edge",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Three icons near the lower center of the reflective surface",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 5,
+          "relevant_claims": 5,
+          "irrelevant_claims": 0,
+          "raw_novel_claims": 0,
+          "relevant_novel_claims": 0,
+          "irrelevant_novel_claims": 0,
+          "unavoidable_repetition_claims": 3,
+          "avoidable_redundancy_claims": 2,
+          "novelty_rate": 0.0,
+          "raw_novelty_rate": 0.0,
+          "unavoidable_repetition_rate": 0.6,
+          "avoidable_redundancy_rate": 0.4,
+          "redundancy_rate": 1.0
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Round mirror",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Continuous warm-white illuminated ring just inside the black outer rim",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Black outer rim",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Diffuse warm glow radiates from behind the mirror around its outer edge",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Three icons near the lower center of the reflective surface",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Round mirror",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Item Shape",
+                "value": "Round"
+              },
+              {
+                "field": "title",
+                "value": "STARLEAD Black Mirror-Round-Bathroom-with-Lighting 60 cm, Bluetooth, Anti-fog, Mirror-LED with 3 Light Colours, Dimmable, Memory, IP44, HD Tempered Glass, Non-Metallic Frame"
+              }
+            ],
+            "reason": "The DOM explicitly identifies the item as round, so this adds no new semantic information."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Continuous warm-white illuminated ring just inside the black outer rim",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "Choose between warm white light (3000K), neutral white light (4000K) and cool white light (6500K)"
+              },
+              {
+                "field": "feature_bullets[0]",
+                "value": "has a black coating on the edges, imitates metal frames"
+              },
+              {
+                "field": "product_details.Frame Color",
+                "value": "Black"
+              }
+            ],
+            "reason": "The DOM already establishes warm-white lighting and black edging, but not the continuous ring's placement immediately inside the rim. Repeating the light colour and rim is needed to anchor the new layout information."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Black outer rim",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Frame Color",
+                "value": "Black"
+              },
+              {
+                "field": "feature_bullets[0]",
+                "value": "has a black coating on the edges, imitates metal frames"
+              }
+            ],
+            "reason": "The DOM already describes a black frame/black coating on the mirror edges, which sufficiently conveys a black outer rim."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Diffuse warm glow radiates from behind the mirror around its outer edge",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[0]",
+                "value": "A soft glow around the buttons illuminates the bathroom at night."
+              },
+              {
+                "field": "feature_bullets[1]",
+                "value": "Choose between warm white light (3000K), neutral white light (4000K) and cool white light (6500K)"
+              },
+              {
+                "field": "title",
+                "value": "STARLEAD Black Mirror-Round-Bathroom-with-Lighting 60 cm, Bluetooth, Anti-fog, Mirror-LED with 3 Light Colours, Dimmable, Memory, IP44, HD Tempered Glass, Non-Metallic Frame"
+              }
+            ],
+            "reason": "The DOM establishes that the mirror is illuminated and can provide warm-white light, but not that illumination radiates from behind the outer edge. The repeated lighting context is needed to describe and locate the newly specified glow."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Three icons near the lower center of the reflective surface",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[0]",
+                "value": "3 separate buttons for lighting, anti-fog and Bluetooth."
+              },
+              {
+                "field": "feature_bullets[2]",
+                "value": "Remember to click the third button to turn off Bluetooth"
+              }
+            ],
+            "reason": "The DOM establishes three controls, but does not identify them as icons or state their placement near the lower center of the mirror surface. Referring to three icons anchors the new positional information to the existing set of controls."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 0.8,
+        "objective_claims": 4,
+        "subjective_claims": 1,
+        "total_claims": 5,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The mirror is round.",
+            "label": "OBJECTIVE",
+            "reason": "The circular shape is directly visible in the image."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "A continuous warm-white illuminated ring appears just inside the black outer rim.",
+            "label": "OBJECTIVE",
+            "reason": "A pale warm-toned light band is visibly continuous around the mirror and positioned inside a dark outer border."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "A diffuse warm glow appears around the mirror's outer edge.",
+            "label": "OBJECTIVE",
+            "reason": "A soft yellowish halo is visibly present on the wall surrounding the mirror."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The glow radiates from behind the mirror.",
+            "label": "SUBJECTIVE",
+            "reason": "Although a halo is visible, the exact physical source and placement of the light behind the mirror cannot be directly verified from the image alone."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Three icons appear near the lower center of the reflective surface.",
+            "label": "OBJECTIVE",
+            "reason": "Three small visible symbols are located near the lower central area of the mirror surface."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 38,
+        "relevant_novel_claims": 0,
+        "efficiency_per_100_words": 0.0
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "A warm beige bathroom vanity features a large round illuminated mirror with a black rim and three touch-control icons. Its reflection shows a shelving unit with plants, bottles, and folded towels. On the pale counter are silver, orange, and white deer figurines, plus a round tray holding two speckled cups and small items.",
+      "relevancy": {
+        "total_claims": 12,
+        "relevant_claims": 4,
+        "supplementary_claims": 0,
+        "visual_only_claims": 8,
+        "relevancy_rate": 0.3333333333333333,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Warm beige bathroom vanity",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Large round illuminated mirror with a black rim",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Three touch-control icons on the mirror",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A shelving unit is visible in the mirror's reflection",
+            "label": "V"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Plants are visible in the shelving unit's reflection",
+            "label": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Bottles are visible in the shelving unit's reflection",
+            "label": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Folded towels are visible in the shelving unit's reflection",
+            "label": "V"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Pale counter",
+            "label": "R"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Silver, orange, and white deer figurines on the counter",
+            "label": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A round tray on the counter",
+            "label": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "Two speckled cups in the tray",
+            "label": "V"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Small items in the tray",
+            "label": "V"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 12,
+          "relevant_claims": 4,
+          "irrelevant_claims": 8,
+          "raw_novel_claims": 10,
+          "relevant_novel_claims": 2,
+          "irrelevant_novel_claims": 8,
+          "unavoidable_repetition_claims": 0,
+          "avoidable_redundancy_claims": 2,
+          "novelty_rate": 0.16666666666666666,
+          "raw_novelty_rate": 0.8333333333333334,
+          "unavoidable_repetition_rate": 0.0,
+          "avoidable_redundancy_rate": 0.16666666666666666,
+          "redundancy_rate": 0.16666666666666666
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Warm beige bathroom vanity",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Large round illuminated mirror with a black rim",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Three touch-control icons on the mirror",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A shelving unit is visible in the mirror's reflection",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Plants are visible in the shelving unit's reflection",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Bottles are visible in the shelving unit's reflection",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Folded towels are visible in the shelving unit's reflection",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Pale counter",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Silver, orange, and white deer figurines on the counter",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A round tray on the counter",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "Two speckled cups in the tray",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Small items in the tray",
+            "relevance_code": "V"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Warm beige bathroom vanity",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM identifies the product as a bathroom mirror but provides no information about a beige vanity or its colour."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Large round illuminated mirror with a black rim",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "STARLEAD Black Mirror-Round-Bathroom-with-Lighting 60 cm..."
+              },
+              {
+                "field": "product_details.Item Shape",
+                "value": "Round"
+              },
+              {
+                "field": "product_details.Frame Color",
+                "value": "Black"
+              },
+              {
+                "field": "product_details.Item Dimensions L x W",
+                "value": "60L x 60W centimetres"
+              },
+              {
+                "field": "product_details.Special Features",
+                "value": "Adjustable, Dimmable, Fog Light, Lighted"
+              }
+            ],
+            "reason": "The DOM already identifies a 60 cm round bathroom mirror with lighting and a black frame/rim. Repeating these product characteristics adds no necessary information."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Three touch-control icons on the mirror",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[0]",
+                "value": "Stylish Design and Smart Touch... 3 separate buttons for lighting, anti-fog and Bluetooth."
+              }
+            ],
+            "reason": "The DOM already states that the mirror has smart touch controls and three separate buttons for lighting, anti-fog, and Bluetooth. The claim adds no necessary semantic information."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A shelving unit is visible in the mirror's reflection",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a shelving unit or anything visible in the mirror's reflection."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Plants are visible in the shelving unit's reflection",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM provides no information about plants, a shelving unit, or reflected scene contents."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Bottles are visible in the shelving unit's reflection",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM provides no information about bottles, a shelving unit, or reflected scene contents."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Folded towels are visible in the shelving unit's reflection",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM provides no information about folded towels, a shelving unit, or reflected scene contents."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Pale counter",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a counter or its colour."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Silver, orange, and white deer figurines on the counter",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about deer figurines, their colours, or counter-top objects."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A round tray on the counter",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a tray or a counter."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "Two speckled cups in the tray",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about cups, their appearance, or a tray."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Small items in the tray",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about small items or a tray."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 10,
+        "subjective_claims": 0,
+        "total_claims": 10,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "A beige bathroom vanity is visible.",
+            "label": "OBJECTIVE",
+            "reason": "The image visibly shows a beige-toned counter and cabinet unit in a bathroom-style display."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The vanity has a large round illuminated mirror.",
+            "label": "OBJECTIVE",
+            "reason": "A large circular mirror with a visibly glowing light around its perimeter is directly visible."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The mirror has a black rim.",
+            "label": "OBJECTIVE",
+            "reason": "A narrow dark, black-looking border is visibly present around the mirror."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Three touch-control icons appear near the bottom of the mirror.",
+            "label": "OBJECTIVE",
+            "reason": "Three small circular control symbols are visibly shown near the mirror's lower center; their touch-control appearance is indicated by the visible icon design."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The mirror reflection shows a shelving unit.",
+            "label": "OBJECTIVE",
+            "reason": "Shelves are visibly reflected along the left side of the mirror."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Plants, bottles, and folded towels appear on the reflected shelving unit.",
+            "label": "OBJECTIVE",
+            "reason": "The reflected shelves visibly contain potted plants, containers resembling bottles, and stacked folded textiles."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The counter is pale-colored.",
+            "label": "OBJECTIVE",
+            "reason": "The countertop has a visibly light cream or off-white appearance."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Silver, orange, and white deer figurines are on the counter.",
+            "label": "OBJECTIVE",
+            "reason": "Three small deer-shaped decorative figures in silver-gray, orange, and white are visibly placed on the counter."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "A round tray on the counter holds two speckled cups.",
+            "label": "OBJECTIVE",
+            "reason": "A circular tray is visibly present on the right side of the counter, containing two light-colored cups with visible speckles."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "The tray holds additional small items.",
+            "label": "OBJECTIVE",
+            "reason": "Several small objects are visibly present in the tray alongside the cups."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 53,
+        "relevant_novel_claims": 2,
+        "efficiency_per_100_words": 3.7736
+      }
+    }
+  }
+}

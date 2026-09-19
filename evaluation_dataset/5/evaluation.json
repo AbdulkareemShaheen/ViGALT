@@ -1,0 +1,527 @@
+{
+  "folder_number": 5,
+  "image_file": "61qXgbMoA1L._AC_SX679_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "Zip-up hooded sweatshirt in pink. It has pink awareness ribbon graphics, with a small graphic on the left chest and a much larger version of the graphic centered across the back, plus a large divided hand pocket on the front. Ribbed cuffs on the sleeves and a ribbed waistband at the hem finish the garment.",
+      "relevancy": {
+        "total_claims": 6,
+        "relevant_claims": 6,
+        "supplementary_claims": 0,
+        "visual_only_claims": 0,
+        "relevancy_rate": 1.0,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Pink zip-up hooded sweatshirt",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Small pink awareness ribbon graphic on the left chest",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Much larger pink awareness ribbon graphic centered across the back",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Large divided hand pocket on the front",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Ribbed cuffs on the sleeves",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Ribbed waistband at the hem",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 6,
+          "relevant_claims": 6,
+          "irrelevant_claims": 0,
+          "raw_novel_claims": 2,
+          "relevant_novel_claims": 2,
+          "irrelevant_novel_claims": 0,
+          "unavoidable_repetition_claims": 3,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.3333333333333333,
+          "raw_novelty_rate": 0.3333333333333333,
+          "unavoidable_repetition_rate": 0.5,
+          "avoidable_redundancy_rate": 0.16666666666666666,
+          "redundancy_rate": 0.6666666666666666
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Pink zip-up hooded sweatshirt",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Small pink awareness ribbon graphic on the left chest",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Much larger pink awareness ribbon graphic centered across the back",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Large divided hand pocket on the front",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Ribbed cuffs on the sleeves",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Ribbed waistband at the hem",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Pink zip-up hooded sweatshirt",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "Générique 2026 October Pink Women's Hooded Sweatshirt - October Pink Women's Mid-Season Jacket Autumn Zip Sweatshirt Oversized Sweatshirts Winter Warm"
+              },
+              {
+                "field": "product_details.Colour",
+                "value": "Pink"
+              },
+              {
+                "field": "product_details.Neck Style",
+                "value": "Hooded Neck"
+              }
+            ],
+            "reason": "The DOM already identifies the product as a pink women's hooded sweatshirt and explicitly includes \"Zip Sweatshirt\" in the title. The claim adds no necessary semantic information."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Small pink awareness ribbon graphic on the left chest",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[0]",
+                "value": "\"Pink October\": A trendy hoodie with pink ribbon that both supports this charity cause and shows a style that is both trendy and committed."
+              }
+            ],
+            "reason": "The DOM establishes that the hoodie has a pink ribbon associated with an awareness cause, but it does not specify that it is a small graphic or that it is positioned on the left chest. Repeating the ribbon concept is needed to anchor those new size and placement details."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Much larger pink awareness ribbon graphic centered across the back",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[0]",
+                "value": "\"Pink October\": A trendy hoodie with pink ribbon that both supports this charity cause and shows a style that is both trendy and committed."
+              }
+            ],
+            "reason": "The DOM mentions a pink awareness-related ribbon but provides no information about a larger back graphic or its centered placement. Referring to the ribbon is necessary to identify what the new size and back-location details describe."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Large divided hand pocket on the front",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[3]",
+                "value": "Practical hood and pockets: With an adjustable hood and chest pocket, it perfectly combines style and functionality for everyday use."
+              }
+            ],
+            "reason": "The DOM indicates that the garment has pockets, but does not describe a large divided hand pocket or its front placement. Repeating that it is a pocket is needed to ground the new structural and location details."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Ribbed cuffs on the sleeves",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about sleeve cuffs or ribbed construction."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Ribbed waistband at the hem",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a waistband, hem treatment, or ribbed construction."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 7,
+        "subjective_claims": 0,
+        "total_claims": 7,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The garment is a pink zip-up hooded sweatshirt.",
+            "label": "OBJECTIVE",
+            "reason": "The image visibly shows a pink sweatshirt-style garment with a hood and a full-length front zipper."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The garment has pink awareness ribbon graphics.",
+            "label": "OBJECTIVE",
+            "reason": "Pink ribbon-shaped graphics are visibly printed on the garment; identifying them as awareness ribbons describes their recognizable visible form."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "A small ribbon graphic appears on the left chest.",
+            "label": "OBJECTIVE",
+            "reason": "The front view visibly shows a small pink ribbon graphic on the wearer's left chest area."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A much larger ribbon graphic is centered across the back.",
+            "label": "OBJECTIVE",
+            "reason": "The back view visibly shows a ribbon graphic positioned near the center of the back and substantially larger than the chest graphic."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The garment has a large divided hand pocket on the front.",
+            "label": "OBJECTIVE",
+            "reason": "The front view visibly shows two pocket openings joined in a kangaroo-style front pocket area."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The sleeves have ribbed cuffs.",
+            "label": "OBJECTIVE",
+            "reason": "The sleeve ends visibly have gathered, ribbed-looking cuff bands."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The garment has a ribbed waistband at the hem.",
+            "label": "OBJECTIVE",
+            "reason": "A distinct ribbed band is visibly present along the bottom hem of the sweatshirt."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 55,
+        "relevant_novel_claims": 2,
+        "efficiency_per_100_words": 3.6364
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "Two women model pink hooded zip-up jackets with ribbed cuffs and hems. The front-facing woman wears a black top and white pants, with a small pink ribbon on her chest, while the other faces away, displaying a large pink ribbon on the back and wearing black pants.",
+      "relevancy": {
+        "total_claims": 10,
+        "relevant_claims": 7,
+        "supplementary_claims": 0,
+        "visual_only_claims": 3,
+        "relevancy_rate": 0.7,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Two women model pink hooded zip-up jackets.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The jackets have ribbed cuffs.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The jackets have ribbed hems.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "One woman faces front.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The front-facing woman wears a black top.",
+            "label": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The front-facing woman wears white pants.",
+            "label": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The front-facing woman has a small pink ribbon on her chest.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The other woman faces away.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "The other woman displays a large pink ribbon on her back.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "The other woman wears black pants.",
+            "label": "V"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 10,
+          "relevant_claims": 7,
+          "irrelevant_claims": 3,
+          "raw_novel_claims": 7,
+          "relevant_novel_claims": 4,
+          "irrelevant_novel_claims": 3,
+          "unavoidable_repetition_claims": 3,
+          "avoidable_redundancy_claims": 0,
+          "novelty_rate": 0.4,
+          "raw_novelty_rate": 0.7,
+          "unavoidable_repetition_rate": 0.3,
+          "avoidable_redundancy_rate": 0.0,
+          "redundancy_rate": 0.3
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Two women model pink hooded zip-up jackets.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The jackets have ribbed cuffs.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The jackets have ribbed hems.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "One woman faces front.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The front-facing woman wears a black top.",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The front-facing woman wears white pants.",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The front-facing woman has a small pink ribbon on her chest.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The other woman faces away.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "The other woman displays a large pink ribbon on her back.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "The other woman wears black pants.",
+            "relevance_code": "V"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Two women model pink hooded zip-up jackets.",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "Pink Women's Hooded Sweatshirt ... Autumn Zip Sweatshirt"
+              },
+              {
+                "field": "product_details.Colour",
+                "value": "Pink"
+              },
+              {
+                "field": "product_details.Neck Style",
+                "value": "Hooded Neck"
+              }
+            ],
+            "reason": "The DOM already establishes that the product is pink, hooded, and zip-front. Repeating those attributes is necessary to anchor the new information that two women are modeling the pictured garments."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The jackets have ribbed cuffs.",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about ribbed cuffs or cuff construction."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The jackets have ribbed hems.",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about ribbed hems or hem construction."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "One woman faces front.",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not describe any models or their viewing direction."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The front-facing woman wears a black top.",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM provides no information about a model's black top or other underlayer."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The front-facing woman wears white pants.",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM provides no information about a model's white pants."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The front-facing woman has a small pink ribbon on her chest.",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[0]",
+                "value": "\"Pink October\": A trendy hoodie with pink ribbon that both supports this charity cause and shows a style that is both trendy and committed."
+              }
+            ],
+            "reason": "The DOM already identifies a pink ribbon as a product feature. Repeating the ribbon is necessary to locate and distinguish the new visual information that it is small and positioned on the front-facing woman's chest."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The other woman faces away.",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not describe a second model or any model's rear-facing pose."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "The other woman displays a large pink ribbon on her back.",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[0]",
+                "value": "\"Pink October\": A trendy hoodie with pink ribbon that both supports this charity cause and shows a style that is both trendy and committed."
+              }
+            ],
+            "reason": "The DOM establishes that the hoodie has a pink ribbon. Repeating that feature is needed to convey the new information that the depicted rear-facing woman shows a large version on the back."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "The other woman wears black pants.",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM provides no information about a model's black pants."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 8,
+        "subjective_claims": 0,
+        "total_claims": 8,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Two women model pink hooded zip-up jackets.",
+            "label": "OBJECTIVE",
+            "reason": "The image visibly shows two women wearing pink jackets with hoods and front zipper closures."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The jackets have ribbed cuffs and hems.",
+            "label": "OBJECTIVE",
+            "reason": "The sleeve cuffs and bottom hems are visibly gathered and ribbed in appearance."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The front-facing woman wears a black top.",
+            "label": "OBJECTIVE",
+            "reason": "A black top is visibly shown underneath the open jacket of the woman facing forward."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The front-facing woman wears white pants.",
+            "label": "OBJECTIVE",
+            "reason": "White pants are visibly shown on the lower portion of the front-facing woman."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "A small pink ribbon appears on the front-facing woman's chest.",
+            "label": "OBJECTIVE",
+            "reason": "A small pink ribbon graphic is visibly placed on the jacket's chest area."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The other woman faces away.",
+            "label": "OBJECTIVE",
+            "reason": "The second woman is positioned with her back toward the viewer."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A large pink ribbon appears on the back of the other woman's jacket.",
+            "label": "OBJECTIVE",
+            "reason": "A large pink ribbon graphic is clearly visible on the back of the jacket."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The other woman wears black pants.",
+            "label": "OBJECTIVE",
+            "reason": "Black pants are visibly shown on the lower portion of the woman facing away."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 47,
+        "relevant_novel_claims": 4,
+        "efficiency_per_100_words": 8.5106
+      }
+    }
+  }
+}

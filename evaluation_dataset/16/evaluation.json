@@ -1,0 +1,885 @@
+{
+  "folder_number": 16,
+  "image_file": "71IRNgOKLfL._AC_SY300_SX300_QL70_ML2_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "Dark gray vertically ribbed upholstery covers the seating, with the right seat reclined and its footrest extended. Illuminated vertical strips run along both front arm edges, with circular cup holders built into the armrests and a control panel mounted on the outside of the left arm. Open compartments beneath and in front of the seating contain a blanket, a cushion, and books; one front compartment has its hinged lid raised.",
+      "relevancy": {
+        "total_claims": 11,
+        "relevant_claims": 8,
+        "supplementary_claims": 0,
+        "visual_only_claims": 3,
+        "relevancy_rate": 0.7272727272727273,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Dark gray vertically ribbed upholstery covers the seating",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The right seat is reclined",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The right seat's footrest is extended",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Illuminated vertical strips run along both front arm edges",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Circular cup holders are built into the armrests",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "A control panel is mounted on the outside of the left arm",
+            "label": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Open compartments are beneath and in front of the seating",
+            "label": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "A blanket is in the compartments",
+            "label": "V"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "A cushion is in the compartments",
+            "label": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Books are in the compartments",
+            "label": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "One front compartment has its hinged lid raised",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 11,
+          "relevant_claims": 8,
+          "irrelevant_claims": 3,
+          "raw_novel_claims": 9,
+          "relevant_novel_claims": 7,
+          "irrelevant_novel_claims": 2,
+          "unavoidable_repetition_claims": 2,
+          "avoidable_redundancy_claims": 0,
+          "novelty_rate": 0.6363636363636364,
+          "raw_novelty_rate": 0.8181818181818182,
+          "unavoidable_repetition_rate": 0.18181818181818182,
+          "avoidable_redundancy_rate": 0.0,
+          "redundancy_rate": 0.18181818181818182
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Dark gray vertically ribbed upholstery covers the seating",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The right seat is reclined",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The right seat's footrest is extended",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Illuminated vertical strips run along both front arm edges",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Circular cup holders are built into the armrests",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "A control panel is mounted on the outside of the left arm",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Open compartments are beneath and in front of the seating",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "A blanket is in the compartments",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "A cushion is in the compartments",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Books are in the compartments",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "One front compartment has its hinged lid raised",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Dark gray vertically ribbed upholstery covers the seating",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Upholstery Color",
+                "value": "Dark Grey"
+              },
+              {
+                "field": "product_details.Upholstery Fabric Type",
+                "value": "Corduroy"
+              }
+            ],
+            "reason": "The DOM establishes dark-grey corduroy upholstery, but does not state that the ribs run vertically or describe this seating coverage configuration."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The right seat is reclined",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about any seat being reclined or about the position of the right seat."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The right seat's footrest is extended",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention a footrest, an extension mechanism, or the state of the right seat."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Illuminated vertical strips run along both front arm edges",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "LED mood lighting makes the space more warm and luxurious"
+              },
+              {
+                "field": "title",
+                "value": "KOMHTOM 3 Seater L-Shaped Sofa with 2 Drawers, Storage Stool, LED Lamp, USB/Type-C Port and Wooden Frame – Multifunctional Corduroy Sofa (Dark Grey, B)"
+              }
+            ],
+            "reason": "The DOM already establishes LED lighting, while the claim adds its specific form and placement as vertical strips on both front arm edges. Referring to the strips as illuminated is necessary to ground the new location detail as the product's LED feature."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Circular cup holders are built into the armrests",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention cup holders or any armrest-integrated receptacles."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "A control panel is mounted on the outside of the left arm",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "Although the DOM lists a USB/Type-C port, it does not identify a control panel or state that any panel is on the outside of the left arm."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Open compartments are beneath and in front of the seating",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "equipped with side pockets, a storage bench, and 2 large-capacity roller drawers"
+              },
+              {
+                "field": "product_details.Number of Drawers",
+                "value": "2"
+              }
+            ],
+            "reason": "The DOM describes storage through side pockets, a storage bench, and roller drawers, but does not describe open compartments located beneath and in front of the seating."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "A blanket is in the compartments",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "a storage bench, and 2 large-capacity roller drawers, perfect for storing books and everyday items"
+              }
+            ],
+            "reason": "The DOM describes storage intended for books and everyday items but does not state that a blanket is present in any compartment."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "A cushion is in the compartments",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "a storage bench, and 2 large-capacity roller drawers, perfect for storing books and everyday items"
+              }
+            ],
+            "reason": "The DOM identifies storage features but does not state that a cushion is placed in any compartment."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Books are in the compartments",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "a storage bench, and 2 large-capacity roller drawers, perfect for storing books and everyday items"
+              }
+            ],
+            "reason": "The DOM mentions books as items the storage can hold, but not as items actually present. Repeating books is necessary to express the new assertion that books are currently in the compartments."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "One front compartment has its hinged lid raised",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "a storage bench, and 2 large-capacity roller drawers"
+              },
+              {
+                "field": "product_details.Number of Drawers",
+                "value": "2"
+              }
+            ],
+            "reason": "The DOM lists storage furniture and drawers but does not identify a front compartment with a hinged lid or give the lid's raised state."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 8,
+        "subjective_claims": 0,
+        "total_claims": 8,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Dark gray vertically ribbed upholstery covers the seating.",
+            "label": "OBJECTIVE",
+            "reason": "The seating surfaces visibly appear dark gray and show a vertical ribbed or channel-stitched texture."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The right seat is reclined.",
+            "label": "OBJECTIVE",
+            "reason": "The rightmost seat's backrest is visibly tilted backward relative to the upright sofa backrests."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The right seat's footrest is extended.",
+            "label": "OBJECTIVE",
+            "reason": "A padded section projects forward from the reclined right seat, visibly functioning as an extended footrest."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Illuminated vertical strips run along both front arm edges.",
+            "label": "OBJECTIVE",
+            "reason": "Bright vertical light strips are visibly present along the outer front edges of both armrests."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Circular cup holders are built into the armrests.",
+            "label": "OBJECTIVE",
+            "reason": "Circular recessed holders are visibly shown on the tops of both armrests."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "A control panel is mounted on the outside of the left arm.",
+            "label": "OBJECTIVE",
+            "reason": "A small panel with visible buttons or ports appears on the outer side of the left armrest."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Open compartments beneath and in front of the seating contain a blanket, a cushion, and books.",
+            "label": "OBJECTIVE",
+            "reason": "The visible storage areas show a folded green textile and other soft furnishing items below the seating, while the raised front compartment visibly contains stacked books."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "One front compartment has its hinged lid raised.",
+            "label": "OBJECTIVE",
+            "reason": "The front-right storage compartment is visibly open with its padded lid lifted upward on a hinge."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 70,
+        "relevant_novel_claims": 7,
+        "efficiency_per_100_words": 10.0
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "A dark gray, vertically ribbed L-shaped sectional sofa features three seats, a reclining chaise, illuminated armrests, cup holders, charging ports, and storage pockets. An open under-seat compartment reveals a light green cushion, while a matching storage ottoman holds books beneath its raised lid. The set sits on a neutral patterned rug over wood flooring.",
+      "relevancy": {
+        "total_claims": 15,
+        "relevant_claims": 11,
+        "supplementary_claims": 0,
+        "visual_only_claims": 4,
+        "relevancy_rate": 0.7333333333333333,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Dark gray L-shaped sectional sofa",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The sectional sofa is vertically ribbed",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The sectional sofa has three seats",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The sectional sofa has a reclining chaise",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The sectional sofa has illuminated armrests",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The sectional sofa has cup holders",
+            "label": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The sectional sofa has charging ports",
+            "label": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The sectional sofa has storage pockets",
+            "label": "R"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "An open under-seat compartment is visible",
+            "label": "R"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A light green cushion is visible in the under-seat compartment",
+            "label": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "A matching storage ottoman is present",
+            "label": "R"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "The storage ottoman has a raised lid",
+            "label": "R"
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Books are beneath the raised lid of the storage ottoman",
+            "label": "V"
+          },
+          {
+            "claim_id": "C14",
+            "claim": "The set sits on a neutral patterned rug",
+            "label": "V"
+          },
+          {
+            "claim_id": "C15",
+            "claim": "The rug is over wood flooring",
+            "label": "V"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 15,
+          "relevant_claims": 11,
+          "irrelevant_claims": 4,
+          "raw_novel_claims": 2,
+          "relevant_novel_claims": 0,
+          "irrelevant_novel_claims": 2,
+          "unavoidable_repetition_claims": 9,
+          "avoidable_redundancy_claims": 4,
+          "novelty_rate": 0.0,
+          "raw_novelty_rate": 0.13333333333333333,
+          "unavoidable_repetition_rate": 0.6,
+          "avoidable_redundancy_rate": 0.26666666666666666,
+          "redundancy_rate": 0.8666666666666667
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Dark gray L-shaped sectional sofa",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The sectional sofa is vertically ribbed",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The sectional sofa has three seats",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The sectional sofa has a reclining chaise",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The sectional sofa has illuminated armrests",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The sectional sofa has cup holders",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The sectional sofa has charging ports",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The sectional sofa has storage pockets",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "An open under-seat compartment is visible",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A light green cushion is visible in the under-seat compartment",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "A matching storage ottoman is present",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "The storage ottoman has a raised lid",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Books are beneath the raised lid of the storage ottoman",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C14",
+            "claim": "The set sits on a neutral patterned rug",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C15",
+            "claim": "The rug is over wood flooring",
+            "relevance_code": "V"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Dark gray L-shaped sectional sofa",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "Dark Grey"
+              },
+              {
+                "field": "product_details.Sofa Type",
+                "value": "Sectional"
+              },
+              {
+                "field": "product_details.Item Shape",
+                "value": "L-Shape"
+              }
+            ],
+            "reason": "The DOM already specifies a dark grey, L-shaped sectional sofa. The claim adds no new semantic information."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The sectional sofa is vertically ribbed",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Sofa Type",
+                "value": "Sectional"
+              },
+              {
+                "field": "product_details.Upholstery Fabric Type",
+                "value": "Corduroy"
+              }
+            ],
+            "reason": "The sofa and its corduroy upholstery are represented in the DOM, but the vertical rib orientation is not. Referring to the sectional sofa is necessary to anchor the new visual texture detail."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The sectional sofa has three seats",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "KOMHTOM 3 Seater L-Shaped Sofa"
+              },
+              {
+                "field": "product_details.Seating Capacity",
+                "value": "3"
+              }
+            ],
+            "reason": "The DOM explicitly identifies the product as a 3-seater with seating capacity of three, so the claim supplies no new information."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The sectional sofa has a reclining chaise",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Sofa Type",
+                "value": "Sectional"
+              },
+              {
+                "field": "product_details.Item Shape",
+                "value": "L-Shape"
+              }
+            ],
+            "reason": "The DOM establishes that the product is an L-shaped sectional, but it does not state that its chaise reclines. The repeated sofa reference anchors the new chaise feature."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The sectional sofa has illuminated armrests",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets",
+                "value": "LED mood lighting makes the space more warm and luxurious"
+              },
+              {
+                "field": "product_details.Sofa Type",
+                "value": "Sectional"
+              }
+            ],
+            "reason": "The DOM mentions LED lighting but does not locate that lighting in the armrests. Identifying the sofa and armrests is necessary to convey the new placement detail."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The sectional sofa has cup holders",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Sofa Type",
+                "value": "Sectional"
+              }
+            ],
+            "reason": "The sectional sofa is already identified in the DOM, while cup holders are not. The repeated sofa reference is needed to attach the new feature to the product."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The sectional sofa has charging ports",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets",
+                "value": "Equipped with a 12V USB/Type-C port"
+              },
+              {
+                "field": "title",
+                "value": "USB/Type-C Port"
+              }
+            ],
+            "reason": "USB/Type-C charging ports are explicitly listed in the DOM. Repeating their presence adds no necessary information."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The sectional sofa has storage pockets",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets",
+                "value": "This adjustable L-shaped sofa with smart design is equipped with side pockets"
+              }
+            ],
+            "reason": "The DOM explicitly states that the sofa is equipped with side pockets, which semantically covers storage pockets."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "An open under-seat compartment is visible",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets",
+                "value": "equipped with side pockets, a storage bench, and 2 large-capacity roller drawers"
+              },
+              {
+                "field": "product_details.Seat Cushion Configuration",
+                "value": "Single Cushion Seat"
+              }
+            ],
+            "reason": "The DOM establishes seating and storage features but does not describe an open compartment beneath the seat. The under-seat reference is needed to locate the new visible storage detail on the sofa."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A light green cushion is visible in the under-seat compartment",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Cushion Construction",
+                "value": "Foam with corduroy cover"
+              }
+            ],
+            "reason": "The DOM describes the sofa's cushions generally, but does not contain a light green cushion or an under-seat compartment containing one."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "A matching storage ottoman is present",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Included Components",
+                "value": "Ottoman"
+              },
+              {
+                "field": "title",
+                "value": "Storage Stool"
+              }
+            ],
+            "reason": "The DOM already establishes that an ottoman/storage stool is included, but does not state that it visually matches the sofa. Repeating the ottoman is necessary to express the new matching relationship."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "The storage ottoman has a raised lid",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Included Components",
+                "value": "Ottoman"
+              },
+              {
+                "field": "title",
+                "value": "Storage Stool"
+              }
+            ],
+            "reason": "An ottoman/storage stool is represented in the DOM, but its lid position is not. The repeated ottoman reference anchors the new raised-lid detail."
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Books are beneath the raised lid of the storage ottoman",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Included Components",
+                "value": "Ottoman"
+              },
+              {
+                "field": "feature_bullets",
+                "value": "a storage bench, and 2 large-capacity roller drawers, perfect for storing books and everyday items"
+              }
+            ],
+            "reason": "The DOM identifies an ottoman and states that the sofa storage can hold books, but it does not show books placed beneath a raised ottoman lid. The storage-ottoman reference is needed to ground the new placement detail."
+          },
+          {
+            "claim_id": "C14",
+            "claim": "The set sits on a neutral patterned rug",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Sofa Type",
+                "value": "Sectional"
+              },
+              {
+                "field": "product_details.Included Components",
+                "value": "Ottoman"
+              }
+            ],
+            "reason": "The DOM establishes the sofa and included ottoman as the product set, but contains no rug information. Referring to the set is necessary to specify what the newly described rug is beneath."
+          },
+          {
+            "claim_id": "C15",
+            "claim": "The rug is over wood flooring",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM provides no information about a rug or any flooring material, including wood flooring."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 17,
+        "subjective_claims": 0,
+        "total_claims": 17,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The sectional sofa is dark gray.",
+            "label": "OBJECTIVE",
+            "reason": "Its dark gray upholstery is directly visible in the image."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The sofa has vertically ribbed upholstery.",
+            "label": "OBJECTIVE",
+            "reason": "Vertical channel-like ribbing is visibly present on the sofa's fabric surfaces."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The sofa is L-shaped.",
+            "label": "OBJECTIVE",
+            "reason": "The main sofa and the extended/reclining section form a visible L-like arrangement."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The sofa has three seat sections.",
+            "label": "OBJECTIVE",
+            "reason": "Three distinct padded seating areas are visible across the main sofa."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "A chaise section is shown in a reclined position.",
+            "label": "OBJECTIVE",
+            "reason": "The right-side chaise-like section is visibly extended and tilted upward with its mechanism exposed."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The armrests are illuminated.",
+            "label": "OBJECTIVE",
+            "reason": "Visible light strips run along the outer edges of both armrests."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The sofa has cup holders.",
+            "label": "OBJECTIVE",
+            "reason": "Round recessed cup-holder openings are visible on the armrest areas."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The sofa has charging ports.",
+            "label": "OBJECTIVE",
+            "reason": "Small port openings are visibly shown on the outer side of the left armrest."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "The sofa has storage pockets.",
+            "label": "OBJECTIVE",
+            "reason": "A visible pocket-like panel appears on the outer side of the left armrest."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "An under-seat compartment is open.",
+            "label": "OBJECTIVE",
+            "reason": "A storage drawer or compartment beneath the sofa seat is visibly pulled open."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "The open compartment contains a light green cushion.",
+            "label": "OBJECTIVE",
+            "reason": "A light green padded item is visibly present inside the open under-seat compartment."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "A matching dark gray storage ottoman is shown beside the sofa.",
+            "label": "OBJECTIVE",
+            "reason": "A separate dark gray upholstered ottoman with upholstery visually similar to the sofa is visible at the right."
+          },
+          {
+            "claim_id": "C13",
+            "claim": "The ottoman's lid is raised.",
+            "label": "OBJECTIVE",
+            "reason": "The ottoman top is visibly open and angled upward."
+          },
+          {
+            "claim_id": "C14",
+            "claim": "Books are visible inside the ottoman.",
+            "label": "OBJECTIVE",
+            "reason": "Several rectangular book-like items are visibly stored in the open ottoman."
+          },
+          {
+            "claim_id": "C15",
+            "claim": "The set sits on a patterned rug.",
+            "label": "OBJECTIVE",
+            "reason": "A rug with a visible mottled decorative pattern lies beneath the furniture."
+          },
+          {
+            "claim_id": "C16",
+            "claim": "The rug is neutral colored.",
+            "label": "OBJECTIVE",
+            "reason": "The rug visibly consists of subdued gray, beige, and off-white tones; describing these as neutral refers to its observable muted color palette."
+          },
+          {
+            "claim_id": "C17",
+            "claim": "Wood flooring is visible around the rug.",
+            "label": "OBJECTIVE",
+            "reason": "Light brown wood-plank flooring is directly visible surrounding the rug."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 54,
+        "relevant_novel_claims": 0,
+        "efficiency_per_100_words": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,485 @@
+{
+  "folder_number": 27,
+  "image_file": "61r1Xkm9NuL._AC_SX679_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "A mirror is opened into three rectangular panels arranged at angles. It has black borders and two black hooks extending above it. The reflections show front, side, and rear views of a person trimming his hair, and the black rear panel displays the JUSRON brand name and logo.",
+      "relevancy": {
+        "total_claims": 6,
+        "relevant_claims": 5,
+        "supplementary_claims": 0,
+        "visual_only_claims": 1,
+        "relevancy_rate": 0.8333333333333334,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "A mirror is opened into three rectangular panels arranged at angles.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The mirror has black borders.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Two black hooks extend above the mirror.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The reflections show front, side, and rear views of a person trimming his hair.",
+            "label": "V"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The black rear panel displays the JUSRON brand name.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The black rear panel displays the JUSRON logo.",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 6,
+          "relevant_claims": 5,
+          "irrelevant_claims": 1,
+          "raw_novel_claims": 0,
+          "relevant_novel_claims": 0,
+          "irrelevant_novel_claims": 0,
+          "unavoidable_repetition_claims": 5,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.0,
+          "raw_novelty_rate": 0.0,
+          "unavoidable_repetition_rate": 0.8333333333333334,
+          "avoidable_redundancy_rate": 0.16666666666666666,
+          "redundancy_rate": 1.0
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "A mirror is opened into three rectangular panels arranged at angles.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The mirror has black borders.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Two black hooks extend above the mirror.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The reflections show front, side, and rear views of a person trimming his hair.",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The black rear panel displays the JUSRON brand name.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The black rear panel displays the JUSRON logo.",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "A mirror is opened into three rectangular panels arranged at angles.",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "Cosmetic Mirror Foldable in 3 Sections"
+              },
+              {
+                "field": "product_details.Item Shape",
+                "value": "Rectangular"
+              }
+            ],
+            "reason": "The DOM already establishes that the mirror is rectangular and foldable into three sections, but it does not describe the opened panels' angled spatial arrangement. Repeating the three-panel structure is needed to anchor that new configuration detail."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The mirror has black borders.",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Frame Color",
+                "value": "Black"
+              },
+              {
+                "field": "product_details.Colour",
+                "value": "Black Blk"
+              }
+            ],
+            "reason": "The DOM already identifies the mirror's frame/border color as black. The claim adds no necessary semantic information beyond that color description."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Two black hooks extend above the mirror.",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[0]",
+                "value": "the 360-degree mirror features an adjustable retractable hook that can be attached to a door, wall, bathroom, closet, or placed side by side on a table"
+              }
+            ],
+            "reason": "The DOM establishes that the mirror has a retractable hanging hook, while the claim adds the visually specific number, black color, and position above the mirror. Referring to the hooks is needed to convey those new details."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The reflections show front, side, and rear views of a person trimming his hair.",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "360-degree viewing angle, which can easily see all angles of the head and face"
+              },
+              {
+                "field": "feature_bullets[3]",
+                "value": "The makeup mirror is a powerful tool for ... meticulous hair repair"
+              }
+            ],
+            "reason": "The DOM mentions viewing all angles and using the mirror for hair grooming, but it does not state that the reflections specifically show front, side, and rear views of a person trimming hair. The overlapping grooming and multi-angle context grounds those new reflected-view details."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The black rear panel displays the JUSRON brand name.",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "brand",
+                "value": "JUSRON"
+              },
+              {
+                "field": "product_details.Colour",
+                "value": "Black Blk"
+              }
+            ],
+            "reason": "The DOM supplies the JUSRON brand and black product color, but does not state that the brand name is displayed on a rear panel. Repeating the brand name is necessary to identify what is displayed in the new panel-specific information."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The black rear panel displays the JUSRON logo.",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "brand",
+                "value": "JUSRON"
+              },
+              {
+                "field": "product_details.Colour",
+                "value": "Black Blk"
+              }
+            ],
+            "reason": "The DOM identifies JUSRON as the brand and the product as black, but it does not mention a logo or its placement on a rear panel. The brand reference is needed to specify whose logo is shown in the new visual detail."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 6,
+        "subjective_claims": 0,
+        "total_claims": 6,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The mirror is opened into three rectangular panels arranged at angles.",
+            "label": "OBJECTIVE",
+            "reason": "Three rectangular mirror panels are visibly shown connected and positioned at angles to one another."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The panels have black borders.",
+            "label": "OBJECTIVE",
+            "reason": "Black edging is visibly present around the panels."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Two black hooks extend above the mirror.",
+            "label": "OBJECTIVE",
+            "reason": "Two black hook-like pieces are visibly attached above the upper edges of the mirror assembly."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The reflections show front, side, and rear views of a person.",
+            "label": "OBJECTIVE",
+            "reason": "The image visibly depicts the person from front-facing, profile, and back-facing angles in the mirror panels."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The person is trimming his hair.",
+            "label": "OBJECTIVE",
+            "reason": "The person is visibly holding an electric hair trimmer against the back of his head."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The black rear panel displays the JUSRON brand name and logo.",
+            "label": "OBJECTIVE",
+            "reason": "A black outward-facing panel visibly shows the readable text “JUSRON” alongside a logo."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 48,
+        "relevant_novel_claims": 0,
+        "efficiency_per_100_words": 0.0
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "A black, three-section hinged mirror with reflective panels and a gold “JUSRON” logo on the side panel. Two adjustable support rods extend above it. A man in a black shirt uses electric clippers to cut the back of his hair, visible from multiple angles in the mirrors.",
+      "relevancy": {
+        "total_claims": 5,
+        "relevant_claims": 3,
+        "supplementary_claims": 0,
+        "visual_only_claims": 2,
+        "relevancy_rate": 0.6,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Black, three-section hinged mirror with reflective panels",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Gold “JUSRON” logo on the side panel",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Two adjustable support rods extend above the mirror",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A man in a black shirt is visible from multiple angles in the mirrors",
+            "label": "V"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The man uses electric clippers to cut the back of his hair",
+            "label": "V"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 5,
+          "relevant_claims": 3,
+          "irrelevant_claims": 2,
+          "raw_novel_claims": 4,
+          "relevant_novel_claims": 2,
+          "irrelevant_novel_claims": 2,
+          "unavoidable_repetition_claims": 0,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.4,
+          "raw_novelty_rate": 0.8,
+          "unavoidable_repetition_rate": 0.0,
+          "avoidable_redundancy_rate": 0.2,
+          "redundancy_rate": 0.2
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Black, three-section hinged mirror with reflective panels",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Gold “JUSRON” logo on the side panel",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Two adjustable support rods extend above the mirror",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A man in a black shirt is visible from multiple angles in the mirrors",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The man uses electric clippers to cut the back of his hair",
+            "relevance_code": "V"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Black, three-section hinged mirror with reflective panels",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "Black Blk"
+              },
+              {
+                "field": "title",
+                "value": "JUSRON 360° Hanging Mirror - Cosmetic Mirror Foldable in 3 Sections - Height Adjustable - for Makeup, Shaving, Hairdressing - No LED"
+              },
+              {
+                "field": "feature_bullets[2]",
+                "value": "Lightweight and practical: the travel mirror uses a foldable portable design. You can easily place the three-part folding mirror in your handbag or luggage."
+              }
+            ],
+            "reason": "The DOM already identifies a black mirror that folds in three sections. Its status as a mirror already conveys reflective panels, and the foldable three-part construction sufficiently conveys the hinged configuration."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Gold “JUSRON” logo on the side panel",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "brand",
+                "value": "JUSRON"
+              }
+            ],
+            "reason": "Although the DOM provides the JUSRON brand name, it does not state that a logo appears on the product, nor its gold color or placement on a side panel."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Two adjustable support rods extend above the mirror",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[0]",
+                "value": "Adjustable in height: the 360-degree mirror features an adjustable retractable hook that can be attached to a door, wall, bathroom, closet, or placed side by side on a table."
+              }
+            ],
+            "reason": "The DOM describes an adjustable retractable hook and height adjustment, but does not specify two support rods or that they extend above the mirror."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A man in a black shirt is visible from multiple angles in the mirrors",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "Perfect DIY Makeup: The 360° mirror for self-haircutting uses high-quality ABS and glass materials with a 360-degree viewing angle, which can easily see all angles of the head and face."
+              }
+            ],
+            "reason": "The DOM describes the mirror's ability to show multiple angles, but contains no information about a depicted man, his black shirt, or his visibility in the mirror panels."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The man uses electric clippers to cut the back of his hair",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "Perfect DIY Makeup: The 360° mirror for self-haircutting uses high-quality ABS and glass materials with a 360-degree viewing angle, which can easily see all angles of the head and face."
+              },
+              {
+                "field": "feature_bullets[3]",
+                "value": "Distortion-free clarity: High resolution glass, no amplification, no deformation, no glare, better image effect. The makeup mirror is a powerful tool for exquisite makeup, meticulous hair repair, individual hair coloring, beautiful braiding, and shaving."
+              }
+            ],
+            "reason": "The DOM mentions self-haircutting and hair repair as uses, but does not specify a man, electric clippers, or cutting the back of his hair."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 0.7272727272727273,
+        "objective_claims": 8,
+        "subjective_claims": 3,
+        "total_claims": 11,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The mirror is black.",
+            "label": "OBJECTIVE",
+            "reason": "The product's outer panels are visibly black in the image."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The mirror has three hinged sections.",
+            "label": "OBJECTIVE",
+            "reason": "Three distinct connected panels are visible, with folds between the panels indicating hinged sections."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The mirror has reflective panels.",
+            "label": "OBJECTIVE",
+            "reason": "The inner panels visibly reflect the man and surrounding scene."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A gold “JUSRON” logo appears on the side panel.",
+            "label": "OBJECTIVE",
+            "reason": "Gold-colored JUSRON text and a graphic mark are visibly printed on the black outer side panel."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Two support rods extend above the mirror.",
+            "label": "OBJECTIVE",
+            "reason": "Two thin vertical rods with black hooked tops are visibly positioned above the mirror."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The support rods are adjustable.",
+            "label": "SUBJECTIVE",
+            "reason": "Adjustability is a functional property that cannot be conclusively verified from the image alone, even though the rods show segmented construction."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A man wearing a black shirt is shown behind the mirror.",
+            "label": "OBJECTIVE",
+            "reason": "A man in a black shirt is visibly depicted in front of and behind the mirror panels."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The man holds clippers against the back of his hair.",
+            "label": "OBJECTIVE",
+            "reason": "He is visibly holding a clipper-like grooming device at the back of his head."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "The clippers are electric.",
+            "label": "SUBJECTIVE",
+            "reason": "Whether the grooming device is electric is a functional characteristic not directly verifiable from the visible image."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "The man is cutting the back of his hair.",
+            "label": "SUBJECTIVE",
+            "reason": "Although the device is held against his hair, the act of actively cutting hair is an inferred action rather than directly observable from the still image."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "The man's head is reflected from multiple angles in the mirrors.",
+            "label": "OBJECTIVE",
+            "reason": "The separate mirror panels visibly show reflections of the man's head from front, side, and rear-oriented views."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 47,
+        "relevant_novel_claims": 2,
+        "efficiency_per_100_words": 4.2553
+      }
+    }
+  }
+}

@@ -1,0 +1,487 @@
+{
+  "folder_number": 3,
+  "image_file": "71R0e1+P71L._AC_SX569_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "A sweater has a light-gray body with repeating vertical zigzag bands filled with small diamond texture. Brown contrast panels run along the outer lower sleeves, with ribbed knit cuffs at the sleeve ends and a ribbed knit hem along the bottom edge. A short front placket opening from the collar has a dark button near the upper chest.",
+      "relevancy": {
+        "total_claims": 7,
+        "relevant_claims": 7,
+        "supplementary_claims": 0,
+        "visual_only_claims": 0,
+        "relevancy_rate": 1.0,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Light-gray sweater body",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Repeating vertical zigzag bands filled with small diamond texture",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Brown contrast panels along the outer lower sleeves",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Ribbed knit cuffs at the sleeve ends",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Ribbed knit hem along the bottom edge",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Short front placket opening from the collar",
+            "label": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Dark button near the upper chest",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 7,
+          "relevant_claims": 7,
+          "irrelevant_claims": 0,
+          "raw_novel_claims": 4,
+          "relevant_novel_claims": 4,
+          "irrelevant_novel_claims": 0,
+          "unavoidable_repetition_claims": 1,
+          "avoidable_redundancy_claims": 2,
+          "novelty_rate": 0.5714285714285714,
+          "raw_novelty_rate": 0.5714285714285714,
+          "unavoidable_repetition_rate": 0.14285714285714285,
+          "avoidable_redundancy_rate": 0.2857142857142857,
+          "redundancy_rate": 0.42857142857142855
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Light-gray sweater body",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Repeating vertical zigzag bands filled with small diamond texture",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Brown contrast panels along the outer lower sleeves",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Ribbed knit cuffs at the sleeve ends",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Ribbed knit hem along the bottom edge",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Short front placket opening from the collar",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Dark button near the upper chest",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Light-gray sweater body",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "Grey"
+              },
+              {
+                "field": "product_details.Sweater Form",
+                "value": "Sweater Pullover"
+              }
+            ],
+            "reason": "The DOM already identifies the product as a grey sweater. Describing its light-gray sweater body adds no necessary semantic information."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Repeating vertical zigzag bands filled with small diamond texture",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Special Features",
+                "value": "Jacquard knit"
+              },
+              {
+                "field": "product_details.Weave Type",
+                "value": "Jacquard"
+              }
+            ],
+            "reason": "The DOM specifies a jacquard knit/weave but does not describe the particular vertical zigzag bands or small diamond texture."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Brown contrast panels along the outer lower sleeves",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about brown contrast panels, their placement, or sleeve color blocking."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Ribbed knit cuffs at the sleeve ends",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "ribbed cuffs retain heat while creating a fitted silhouette."
+              }
+            ],
+            "reason": "The DOM explicitly states that the garment has ribbed cuffs, so repeating this cuff detail adds no necessary information."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Ribbed knit hem along the bottom edge",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "Although the DOM mentions ribbed cuffs, it does not state that the bottom hem is ribbed."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Short front placket opening from the collar",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "Stand-up collar with button closure"
+              },
+              {
+                "field": "product_details.Closure Type",
+                "value": "Button"
+              }
+            ],
+            "reason": "The DOM identifies a button closure at the collar but does not specify a front placket opening or that it is short."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Dark button near the upper chest",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "Stand-up collar with button closure"
+              },
+              {
+                "field": "product_details.Closure Type",
+                "value": "Button"
+              }
+            ],
+            "reason": "The DOM establishes that the garment has a button closure, while the claim adds the button's dark color and upper-chest location. Referring to the button is necessary to anchor those new visual details."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 7,
+        "subjective_claims": 0,
+        "total_claims": 7,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The sweater has a light-gray body.",
+            "label": "OBJECTIVE",
+            "reason": "The garment's main body appears light gray in the image."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The sweater has repeating vertical zigzag bands filled with a small diamond texture.",
+            "label": "OBJECTIVE",
+            "reason": "Vertical cable-like zigzag bands and a small repeating textured knit pattern are visibly present across the sweater."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Brown contrast panels run along the outer lower sleeves.",
+            "label": "OBJECTIVE",
+            "reason": "Brown patches are visibly located on the outer sides of both lower sleeves near the elbows."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The sweater has ribbed knit cuffs at the sleeve ends.",
+            "label": "OBJECTIVE",
+            "reason": "The sleeve ends visibly have ribbed knitted cuffs."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The sweater has a ribbed knit hem along the bottom edge.",
+            "label": "OBJECTIVE",
+            "reason": "A ribbed band is visibly present along the garment's lower edge."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "A short front placket opening extends from the collar.",
+            "label": "OBJECTIVE",
+            "reason": "A short opening with a placket is visibly centered below the raised collar."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The placket has a dark button near the upper chest.",
+            "label": "OBJECTIVE",
+            "reason": "A dark round button is visibly attached to the front placket near the upper chest."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 58,
+        "relevant_novel_claims": 4,
+        "efficiency_per_100_words": 6.8966
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "A gray cable-knit pullover sweater with a ribbed stand collar, two-button placket, ribbed cuffs and hem, and brown elbow patches.",
+      "relevancy": {
+        "total_claims": 6,
+        "relevant_claims": 6,
+        "supplementary_claims": 0,
+        "visual_only_claims": 0,
+        "relevancy_rate": 1.0,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Gray cable-knit pullover sweater",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Ribbed stand collar",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Two-button placket",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Ribbed cuffs",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Ribbed hem",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Brown elbow patches",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 6,
+          "relevant_claims": 6,
+          "irrelevant_claims": 0,
+          "raw_novel_claims": 2,
+          "relevant_novel_claims": 2,
+          "irrelevant_novel_claims": 0,
+          "unavoidable_repetition_claims": 3,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.3333333333333333,
+          "raw_novelty_rate": 0.3333333333333333,
+          "unavoidable_repetition_rate": 0.5,
+          "avoidable_redundancy_rate": 0.16666666666666666,
+          "redundancy_rate": 0.6666666666666666
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Gray cable-knit pullover sweater",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Ribbed stand collar",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Two-button placket",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Ribbed cuffs",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Ribbed hem",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Brown elbow patches",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Gray cable-knit pullover sweater",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "Grey"
+              },
+              {
+                "field": "product_details.Sweater Form",
+                "value": "Sweater Pullover"
+              },
+              {
+                "field": "product_details.Special Features",
+                "value": "Jacquard knit"
+              }
+            ],
+            "reason": "The DOM already identifies a grey pullover sweater, but it does not state that the knit is cable-knit. Repeating the garment type and color anchors the new cable-knit construction to the product."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Ribbed stand collar",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "Stand-up collar with button closure...; ribbed cuffs retain heat..."
+              },
+              {
+                "field": "product_details.Neck Style",
+                "value": "Mock Neck"
+              }
+            ],
+            "reason": "The DOM establishes a stand-up/mock-neck collar but only specifies ribbing for the cuffs, not the collar. Referring to the stand collar is needed to locate the new ribbed detail on that specific garment part."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Two-button placket",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "Stand-up collar with button closure provides wind protection..."
+              },
+              {
+                "field": "product_details.Closure Type",
+                "value": "Button"
+              }
+            ],
+            "reason": "The DOM states that the garment has a button closure but gives neither the number of buttons nor a placket configuration. The button/placket reference is needed to make the new two-button detail understandable."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Ribbed cuffs",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "ribbed cuffs retain heat while creating a fitted silhouette"
+              }
+            ],
+            "reason": "The DOM explicitly states that the sweater has ribbed cuffs. The claim adds no new attribute or necessary clarification."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Ribbed hem",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM mentions ribbed cuffs but contains no information that the sweater's hem is ribbed. A ribbed hem is a distinct garment feature."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Brown elbow patches",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM provides no information about elbow patches or their brown color."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 6,
+        "subjective_claims": 0,
+        "total_claims": 6,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The pullover sweater is gray.",
+            "label": "OBJECTIVE",
+            "reason": "The garment's gray color is directly visible in the image."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The sweater has a cable-knit pattern.",
+            "label": "OBJECTIVE",
+            "reason": "Raised cable-like knit columns are visibly present across the front and sleeves."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The sweater has a ribbed stand collar.",
+            "label": "OBJECTIVE",
+            "reason": "A short upright collar with visible ribbed knitting is directly observable at the neckline."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The sweater has a two-button placket.",
+            "label": "OBJECTIVE",
+            "reason": "A short neckline placket with two visible buttons can be seen on the front."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The sweater has ribbed cuffs and hem.",
+            "label": "OBJECTIVE",
+            "reason": "The sleeve ends and bottom edge visibly have ribbed knit bands."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The sweater has brown elbow patches.",
+            "label": "OBJECTIVE",
+            "reason": "Brown patch-like panels are visibly positioned at the elbow areas of both sleeves."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 20,
+        "relevant_novel_claims": 2,
+        "efficiency_per_100_words": 10.0
+      }
+    }
+  }
+}

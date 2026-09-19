@@ -1,0 +1,602 @@
+{
+  "folder_number": 6,
+  "image_file": "71bvy99CHpL._AC_SX679_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "Gray shirt body with a gray collar and a black inner collar. Black buttons are arranged down the center front, with a rounded lower edge and narrow cuffs at the ends of the sleeves. A black cuff is visible at the end of the sleeve on the right side of the image.",
+      "relevancy": {
+        "total_claims": 7,
+        "relevant_claims": 7,
+        "supplementary_claims": 0,
+        "visual_only_claims": 0,
+        "relevancy_rate": 1.0,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Gray shirt body",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Gray collar",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Black inner collar",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Black buttons arranged down the center front",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Rounded lower edge",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Narrow cuffs at the ends of the sleeves",
+            "label": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A black cuff is visible at the end of the sleeve on the right side of the image",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 7,
+          "relevant_claims": 7,
+          "irrelevant_claims": 0,
+          "raw_novel_claims": 3,
+          "relevant_novel_claims": 3,
+          "irrelevant_novel_claims": 0,
+          "unavoidable_repetition_claims": 3,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.42857142857142855,
+          "raw_novelty_rate": 0.42857142857142855,
+          "unavoidable_repetition_rate": 0.42857142857142855,
+          "avoidable_redundancy_rate": 0.14285714285714285,
+          "redundancy_rate": 0.5714285714285714
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Gray shirt body",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Gray collar",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Black inner collar",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Black buttons arranged down the center front",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Rounded lower edge",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Narrow cuffs at the ends of the sleeves",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A black cuff is visible at the end of the sleeve on the right side of the image",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Gray shirt body",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "Grey"
+              },
+              {
+                "field": "title",
+                "value": "Subliminal Mode Men's Long Sleeve Shirt | Regular Fit | Comfortable and Easy to Care | Ideal for Office and Casual Outing"
+              }
+            ],
+            "reason": "The DOM already identifies the product as a shirt and gives its colour as Grey. Stating that the shirt body is gray adds no necessary distinct information."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Gray collar",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "Grey"
+              },
+              {
+                "field": "product_details.Collar Style",
+                "value": "Classic"
+              }
+            ],
+            "reason": "The DOM specifies an overall grey product colour and a classic collar style, but does not state that the collar itself is gray."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Black inner collar",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about an inner collar or its black colour."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Black buttons arranged down the center front",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Style Name",
+                "value": "With buttons"
+              },
+              {
+                "field": "product_details.Closure Type",
+                "value": "Button"
+              },
+              {
+                "field": "description",
+                "value": "Contrast buttons and adjustable cuffs add character to this refined shirt."
+              }
+            ],
+            "reason": "The DOM establishes that the shirt has buttons, while the claim adds their black colour and center-front arrangement. Referring to the buttons is necessary to anchor those new visual details to the existing button closure."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Rounded lower edge",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Hemline Form",
+                "value": "Straight"
+              }
+            ],
+            "reason": "The DOM provides a hemline form but does not represent a rounded lower edge."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Narrow cuffs at the ends of the sleeves",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Cuff Style",
+                "value": "French Cuff"
+              },
+              {
+                "field": "description",
+                "value": "Contrast buttons and adjustable cuffs add character to this refined shirt."
+              },
+              {
+                "field": "product_details.Sleeve Type",
+                "value": "Long Sleeve"
+              }
+            ],
+            "reason": "The DOM already establishes cuffs and long sleeves, while the claim adds that the cuffs are narrow. Mentioning the cuffs at the sleeve ends is needed to attach the new width detail to the relevant garment feature."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A black cuff is visible at the end of the sleeve on the right side of the image",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Cuff Style",
+                "value": "French Cuff"
+              },
+              {
+                "field": "description",
+                "value": "Contrast buttons and adjustable cuffs add character to this refined shirt."
+              }
+            ],
+            "reason": "The DOM establishes that the shirt has cuffs, while the claim adds a black colour and an image-specific location on the right side. Repeating the cuff reference is necessary to ground those new visual and positional details."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 7,
+        "subjective_claims": 0,
+        "total_claims": 7,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The shirt body is gray.",
+            "label": "OBJECTIVE",
+            "reason": "The main body of the shirt is visibly gray in the image."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The shirt has a gray collar.",
+            "label": "OBJECTIVE",
+            "reason": "The outer collar is visibly gray."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The shirt has a black inner collar.",
+            "label": "OBJECTIVE",
+            "reason": "A black collar lining or inner collar area is visibly shown beneath the gray outer collar."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Black buttons are arranged down the center front.",
+            "label": "OBJECTIVE",
+            "reason": "Several black buttons are visibly aligned along the shirt's center-front placket."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The shirt has a rounded lower edge.",
+            "label": "OBJECTIVE",
+            "reason": "The visible bottom hem curves upward at the sides, creating a rounded shirttail shape."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The sleeves have narrow cuffs at their ends.",
+            "label": "OBJECTIVE",
+            "reason": "The sleeve ends visibly include cuff sections that are narrower in width than the sleeves above them."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A black cuff is visible at the end of the sleeve on the right side of the image.",
+            "label": "OBJECTIVE",
+            "reason": "The sleeve on the image's right ends in a visibly black cuff."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 52,
+        "relevant_novel_claims": 3,
+        "efficiency_per_100_words": 5.7692
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "A gray men’s dress shirt is centered against a white background. It features long sleeves, a pointed collar with a black inner lining, black front buttons, and black button cuffs, one of which is turned outward to reveal its underside. The shirt has slight wrinkles and a gently curved hem.",
+      "relevancy": {
+        "total_claims": 9,
+        "relevant_claims": 8,
+        "supplementary_claims": 0,
+        "visual_only_claims": 1,
+        "relevancy_rate": 0.8888888888888888,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Gray men's dress shirt",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "White background",
+            "label": "V"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Long sleeves",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Pointed collar with a black inner lining",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Black front buttons",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Black button cuffs",
+            "label": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "One cuff is turned outward, revealing its underside",
+            "label": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Slight wrinkles",
+            "label": "R"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Gently curved hem",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 9,
+          "relevant_claims": 8,
+          "irrelevant_claims": 1,
+          "raw_novel_claims": 2,
+          "relevant_novel_claims": 1,
+          "irrelevant_novel_claims": 1,
+          "unavoidable_repetition_claims": 4,
+          "avoidable_redundancy_claims": 3,
+          "novelty_rate": 0.1111111111111111,
+          "raw_novelty_rate": 0.2222222222222222,
+          "unavoidable_repetition_rate": 0.4444444444444444,
+          "avoidable_redundancy_rate": 0.3333333333333333,
+          "redundancy_rate": 0.7777777777777778
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Gray men's dress shirt",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "White background",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Long sleeves",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Pointed collar with a black inner lining",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Black front buttons",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Black button cuffs",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "One cuff is turned outward, revealing its underside",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Slight wrinkles",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Gently curved hem",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Gray men's dress shirt",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "Grey"
+              },
+              {
+                "field": "title",
+                "value": "Subliminal Mode Men's Long Sleeve Shirt | Regular Fit | Comfortable and Easy to Care | Ideal for Office and Casual Outing"
+              },
+              {
+                "field": "product_details.Shirt Form Type",
+                "value": "Tuxedo Shirt"
+              }
+            ],
+            "reason": "The DOM already identifies the item as a grey men's shirt and further describes its form as a tuxedo shirt, which conveys the dress-shirt meaning. The claim adds no necessary information."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "White background",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about the image background or a white background."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Long sleeves",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Sleeve Type",
+                "value": "Long Sleeve"
+              },
+              {
+                "field": "product_details.Sleeve Length Description",
+                "value": "Long Sleeve"
+              }
+            ],
+            "reason": "Long sleeves are explicitly stated in the DOM, so repeating this information adds no necessary detail."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Pointed collar with a black inner lining",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Collar Style",
+                "value": "Classic"
+              }
+            ],
+            "reason": "The DOM establishes that the shirt has a collar, but it does not provide the black inner-lining detail. Repeating the collar reference is needed to anchor that new lining information."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Black front buttons",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Closure Type",
+                "value": "Button"
+              },
+              {
+                "field": "description",
+                "value": "Contrast buttons and adjustable cuffs add character to this refined shirt."
+              }
+            ],
+            "reason": "The DOM establishes that the shirt has buttons, including contrast buttons, but does not state that the front buttons are black. Referring to the buttons is needed to express and locate the new color detail."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Black button cuffs",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Cuff Style",
+                "value": "French Cuff"
+              },
+              {
+                "field": "description",
+                "value": "Contrast buttons and adjustable cuffs add character to this refined shirt."
+              }
+            ],
+            "reason": "The DOM establishes cuffs and mentions adjustable cuffs, but it does not state that they are black or button cuffs. The cuff reference is necessary to anchor the new visual details."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "One cuff is turned outward, revealing its underside",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Cuff Style",
+                "value": "French Cuff"
+              },
+              {
+                "field": "description",
+                "value": "Contrast buttons and adjustable cuffs add character to this refined shirt."
+              }
+            ],
+            "reason": "The DOM indicates that the shirt has cuffs but does not describe one being turned outward or its underside being visible. Mentioning the cuff is necessary to locate the new positional detail."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Slight wrinkles",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "description",
+                "value": "Easy to maintain, it does not wrinkle very little, guaranteeing you a flawless look in all circumstances."
+              },
+              {
+                "field": "feature_bullets[2]",
+                "value": "Simplified maintenance: low wrinkle and resistant, it requires minimal effort to stay flawless after each wash."
+              }
+            ],
+            "reason": "The DOM already characterizes the shirt as low-wrinkle and resistant to wrinkling. Slight wrinkles conveys no necessary additional semantic information."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Gently curved hem",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Hemline Form",
+                "value": "Straight"
+              }
+            ],
+            "reason": "The DOM specifies a straight hemline but does not represent a gently curved hem. The curved-hem information is therefore not already provided."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 8,
+        "subjective_claims": 0,
+        "total_claims": 8,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "A gray men’s dress shirt is centered against a white background.",
+            "label": "OBJECTIVE",
+            "reason": "The image visibly shows a gray button-front shirt centered on a white background; its dress-shirt styling and men’s cut are visually apparent."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The shirt features long sleeves.",
+            "label": "OBJECTIVE",
+            "reason": "Both sleeves extend from the shoulders to the cuff area, which is directly visible."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The shirt has a pointed collar with a black inner lining.",
+            "label": "OBJECTIVE",
+            "reason": "The collar has visibly pointed ends, and the inner collar area is visibly black."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The shirt has black front buttons.",
+            "label": "OBJECTIVE",
+            "reason": "Several dark, black-appearing buttons are visibly arranged down the front placket."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The shirt has black button cuffs.",
+            "label": "OBJECTIVE",
+            "reason": "The cuffs are visibly dark/black, and their buttoned cuff construction is observable."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "One cuff is turned outward to reveal its underside.",
+            "label": "OBJECTIVE",
+            "reason": "The cuff on the right side of the image is visibly folded or turned outward, exposing its dark inner side."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The shirt has slight wrinkles.",
+            "label": "OBJECTIVE",
+            "reason": "Visible creases and folds appear across the sleeves and front of the shirt."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The shirt has a gently curved hem.",
+            "label": "OBJECTIVE",
+            "reason": "The lower edge of the shirt visibly curves upward at the sides relative to the center."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 51,
+        "relevant_novel_claims": 1,
+        "efficiency_per_100_words": 1.9608
+      }
+    }
+  }
+}

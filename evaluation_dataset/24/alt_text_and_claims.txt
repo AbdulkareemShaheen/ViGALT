@@ -1,0 +1,26 @@
+=== ViGALT ===
+A white-painted bed frame has a peaked roof-shaped frame with four corner posts. Raised guard panels made of vertical slats run along the sides and foot end, with a solid back panel behind the low-set sleeping surface and an opening at the front. The sleeping surface contains a white mattress with a lightly quilted cover.
+
+White-painted bed frame
+Peaked roof-shaped frame
+Four corner posts
+Raised guard panels made of vertical slats along the sides and foot end
+Solid back panel behind the low-set sleeping surface
+Opening at the front
+White mattress with a lightly quilted cover on the sleeping surface
+
+=== ASSETS24 ===
+Bright nursery with a white house-style crib, pink-and-white bedding, plush toys, and string lights. A plush lion hangs on the wall, while a crocheted toy lies on the wooden floor beside an animal-patterned rug. A rounded inset in the upper left shows a white crib mattress. White walls and pale curtains complete the room.
+
+The nursery is bright.
+A white house-style crib is in the nursery.
+The crib has pink-and-white bedding.
+Plush toys are in the nursery.
+String lights are in the nursery.
+A plush lion hangs on the wall.
+A crocheted toy lies on the floor.
+The floor is wooden.
+An animal-patterned rug is beside the crocheted toy.
+A white crib mattress is shown.
+The walls are white.
+The curtains are pale.

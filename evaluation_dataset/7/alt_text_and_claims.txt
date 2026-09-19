@@ -1,0 +1,23 @@
+=== ViGALT ===
+Intersecting white and dark-blue stripes are visible. Visible features include a pointed turn-down collar, long sleeves, a chest pocket on the wearer’s left with diagonally oriented stripes, and a striped front placket with white buttons down the front. The hem is gently curved.
+
+Intersecting white and dark-blue stripes are visible.
+The garment has a pointed turn-down collar.
+The garment has long sleeves.
+A chest pocket on the wearer’s left has diagonally oriented stripes.
+The garment has a striped front placket.
+White buttons run down the front.
+The hem is gently curved.
+
+=== ASSETS24 ===
+A front-facing long-sleeved button-up shirt with a blue, white, and gray plaid pattern, pointed collar, white-buttoned placket, single chest pocket with a matching flap, and buttoned cuffs, shown against a white background.
+
+Front-facing shirt
+Long sleeves
+Button-up shirt
+Blue, white, and gray plaid pattern
+Pointed collar
+Placket with white buttons
+Single chest pocket with a matching flap
+Buttoned cuffs
+White background

@@ -1,0 +1,555 @@
+{
+  "folder_number": 23,
+  "image_file": "81v2MWCaIyL._AC_SX679_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "Rounded rectangular tubular frames are at the head and foot. The bed frame has a black finish, and each frame has three vertical rods with ringed ornamental sections. The footboard includes a lower horizontal rail beneath the mattress.",
+      "relevancy": {
+        "total_claims": 4,
+        "relevant_claims": 4,
+        "supplementary_claims": 0,
+        "visual_only_claims": 0,
+        "relevancy_rate": 1.0,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Rounded rectangular tubular frames are at the head and foot.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The bed frame has a black finish.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Each frame has three vertical rods with ringed ornamental sections.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The footboard includes a lower horizontal rail beneath the mattress.",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 4,
+          "relevant_claims": 4,
+          "irrelevant_claims": 0,
+          "raw_novel_claims": 0,
+          "relevant_novel_claims": 0,
+          "irrelevant_novel_claims": 0,
+          "unavoidable_repetition_claims": 3,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.0,
+          "raw_novelty_rate": 0.0,
+          "unavoidable_repetition_rate": 0.75,
+          "avoidable_redundancy_rate": 0.25,
+          "redundancy_rate": 1.0
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Rounded rectangular tubular frames are at the head and foot.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The bed frame has a black finish.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Each frame has three vertical rods with ringed ornamental sections.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The footboard includes a lower horizontal rail beneath the mattress.",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Rounded rectangular tubular frames are at the head and foot.",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "description",
+                "value": "Its black finish and classic design headboard/footboard add a timeless touch."
+              },
+              {
+                "field": "product_details.Form Factor",
+                "value": "Rectangular (with head and foot)"
+              }
+            ],
+            "reason": "The DOM already establishes that the bed has head and foot sections, but it does not describe them as rounded rectangular tubular frames. Referring to their position at the head and foot is necessary to locate and distinguish the newly supplied frame-shape detail."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The bed frame has a black finish.",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "description",
+                "value": "Its black finish and classic design headboard/footboard add a timeless touch."
+              },
+              {
+                "field": "product_details.Colour",
+                "value": "Black"
+              }
+            ],
+            "reason": "The DOM explicitly states both the black finish and the product colour. The claim adds no further distinguishing information."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Each frame has three vertical rods with ringed ornamental sections.",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets",
+                "value": "This black metal bed frame with decorated headboard and footboard brings sophistication and retro charm."
+              },
+              {
+                "field": "description",
+                "value": "Its black finish and classic design headboard/footboard add a timeless touch."
+              }
+            ],
+            "reason": "The DOM indicates that the headboard and footboard are decorated, but does not specify three vertical rods or ringed ornamental sections. The reference to each frame anchors these new structural details to the two decorated end sections."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The footboard includes a lower horizontal rail beneath the mattress.",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "description",
+                "value": "Its black finish and classic design headboard/footboard add a timeless touch."
+              },
+              {
+                "field": "product_details.Form Factor",
+                "value": "Rectangular (with head and foot)"
+              }
+            ],
+            "reason": "The DOM establishes the presence of a footboard but does not mention a lower horizontal rail or its placement beneath the mattress. Repeating footboard is necessary to identify where the novel rail detail is located."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 5,
+        "subjective_claims": 0,
+        "total_claims": 5,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The bed has rounded rectangular tubular frames at the head and foot.",
+            "label": "OBJECTIVE",
+            "reason": "The rounded rectangular outlines and tubular construction of the headboard and footboard are directly visible in the image."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The bed frame has a black finish.",
+            "label": "OBJECTIVE",
+            "reason": "The frame's black surface color is directly observable in the image."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Each frame has three vertical rods.",
+            "label": "OBJECTIVE",
+            "reason": "Three vertical rods are visibly positioned within both the headboard and footboard frames."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The vertical rods have ringed ornamental sections.",
+            "label": "OBJECTIVE",
+            "reason": "Decorative ringed or bulb-like sections are visibly present on the vertical rods."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The footboard includes a lower horizontal rail beneath the mattress.",
+            "label": "OBJECTIVE",
+            "reason": "A horizontal rail is visibly located across the lower portion of the footboard below the mattress."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 38,
+        "relevant_novel_claims": 0,
+        "efficiency_per_100_words": 0.0
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "A staged bedroom features a centered bed with a black metal frame, rounded posts, vertical bars, and light beige upholstered panels in the headboard and footboard. The bed is dressed in gray bedding with white pillows and a textured beige accent pillow, resting on a light-colored rug. Wooden nightstands with table lamps flank the bed, with a potted plant on the left nightstand.",
+      "relevancy": {
+        "total_claims": 13,
+        "relevant_claims": 5,
+        "supplementary_claims": 0,
+        "visual_only_claims": 8,
+        "relevancy_rate": 0.38461538461538464,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Staged bedroom",
+            "label": "V"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "A centered bed",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Black metal bed frame",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Rounded bed-frame posts",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Vertical bars in the bed frame",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Light beige upholstered panels in the headboard and footboard",
+            "label": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Gray bedding on the bed",
+            "label": "V"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "White pillows on the bed",
+            "label": "V"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "A textured beige accent pillow on the bed",
+            "label": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A light-colored rug beneath the bed",
+            "label": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "Wooden nightstands flanking the bed",
+            "label": "V"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Table lamps with the nightstands",
+            "label": "V"
+          },
+          {
+            "claim_id": "C13",
+            "claim": "A potted plant on the left nightstand",
+            "label": "V"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 13,
+          "relevant_claims": 5,
+          "irrelevant_claims": 8,
+          "raw_novel_claims": 12,
+          "relevant_novel_claims": 4,
+          "irrelevant_novel_claims": 8,
+          "unavoidable_repetition_claims": 0,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.3076923076923077,
+          "raw_novelty_rate": 0.9230769230769231,
+          "unavoidable_repetition_rate": 0.0,
+          "avoidable_redundancy_rate": 0.07692307692307693,
+          "redundancy_rate": 0.07692307692307693
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Staged bedroom",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "A centered bed",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Black metal bed frame",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Rounded bed-frame posts",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Vertical bars in the bed frame",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Light beige upholstered panels in the headboard and footboard",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Gray bedding on the bed",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "White pillows on the bed",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "A textured beige accent pillow on the bed",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A light-colored rug beneath the bed",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "Wooden nightstands flanking the bed",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Table lamps with the nightstands",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C13",
+            "claim": "A potted plant on the left nightstand",
+            "relevance_code": "V"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Staged bedroom",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM describes the bed product and its features but does not state that it is shown in a staged bedroom."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "A centered bed",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about the bed's placement or centering within an image or room."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Black metal bed frame",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "Zinus Florence Bed Base 90 x 190 cm with Metal Slats – Sturdy Metal Frame and Headboard – Height 35 cm for Storage – Easy Assembly – Black"
+              },
+              {
+                "field": "product_details.Colour",
+                "value": "Black"
+              },
+              {
+                "field": "product_details.Material Type",
+                "value": "Metal"
+              }
+            ],
+            "reason": "The DOM explicitly identifies the item as a black metal bed frame. Repeating this supplies no additional necessary semantic information."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Rounded bed-frame posts",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "Although the DOM describes a metal bed frame with a headboard and footboard, it does not specify that its posts are rounded."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Vertical bars in the bed frame",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM mentions metal slats and a decorated headboard and footboard, but does not describe vertical bars in the bed frame."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Light beige upholstered panels in the headboard and footboard",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM identifies the headboard material as metal and does not provide information about light beige upholstered panels in either the headboard or footboard."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Gray bedding on the bed",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM provides no information about gray bedding being present on the bed."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "White pillows on the bed",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM provides no information about white pillows on the bed."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "A textured beige accent pillow on the bed",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM provides no information about an accent pillow, its beige color, or its texture."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A light-colored rug beneath the bed",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention a rug beneath the bed or its color."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "Wooden nightstands flanking the bed",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about nightstands, their material, or their placement beside the bed."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Table lamps with the nightstands",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about table lamps or nightstands."
+          },
+          {
+            "claim_id": "C13",
+            "claim": "A potted plant on the left nightstand",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a potted plant, a left nightstand, or their relationship."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 12,
+        "subjective_claims": 0,
+        "total_claims": 12,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The image shows a bedroom setting with a bed centered in the composition.",
+            "label": "OBJECTIVE",
+            "reason": "A bed is visibly positioned in the middle of a room-like bedroom scene."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The bed has a black metal frame.",
+            "label": "OBJECTIVE",
+            "reason": "The dark frame surrounding the bed is visibly metal in appearance."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The frame has rounded posts.",
+            "label": "OBJECTIVE",
+            "reason": "The upper corners and side rails of the frame visibly curve into rounded shapes."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The headboard and footboard include vertical bars.",
+            "label": "OBJECTIVE",
+            "reason": "Multiple upright black bars are directly visible in both the headboard and footboard."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Light beige upholstered panels are visible in the headboard and footboard.",
+            "label": "OBJECTIVE",
+            "reason": "Light beige fabric-covered rectangular areas are visibly present within the headboard and footboard structures."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The bed is dressed in gray bedding.",
+            "label": "OBJECTIVE",
+            "reason": "A gray blanket or comforter is visibly spread over the bed."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "White pillows are visible on the bed.",
+            "label": "OBJECTIVE",
+            "reason": "White pillows can be seen behind the beige accent pillow."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "A textured beige accent pillow is placed in front of the white pillows.",
+            "label": "OBJECTIVE",
+            "reason": "A beige rectangular pillow with a visibly raised repeating texture appears in front of the white pillows."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "The bed rests on a light-colored rug.",
+            "label": "OBJECTIVE",
+            "reason": "A pale rug is visibly underneath and in front of the bed."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Wooden nightstands flank the bed.",
+            "label": "OBJECTIVE",
+            "reason": "Wood-toned nightstands are visibly positioned on both the left and right sides of the bed."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "Table lamps sit on the nightstands.",
+            "label": "OBJECTIVE",
+            "reason": "A lamp with a shade is visibly present on each nightstand."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "A potted plant is on the left nightstand.",
+            "label": "OBJECTIVE",
+            "reason": "A small leafy plant in a pot is visibly placed on the nightstand to the left of the bed."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 63,
+        "relevant_novel_claims": 4,
+        "efficiency_per_100_words": 6.3492
+      }
+    }
+  }
+}

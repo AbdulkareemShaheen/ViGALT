@@ -1,0 +1,669 @@
+{
+  "folder_number": 29,
+  "image_file": "71U0guXcKhL._AC_SX679_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "A mirror with a broad rounded top, curved sides, and a tapered lower end is installed vertically above a vessel sink. It is positioned between two vertical wall sconces in a bathroom vanity area, with a narrow visible edge outlining its perimeter.",
+      "relevancy": {
+        "total_claims": 4,
+        "relevant_claims": 3,
+        "supplementary_claims": 1,
+        "visual_only_claims": 1,
+        "relevancy_rate": 0.75,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The mirror has a broad rounded top, curved sides, and a tapered lower end.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The mirror is installed vertically above a vessel sink.",
+            "label": "S"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The mirror is positioned between two vertical wall sconces in a bathroom vanity area.",
+            "label": "V"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A narrow visible edge outlines the mirror's perimeter.",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 4,
+          "relevant_claims": 3,
+          "irrelevant_claims": 1,
+          "raw_novel_claims": 4,
+          "relevant_novel_claims": 3,
+          "irrelevant_novel_claims": 1,
+          "unavoidable_repetition_claims": 0,
+          "avoidable_redundancy_claims": 0,
+          "novelty_rate": 0.75,
+          "raw_novelty_rate": 1.0,
+          "unavoidable_repetition_rate": 0.0,
+          "avoidable_redundancy_rate": 0.0,
+          "redundancy_rate": 0.0
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The mirror has a broad rounded top, curved sides, and a tapered lower end.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The mirror is installed vertically above a vessel sink.",
+            "relevance_code": "S"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The mirror is positioned between two vertical wall sconces in a bathroom vanity area.",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A narrow visible edge outlines the mirror's perimeter.",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The mirror has a broad rounded top, curved sides, and a tapered lower end.",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "SONGMICS Modern Irregular Asymmetric Petal Shaped Mirror 60 x 45 cm Decorative Frameless Entrance Bedroom Bathroom Mirror LWM020BD01"
+              },
+              {
+                "field": "feature_bullets",
+                "value": "Petal-inspired shape: This cosmetic mirror breaks away from the classic design. Its soft and original lines, discreet but refined, make it the focal point of any space, from the living room to the hotel or the restaurant"
+              }
+            ],
+            "reason": "The DOM identifies a petal-inspired, irregular asymmetric shape but does not describe the specific silhouette of a broad rounded top, curved sides, and tapered lower end."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The mirror is installed vertically above a vessel sink.",
+            "relevance_code": "S",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets",
+                "value": "Simple and flexible installation: no worries about assembly! The 3 hooks on the back make it easy to attach this artistic mirror to the wall, both horizontally and vertically, to suit different spaces and layouts"
+              }
+            ],
+            "reason": "The DOM states that vertical mounting is possible, not that the mirror is shown or installed vertically. It contains no information about placement above a vessel sink."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The mirror is positioned between two vertical wall sconces in a bathroom vanity area.",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "SONGMICS Modern Irregular Asymmetric Petal Shaped Mirror 60 x 45 cm Decorative Frameless Entrance Bedroom Bathroom Mirror LWM020BD01"
+              }
+            ],
+            "reason": "The title identifies the item as suitable for a bathroom, but the DOM does not describe a vanity setting, two vertical wall sconces, or the mirror's position between them."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A narrow visible edge outlines the mirror's perimeter.",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Special Features",
+                "value": "Petal shape design, frameless"
+              }
+            ],
+            "reason": "The DOM states that the mirror is frameless, but it does not describe a narrow visible edge around its perimeter."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 7,
+        "subjective_claims": 0,
+        "total_claims": 7,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The mirror has a broad rounded top.",
+            "label": "OBJECTIVE",
+            "reason": "The mirror's upper outline is visibly wide and rounded in the image."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The mirror has curved sides.",
+            "label": "OBJECTIVE",
+            "reason": "Its left and right edges visibly follow curved contours rather than straight vertical lines."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The mirror has a tapered lower end.",
+            "label": "OBJECTIVE",
+            "reason": "The mirror narrows toward its pointed lower portion, which is directly visible."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The mirror is oriented vertically above a vessel sink.",
+            "label": "OBJECTIVE",
+            "reason": "The mirror is visibly taller than it is wide and is mounted on the wall above the raised sink basin."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The mirror is positioned between two vertical wall sconces.",
+            "label": "OBJECTIVE",
+            "reason": "One vertical light fixture is visible on each side of the mirror."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The scene is a bathroom vanity area.",
+            "label": "OBJECTIVE",
+            "reason": "The visible sink, faucet, countertop, and wall-mounted mirror directly indicate a bathroom vanity setting."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A narrow visible edge outlines the mirror's perimeter.",
+            "label": "OBJECTIVE",
+            "reason": "A thin border or edge is visibly distinguishable around the mirror's outline."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 42,
+        "relevant_novel_claims": 3,
+        "efficiency_per_100_words": 7.1429
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "Bright bathroom vanity with cream-white marble walls, backsplash, and countertop accented by gray veining. An asymmetrical oval mirror reflects a bathtub, tall window, curtains, and greenery, flanked by gold-and-white vertical sconces. Below, a white vessel sink and gold faucet are surrounded by a reed diffuser and wooden box on the left, and an amber soap dispenser, candle, and ribbed glass vase of pink flowers on the right.",
+      "relevancy": {
+        "total_claims": 18,
+        "relevant_claims": 5,
+        "supplementary_claims": 0,
+        "visual_only_claims": 13,
+        "relevancy_rate": 0.2777777777777778,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Bright bathroom vanity",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Cream-white marble walls with gray veining",
+            "label": "V"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Cream-white marble backsplash with gray veining",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Cream-white marble countertop with gray veining",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Asymmetrical oval mirror",
+            "label": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The mirror reflects a bathtub",
+            "label": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The mirror reflects a tall window",
+            "label": "V"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The mirror reflects curtains",
+            "label": "V"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "The mirror reflects greenery",
+            "label": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Gold-and-white vertical sconces flank the mirror",
+            "label": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "White vessel sink",
+            "label": "R"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Gold faucet",
+            "label": "R"
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Reed diffuser on the left of the sink",
+            "label": "V"
+          },
+          {
+            "claim_id": "C14",
+            "claim": "Wooden box on the left of the sink",
+            "label": "V"
+          },
+          {
+            "claim_id": "C15",
+            "claim": "Amber soap dispenser on the right of the sink",
+            "label": "V"
+          },
+          {
+            "claim_id": "C16",
+            "claim": "Candle on the right of the sink",
+            "label": "V"
+          },
+          {
+            "claim_id": "C17",
+            "claim": "Ribbed glass vase on the right of the sink",
+            "label": "V"
+          },
+          {
+            "claim_id": "C18",
+            "claim": "Pink flowers in the vase on the right of the sink",
+            "label": "V"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 18,
+          "relevant_claims": 5,
+          "irrelevant_claims": 13,
+          "raw_novel_claims": 17,
+          "relevant_novel_claims": 5,
+          "irrelevant_novel_claims": 12,
+          "unavoidable_repetition_claims": 0,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.2777777777777778,
+          "raw_novelty_rate": 0.9444444444444444,
+          "unavoidable_repetition_rate": 0.0,
+          "avoidable_redundancy_rate": 0.05555555555555555,
+          "redundancy_rate": 0.05555555555555555
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Bright bathroom vanity",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Cream-white marble walls with gray veining",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Cream-white marble backsplash with gray veining",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Cream-white marble countertop with gray veining",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Asymmetrical oval mirror",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The mirror reflects a bathtub",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The mirror reflects a tall window",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The mirror reflects curtains",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "The mirror reflects greenery",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Gold-and-white vertical sconces flank the mirror",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "White vessel sink",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Gold faucet",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Reed diffuser on the left of the sink",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C14",
+            "claim": "Wooden box on the left of the sink",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C15",
+            "claim": "Amber soap dispenser on the right of the sink",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C16",
+            "claim": "Candle on the right of the sink",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C17",
+            "claim": "Ribbed glass vase on the right of the sink",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C18",
+            "claim": "Pink flowers in the vase on the right of the sink",
+            "relevance_code": "V"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Bright bathroom vanity",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM identifies a decorative wall mirror but contains no information about a bathroom vanity or its brightness."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Cream-white marble walls with gray veining",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about marble walls, cream-white coloring, or gray veining."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Cream-white marble backsplash with gray veining",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM provides no information about a backsplash or marble surface with this color and veining."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Cream-white marble countertop with gray veining",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not describe a countertop or any cream-white marble material with gray veining."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Asymmetrical oval mirror",
+            "relevance_code": "V",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "SONGMICS Modern Irregular Asymmetric Petal Shaped Mirror 60 x 45 cm Decorative Frameless Entrance Bedroom Bathroom Mirror LWM020BD01"
+              },
+              {
+                "field": "product_details.Item Shape",
+                "value": "Oval"
+              },
+              {
+                "field": "product_details.Special Features",
+                "value": "Petal shape design, frameless"
+              }
+            ],
+            "reason": "The DOM already identifies the product as an asymmetric mirror and specifies its shape as oval; repeating this adds no necessary semantic information."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The mirror reflects a bathtub",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM describes mirror construction, shape, and installation but does not state that it reflects a bathtub."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The mirror reflects a tall window",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a reflected window or its height."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The mirror reflects curtains",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention curtains or their reflection in the mirror."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "The mirror reflects greenery",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about greenery or a reflection of greenery."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Gold-and-white vertical sconces flank the mirror",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention sconces, their gold-and-white appearance, vertical orientation, or placement beside the mirror."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "White vessel sink",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a sink, including a white vessel sink."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Gold faucet",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not describe a faucet or its color."
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Reed diffuser on the left of the sink",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a reed diffuser, a sink, or their relative positions."
+          },
+          {
+            "claim_id": "C14",
+            "claim": "Wooden box on the left of the sink",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention a wooden box, a sink, or left-side placement."
+          },
+          {
+            "claim_id": "C15",
+            "claim": "Amber soap dispenser on the right of the sink",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a soap dispenser, amber color, a sink, or right-side placement."
+          },
+          {
+            "claim_id": "C16",
+            "claim": "Candle on the right of the sink",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not describe a candle, a sink, or their relative placement."
+          },
+          {
+            "claim_id": "C17",
+            "claim": "Ribbed glass vase on the right of the sink",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a ribbed glass vase, a sink, or right-side placement."
+          },
+          {
+            "claim_id": "C18",
+            "claim": "Pink flowers in the vase on the right of the sink",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention pink flowers, a vase, a sink, or their relative positions."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 0.9375,
+        "objective_claims": 15,
+        "subjective_claims": 1,
+        "total_claims": 16,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The bathroom vanity scene is brightly lit.",
+            "label": "OBJECTIVE",
+            "reason": "The image visibly shows strong illumination across the vanity area and sunlight-like highlights on the wall and countertop."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The walls, backsplash, and countertop are cream-white marble.",
+            "label": "SUBJECTIVE",
+            "reason": "Although cream-white surfaces with gray veining are visible, the actual material being marble cannot be reliably confirmed from the image alone."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Gray veining appears on the walls, backsplash, and countertop.",
+            "label": "OBJECTIVE",
+            "reason": "Thin gray vein-like lines are directly visible across the light-colored wall and counter surfaces."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "An asymmetrical oval mirror is mounted above the sink.",
+            "label": "OBJECTIVE",
+            "reason": "The mirror's irregular oval outline and its position above the sink are directly visible."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The mirror reflects a bathtub.",
+            "label": "OBJECTIVE",
+            "reason": "Part of a white bathtub is visibly reflected in the lower-left area of the mirror."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The mirror reflects a tall window.",
+            "label": "OBJECTIVE",
+            "reason": "A vertically elongated window is clearly visible in the mirror reflection."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The mirror reflects curtains.",
+            "label": "OBJECTIVE",
+            "reason": "Light-colored hanging curtains are visible beside the reflected window."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The mirror reflects greenery.",
+            "label": "OBJECTIVE",
+            "reason": "Green plant foliage is visible through or beside the reflected window."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Gold-and-white vertical sconces flank the mirror.",
+            "label": "OBJECTIVE",
+            "reason": "Two vertically oriented white light fixtures with gold circular mounts appear on opposite sides of the mirror."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A white vessel sink is below the mirror.",
+            "label": "OBJECTIVE",
+            "reason": "A white bowl-shaped sink rests visibly on the countertop beneath the mirror."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "A gold faucet is behind the sink.",
+            "label": "OBJECTIVE",
+            "reason": "A gold-colored faucet is visibly positioned at the rear of the sink."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "A reed diffuser is on the left side of the countertop.",
+            "label": "OBJECTIVE",
+            "reason": "A small container with multiple thin reeds protruding from it is visibly placed on the left side of the counter."
+          },
+          {
+            "claim_id": "C13",
+            "claim": "A wooden box is on the left side of the countertop.",
+            "label": "OBJECTIVE",
+            "reason": "A small rectangular box with a visible wood-like surface is shown on the left side of the counter."
+          },
+          {
+            "claim_id": "C14",
+            "claim": "An amber soap dispenser is on the right side of the countertop.",
+            "label": "OBJECTIVE",
+            "reason": "An amber-colored bottle with a pump top is visibly placed on the right side of the counter."
+          },
+          {
+            "claim_id": "C15",
+            "claim": "A candle is on the right side of the countertop.",
+            "label": "OBJECTIVE",
+            "reason": "A small round candle-like item in a shallow holder is visibly placed beside the bottle on the right."
+          },
+          {
+            "claim_id": "C16",
+            "claim": "A ribbed glass vase of pink flowers is on the right side of the countertop.",
+            "label": "OBJECTIVE",
+            "reason": "A transparent vase with vertical ribbing, containing pink flowers, is clearly visible on the right side of the counter."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 67,
+        "relevant_novel_claims": 5,
+        "efficiency_per_100_words": 7.4627
+      }
+    }
+  }
+}

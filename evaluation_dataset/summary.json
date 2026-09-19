@@ -1,0 +1,25 @@
+{
+  "folders_counted": 30,
+  "methods": {
+    "ViGALT": {
+      "total_claims": 206,
+      "avg_relevancy_rate": 0.9379725829725829,
+      "avg_objectivity_score": 0.9770875420875421,
+      "avg_efficiency_per_100_words": 5.940363333333334,
+      "avg_novelty_rate": 0.36122229622229624,
+      "avg_raw_novelty_rate": 0.4099019499019499,
+      "avg_avoidable_redundancy_rate": 0.17757122507122508,
+      "avg_unavoidable_repetition_rate": 0.41252682502682503
+    },
+    "ASSETS24": {
+      "total_claims": 307,
+      "avg_relevancy_rate": 0.5895915658415658,
+      "avg_objectivity_score": 0.9298859936359937,
+      "avg_efficiency_per_100_words": 4.928536666666667,
+      "avg_novelty_rate": 0.22286704036704036,
+      "avg_raw_novelty_rate": 0.6009940522440522,
+      "avg_avoidable_redundancy_rate": 0.20554750804750804,
+      "avg_unavoidable_repetition_rate": 0.1934584397084397
+    }
+  }
+}

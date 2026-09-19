@@ -1,0 +1,1105 @@
+{
+  "folder_number": 22,
+  "image_file": "81+VS8+YuvL._AC_SX679_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "An L-shaped frame surrounds the head and right side, with open shelving illuminated by cyan LEDs. A work surface extends across the foot and right side, with a laptop sitting on it. Storage compartments beneath the mattress are pulled open on the left, and fabric organizer pockets hang from the near side.",
+      "relevancy": {
+        "total_claims": 7,
+        "relevant_claims": 6,
+        "supplementary_claims": 0,
+        "visual_only_claims": 1,
+        "relevancy_rate": 0.8571428571428571,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "An L-shaped frame surrounds the head and right side",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Open shelving is present",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Cyan LEDs illuminate the open shelving",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A work surface extends across the foot and right side",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "A laptop sits on the work surface",
+            "label": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Storage compartments beneath the mattress are pulled open on the left",
+            "label": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Fabric organizer pockets hang from the near side",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 7,
+          "relevant_claims": 6,
+          "irrelevant_claims": 1,
+          "raw_novel_claims": 0,
+          "relevant_novel_claims": 0,
+          "irrelevant_novel_claims": 0,
+          "unavoidable_repetition_claims": 6,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.0,
+          "raw_novelty_rate": 0.0,
+          "unavoidable_repetition_rate": 0.8571428571428571,
+          "avoidable_redundancy_rate": 0.14285714285714285,
+          "redundancy_rate": 1.0
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "An L-shaped frame surrounds the head and right side",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Open shelving is present",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Cyan LEDs illuminate the open shelving",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A work surface extends across the foot and right side",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "A laptop sits on the work surface",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Storage compartments beneath the mattress are pulled open on the left",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Fabric organizer pockets hang from the near side",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "An L-shaped frame surrounds the head and right side",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "The L-shaped tray and 6 open niches"
+              },
+              {
+                "field": "product_details.Frame Material Type",
+                "value": "Metal"
+              }
+            ],
+            "reason": "The DOM establishes that the product has an L-shaped structural element and a bed frame. The claim adds the new layout detail that the frame surrounds the head and right side; referring to the frame is necessary to anchor that spatial detail."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Open shelving is present",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "The L-shaped tray and 6 open niches to display your books, toys, baskets and decorations"
+              }
+            ],
+            "reason": "The six open niches already communicate that open shelving is present. The claim adds no further distinguishing information."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Cyan LEDs illuminate the open shelving",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[3]",
+                "value": "Customize over 60,000 colors, brightness and lighting mode"
+              },
+              {
+                "field": "feature_bullets[2]",
+                "value": "6 open niches to display your books, toys, baskets and decorations"
+              }
+            ],
+            "reason": "The DOM already establishes configurable LED lighting and open shelving. The cyan color and the fact that the lighting illuminates the shelving are new; repeating the LEDs and shelving is needed to identify what is colored and illuminated."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A work surface extends across the foot and right side",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "This convertible sofa features a genuine work surface of 35x112 cm"
+              }
+            ],
+            "reason": "A work surface is already specified in the DOM. The claim adds its visual extent across the foot and right side, and naming the existing work surface is necessary to ground that spatial information."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "A laptop sits on the work surface",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "This convertible sofa features a genuine work surface of 35x112 cm"
+              },
+              {
+                "field": "feature_bullets[3]",
+                "value": "Connect your devices (laptops, lamps and iPads) simultaneously"
+              }
+            ],
+            "reason": "The DOM mentions both a work surface and laptops, but not a laptop placed on that surface. The repeated work-surface reference is needed to make the new placement information clear."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Storage compartments beneath the mattress are pulled open on the left",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "2 large drawers with wheels and storage under the 90x190 mattress"
+              }
+            ],
+            "reason": "The DOM establishes under-mattress drawers/storage. The claim adds that the compartments are pulled open and positioned on the left; identifying the existing storage is necessary to anchor those new visual-state and location details."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Fabric organizer pockets hang from the near side",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "Storage pockets to keep your school supplies, remote controls and laptops within reach"
+              }
+            ],
+            "reason": "The DOM already specifies storage pockets. The claim adds their fabric construction and their hanging position on the near side, while repeating pockets is necessary to identify the item with those new attributes."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 6,
+        "subjective_claims": 0,
+        "total_claims": 6,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "An L-shaped frame surrounds the head and right side.",
+            "label": "OBJECTIVE",
+            "reason": "The bed's white frame visibly runs along the head and right side in an L-shaped arrangement."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The frame has open shelving illuminated by cyan LEDs.",
+            "label": "OBJECTIVE",
+            "reason": "Open shelf compartments are visible along the head/right-side frame, and they are visibly lit with cyan-blue light."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "A work surface extends across the foot and right side.",
+            "label": "OBJECTIVE",
+            "reason": "A flat white desk-like surface is visibly attached across the foot area and continues along the right side of the bed."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A laptop is sitting on the work surface.",
+            "label": "OBJECTIVE",
+            "reason": "An open laptop is visibly placed on the white surface near the foot of the bed."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Storage compartments beneath the mattress are pulled open on the left.",
+            "label": "OBJECTIVE",
+            "reason": "Two drawer-like storage compartments below the left side of the mattress are visibly extended outward."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Fabric organizer pockets hang from the near side.",
+            "label": "OBJECTIVE",
+            "reason": "Fabric pocket organizers containing small items are visibly attached along the near-side rail of the bed frame."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 52,
+        "relevant_novel_claims": 0,
+        "efficiency_per_100_words": 0.0
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "Bright bedroom featuring a white raised bed with integrated shelving, a desk, storage cubbies, fabric pockets, and large pull-out drawers filled with folded clothing. The bed has white bedding, a folded blue quilt, and a tablet. Open shelves display books, toys, plants, and decor with blue LED lighting. A laptop, cup, notebooks, and stationery sit on the desk, with headphones on a stand. The room includes a window overlooking greenery, space-themed artwork, decorative items, and a gray patterned rug. Two smaller diagrams at the bottom show alternate desk configurations.",
+      "relevancy": {
+        "total_claims": 28,
+        "relevant_claims": 16,
+        "supplementary_claims": 7,
+        "visual_only_claims": 12,
+        "relevancy_rate": 0.5714285714285714,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Bright bedroom",
+            "label": "V"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "White raised bed",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Integrated shelving on the bed",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Desk",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Storage cubbies",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Fabric pockets",
+            "label": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Large pull-out drawers",
+            "label": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Folded clothing fills the drawers",
+            "label": "S"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "White bedding on the bed",
+            "label": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Folded blue quilt on the bed",
+            "label": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "Tablet on the bed",
+            "label": "V"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Open shelves",
+            "label": "R"
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Books on the open shelves",
+            "label": "S"
+          },
+          {
+            "claim_id": "C14",
+            "claim": "Toys on the open shelves",
+            "label": "S"
+          },
+          {
+            "claim_id": "C15",
+            "claim": "Plants on the open shelves",
+            "label": "S"
+          },
+          {
+            "claim_id": "C16",
+            "claim": "Decor on the open shelves",
+            "label": "S"
+          },
+          {
+            "claim_id": "C17",
+            "claim": "Blue LED lighting on the open shelves",
+            "label": "R"
+          },
+          {
+            "claim_id": "C18",
+            "claim": "Laptop on the desk",
+            "label": "V"
+          },
+          {
+            "claim_id": "C19",
+            "claim": "Cup on the desk",
+            "label": "V"
+          },
+          {
+            "claim_id": "C20",
+            "claim": "Notebooks on the desk",
+            "label": "S"
+          },
+          {
+            "claim_id": "C21",
+            "claim": "Stationery on the desk",
+            "label": "S"
+          },
+          {
+            "claim_id": "C22",
+            "claim": "Headphones on a stand",
+            "label": "V"
+          },
+          {
+            "claim_id": "C23",
+            "claim": "Window overlooking greenery",
+            "label": "V"
+          },
+          {
+            "claim_id": "C24",
+            "claim": "Space-themed artwork",
+            "label": "V"
+          },
+          {
+            "claim_id": "C25",
+            "claim": "Decorative items",
+            "label": "V"
+          },
+          {
+            "claim_id": "C26",
+            "claim": "Gray patterned rug",
+            "label": "V"
+          },
+          {
+            "claim_id": "C27",
+            "claim": "Two smaller diagrams at the bottom",
+            "label": "V"
+          },
+          {
+            "claim_id": "C28",
+            "claim": "The diagrams show alternate desk configurations",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 28,
+          "relevant_claims": 16,
+          "irrelevant_claims": 12,
+          "raw_novel_claims": 7,
+          "relevant_novel_claims": 1,
+          "irrelevant_novel_claims": 6,
+          "unavoidable_repetition_claims": 15,
+          "avoidable_redundancy_claims": 6,
+          "novelty_rate": 0.03571428571428571,
+          "raw_novelty_rate": 0.25,
+          "unavoidable_repetition_rate": 0.5357142857142857,
+          "avoidable_redundancy_rate": 0.21428571428571427,
+          "redundancy_rate": 0.75
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Bright bedroom",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "White raised bed",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Integrated shelving on the bed",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Desk",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Storage cubbies",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Fabric pockets",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Large pull-out drawers",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Folded clothing fills the drawers",
+            "relevance_code": "S"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "White bedding on the bed",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Folded blue quilt on the bed",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "Tablet on the bed",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Open shelves",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Books on the open shelves",
+            "relevance_code": "S"
+          },
+          {
+            "claim_id": "C14",
+            "claim": "Toys on the open shelves",
+            "relevance_code": "S"
+          },
+          {
+            "claim_id": "C15",
+            "claim": "Plants on the open shelves",
+            "relevance_code": "S"
+          },
+          {
+            "claim_id": "C16",
+            "claim": "Decor on the open shelves",
+            "relevance_code": "S"
+          },
+          {
+            "claim_id": "C17",
+            "claim": "Blue LED lighting on the open shelves",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C18",
+            "claim": "Laptop on the desk",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C19",
+            "claim": "Cup on the desk",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C20",
+            "claim": "Notebooks on the desk",
+            "relevance_code": "S"
+          },
+          {
+            "claim_id": "C21",
+            "claim": "Stationery on the desk",
+            "relevance_code": "S"
+          },
+          {
+            "claim_id": "C22",
+            "claim": "Headphones on a stand",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C23",
+            "claim": "Window overlooking greenery",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C24",
+            "claim": "Space-themed artwork",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C25",
+            "claim": "Decorative items",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C26",
+            "claim": "Gray patterned rug",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C27",
+            "claim": "Two smaller diagrams at the bottom",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C28",
+            "claim": "The diagrams show alternate desk configurations",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Bright bedroom",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a bedroom's brightness or lighting conditions."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "White raised bed",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "White"
+              },
+              {
+                "field": "title",
+                "value": "Brinlawb Sofa Bed 90 x 190 cm ... White"
+              }
+            ],
+            "reason": "The product being white and a bed is already stated, but the raised-bed characteristic is absent. Referring to the bed anchors the new raised configuration to the product."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Integrated shelving on the bed",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "The L-shaped tray and 6 open niches to display your books, toys, baskets and decorations"
+              }
+            ],
+            "reason": "The DOM already describes six open niches integrated into the single bed, so this adds no necessary information."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Desk",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "This convertible sofa features a genuine work surface of 35x112 cm"
+              },
+              {
+                "field": "title",
+                "value": "Bed Frame 90 x 190 cm with One Table"
+              }
+            ],
+            "reason": "The integrated work surface/table is already explicitly represented in the DOM."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Storage cubbies",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "The L-shaped tray and 6 open niches"
+              }
+            ],
+            "reason": "The six open storage niches already express the presence of storage cubbies."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Fabric pockets",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "Storage pockets to keep your school supplies, remote controls and laptops within reach!"
+              },
+              {
+                "field": "product_details.Upholstery Fabric Type",
+                "value": "Linen"
+              }
+            ],
+            "reason": "Storage pockets are already described, but their fabric construction is not. Repeating pockets is needed to attach the new material characteristic to that feature."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Large pull-out drawers",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "2 large drawers with wheels"
+              },
+              {
+                "field": "product_details.Number of Drawers",
+                "value": "2"
+              }
+            ],
+            "reason": "The DOM already specifies two large wheeled drawers, which conveys pull-out drawers."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Folded clothing fills the drawers",
+            "relevance_code": "S",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "2 large drawers with wheels and storage under the 90x190 mattress to hide your seasonal clothes and bedding"
+              }
+            ],
+            "reason": "The DOM establishes drawers intended for clothing storage, but does not state that folded clothing fills them. Mentioning the drawers anchors the new contents and occupancy information."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "White bedding on the bed",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "White"
+              },
+              {
+                "field": "title",
+                "value": "Brinlawb Sofa Bed 90 x 190 cm ... White"
+              }
+            ],
+            "reason": "The DOM identifies a white bed, but does not describe white bedding placed on it. The repeated bed reference anchors the new bedding placement."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Folded blue quilt on the bed",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "Brinlawb Sofa Bed 90 x 190 cm with LED Lighting and Power Strip ..."
+              }
+            ],
+            "reason": "The DOM establishes that the product is a bed but contains no blue quilt or folded bedding. The bed reference is needed to ground the new quilt placement on the product."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "Tablet on the bed",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[3]",
+                "value": "Connect your devices (laptops, lamps and iPads) simultaneously"
+              },
+              {
+                "field": "title",
+                "value": "Brinlawb Sofa Bed 90 x 190 cm ..."
+              }
+            ],
+            "reason": "The DOM mentions iPads as devices that can be charged, but does not describe a tablet placed on the bed. The bed reference grounds the new placement information."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Open shelves",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "6 open niches to display your books, toys, baskets and decorations"
+              }
+            ],
+            "reason": "The six open niches in the DOM already convey open shelving."
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Books on the open shelves",
+            "relevance_code": "S",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "6 open niches to display your books, toys, baskets and decorations"
+              }
+            ],
+            "reason": "The DOM says the open niches can display books, but does not state that books are actually placed there. Repeating the shelves anchors the new placement information."
+          },
+          {
+            "claim_id": "C14",
+            "claim": "Toys on the open shelves",
+            "relevance_code": "S",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "6 open niches to display your books, toys, baskets and decorations"
+              }
+            ],
+            "reason": "The DOM identifies toys as items the open niches can display, but does not state that toys are actually on them. The shelf reference anchors that new placement."
+          },
+          {
+            "claim_id": "C15",
+            "claim": "Plants on the open shelves",
+            "relevance_code": "S",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "6 open niches to display your books, toys, baskets and decorations"
+              }
+            ],
+            "reason": "The DOM establishes open niches but contains no plants or their placement. Referring to the shelves is necessary to locate the new plant information on the product."
+          },
+          {
+            "claim_id": "C16",
+            "claim": "Decor on the open shelves",
+            "relevance_code": "S",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "6 open niches to display your books, toys, baskets and decorations"
+              }
+            ],
+            "reason": "The DOM says the niches can display decorations, but does not state that decor is actually placed on them. The shelves anchor this new placement information."
+          },
+          {
+            "claim_id": "C17",
+            "claim": "Blue LED lighting on the open shelves",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[3]",
+                "value": "Customize over 60,000 colors, brightness and lighting mode"
+              },
+              {
+                "field": "feature_bullets[2]",
+                "value": "6 open niches to display your books, toys, baskets and decorations"
+              }
+            ],
+            "reason": "The DOM describes customizable LED lighting and open niches, but not blue lighting specifically located on the shelves. Repeating those features anchors the new color and location details."
+          },
+          {
+            "claim_id": "C18",
+            "claim": "Laptop on the desk",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "work surface of 35x112 cm, meeting your reading, homework, and remote work needs"
+              },
+              {
+                "field": "feature_bullets[3]",
+                "value": "Connect your devices (laptops, lamps and iPads) simultaneously"
+              }
+            ],
+            "reason": "The DOM describes both a work surface and laptop charging, but does not state that a laptop is placed on the desk. The desk reference grounds the new placement."
+          },
+          {
+            "claim_id": "C19",
+            "claim": "Cup on the desk",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "This convertible sofa features a genuine work surface of 35x112 cm"
+              }
+            ],
+            "reason": "The desk/work surface is already described, but a cup placed on it is absent. Repeating the desk anchors the new object placement."
+          },
+          {
+            "claim_id": "C20",
+            "claim": "Notebooks on the desk",
+            "relevance_code": "S",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "work surface of 35x112 cm, meeting your reading, homework, and remote work needs"
+              }
+            ],
+            "reason": "The DOM describes the desk's study and work use but does not state that notebooks are placed on it. The desk reference grounds the new placement."
+          },
+          {
+            "claim_id": "C21",
+            "claim": "Stationery on the desk",
+            "relevance_code": "S",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "Storage pockets to keep your school supplies ... within reach!"
+              },
+              {
+                "field": "feature_bullets[1]",
+                "value": "This convertible sofa features a genuine work surface of 35x112 cm"
+              }
+            ],
+            "reason": "The DOM mentions school supplies in storage pockets and an integrated desk, but not stationery placed on the desk. The desk reference anchors the new placement."
+          },
+          {
+            "claim_id": "C22",
+            "claim": "Headphones on a stand",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no headphones, stand, or comparable arrangement."
+          },
+          {
+            "claim_id": "C23",
+            "claim": "Window overlooking greenery",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a window, an exterior view, or greenery."
+          },
+          {
+            "claim_id": "C24",
+            "claim": "Space-themed artwork",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no artwork or space-themed decoration information."
+          },
+          {
+            "claim_id": "C25",
+            "claim": "Decorative items",
+            "relevance_code": "V",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "6 open niches to display your books, toys, baskets and decorations"
+              }
+            ],
+            "reason": "The DOM already explicitly mentions decorations as items for the open niches, so this generic claim adds no necessary information."
+          },
+          {
+            "claim_id": "C26",
+            "claim": "Gray patterned rug",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no rug, gray color, or pattern information."
+          },
+          {
+            "claim_id": "C27",
+            "claim": "Two smaller diagrams at the bottom",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no diagrams, their quantity, or their visual placement."
+          },
+          {
+            "claim_id": "C28",
+            "claim": "The diagrams show alternate desk configurations",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[0]",
+                "value": "Its reversible backrest (left or right) adapts to your room ... to create a perfect layout"
+              },
+              {
+                "field": "feature_bullets[1]",
+                "value": "This convertible sofa features a genuine work surface of 35x112 cm"
+              }
+            ],
+            "reason": "The DOM describes a reversible backrest and an integrated work surface, but does not describe diagrams or alternate desk configurations shown in diagrams."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 24,
+        "subjective_claims": 0,
+        "total_claims": 24,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The image shows a bright bedroom.",
+            "label": "OBJECTIVE",
+            "reason": "The room is visibly well lit, primarily by daylight from the window and interior lighting."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The bedroom features a white raised bed.",
+            "label": "OBJECTIVE",
+            "reason": "A white bed frame elevated above the floor is directly visible."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The bed has integrated shelving.",
+            "label": "OBJECTIVE",
+            "reason": "Open shelving is visibly built into the bed-frame structure along the headboard and side."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The bed has a desk.",
+            "label": "OBJECTIVE",
+            "reason": "A white desk surface is visibly attached to the bed structure."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The bed has storage cubbies.",
+            "label": "OBJECTIVE",
+            "reason": "Multiple small open rectangular compartments are visibly incorporated into the furniture."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The bed has fabric pockets.",
+            "label": "OBJECTIVE",
+            "reason": "Fabric hanging-pocket organizers are visibly attached to the front side of the bed frame."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The bed has large pull-out drawers.",
+            "label": "OBJECTIVE",
+            "reason": "Large drawers are visibly extended from beneath the bed."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The drawers are filled with folded clothing.",
+            "label": "OBJECTIVE",
+            "reason": "The open drawers visibly contain neatly folded textile items resembling clothing."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "The bed has white bedding.",
+            "label": "OBJECTIVE",
+            "reason": "White sheets, pillows, and a white duvet are visibly present on the bed."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A folded blue quilt is on the bed.",
+            "label": "OBJECTIVE",
+            "reason": "A folded blue-green striped textile is visibly placed across the foot of the bed."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "A tablet is on the bed.",
+            "label": "OBJECTIVE",
+            "reason": "A flat black-screen device resembling a tablet is visibly resting on the bedding."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Open shelves display books, toys, plants, and decor.",
+            "label": "OBJECTIVE",
+            "reason": "The visible shelves contain books, toy-like objects, potted plants, and decorative items."
+          },
+          {
+            "claim_id": "C13",
+            "claim": "The shelves have blue LED lighting.",
+            "label": "OBJECTIVE",
+            "reason": "Blue illumination is visibly present under and within the shelving; the exact lighting technology is not visually certain, but LED lighting is commonly identifiable from the depicted strip-like blue accent lighting."
+          },
+          {
+            "claim_id": "C14",
+            "claim": "A laptop sits on the desk.",
+            "label": "OBJECTIVE",
+            "reason": "An open laptop is visibly positioned on the desktop."
+          },
+          {
+            "claim_id": "C15",
+            "claim": "A cup sits on the desk.",
+            "label": "OBJECTIVE",
+            "reason": "A cup is visibly placed on the desk surface."
+          },
+          {
+            "claim_id": "C16",
+            "claim": "Notebooks sit on the desk.",
+            "label": "OBJECTIVE",
+            "reason": "Flat bound paper items resembling notebooks are visibly placed on the desktop."
+          },
+          {
+            "claim_id": "C17",
+            "claim": "Stationery sits on the desk.",
+            "label": "OBJECTIVE",
+            "reason": "Small writing implements and desk-organizer items are visibly present on the desk."
+          },
+          {
+            "claim_id": "C18",
+            "claim": "Headphones are on a stand.",
+            "label": "OBJECTIVE",
+            "reason": "A pair of headphones is visibly hanging from a stand at the right side of the desk."
+          },
+          {
+            "claim_id": "C19",
+            "claim": "The room includes a window overlooking greenery.",
+            "label": "OBJECTIVE",
+            "reason": "A window at the upper left visibly shows green foliage outside."
+          },
+          {
+            "claim_id": "C20",
+            "claim": "The room includes space-themed artwork.",
+            "label": "OBJECTIVE",
+            "reason": "Wall art visibly depicts space-related imagery, including stars and an astronaut-like figure."
+          },
+          {
+            "claim_id": "C21",
+            "claim": "The room includes decorative items.",
+            "label": "OBJECTIVE",
+            "reason": "Various nonfunctional display objects are visibly placed on the shelves and furniture."
+          },
+          {
+            "claim_id": "C22",
+            "claim": "The room includes a gray patterned rug.",
+            "label": "OBJECTIVE",
+            "reason": "A gray rug with a repeating linear pattern is visibly beneath the furniture."
+          },
+          {
+            "claim_id": "C23",
+            "claim": "Two smaller diagrams appear at the bottom of the image.",
+            "label": "OBJECTIVE",
+            "reason": "Two smaller product-view illustrations are visibly shown along the bottom edge."
+          },
+          {
+            "claim_id": "C24",
+            "claim": "The diagrams show alternate desk configurations.",
+            "label": "OBJECTIVE",
+            "reason": "The two illustrations visibly depict the same bed-and-desk unit with the desk arranged on opposite sides."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 89,
+        "relevant_novel_claims": 1,
+        "efficiency_per_100_words": 1.1236
+      }
+    }
+  }
+}

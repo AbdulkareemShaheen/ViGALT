@@ -1,0 +1,641 @@
+{
+  "folder_number": 24,
+  "image_file": "71xTC9gSxAL._AC_SX679_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "A white-painted bed frame has a peaked roof-shaped frame with four corner posts. Raised guard panels made of vertical slats run along the sides and foot end, with a solid back panel behind the low-set sleeping surface and an opening at the front. The sleeping surface contains a white mattress with a lightly quilted cover.",
+      "relevancy": {
+        "total_claims": 7,
+        "relevant_claims": 7,
+        "supplementary_claims": 0,
+        "visual_only_claims": 0,
+        "relevancy_rate": 1.0,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "White-painted bed frame",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Peaked roof-shaped frame",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Four corner posts",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Raised guard panels made of vertical slats along the sides and foot end",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Solid back panel behind the low-set sleeping surface",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Opening at the front",
+            "label": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "White mattress with a lightly quilted cover on the sleeping surface",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 7,
+          "relevant_claims": 7,
+          "irrelevant_claims": 0,
+          "raw_novel_claims": 3,
+          "relevant_novel_claims": 3,
+          "irrelevant_novel_claims": 0,
+          "unavoidable_repetition_claims": 3,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.42857142857142855,
+          "raw_novelty_rate": 0.42857142857142855,
+          "unavoidable_repetition_rate": 0.42857142857142855,
+          "avoidable_redundancy_rate": 0.14285714285714285,
+          "redundancy_rate": 0.5714285714285714
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "White-painted bed frame",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Peaked roof-shaped frame",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Four corner posts",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Raised guard panels made of vertical slats along the sides and foot end",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Solid back panel behind the low-set sleeping surface",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Opening at the front",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "White mattress with a lightly quilted cover on the sleeping surface",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "White-painted bed frame",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "White"
+              },
+              {
+                "field": "product_details.Finish Type",
+                "value": "Painted"
+              },
+              {
+                "field": "product_details.Furniture Finish",
+                "value": "Painted"
+              }
+            ],
+            "reason": "The DOM already specifies that the bed is white with a painted finish. Repeating this adds no necessary information."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Peaked roof-shaped frame",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Item Shape",
+                "value": "House look"
+              },
+              {
+                "field": "feature_bullets[0]",
+                "value": "With its wooden cabin silhouette, this bed transforms the bedroom into a magical world where comfort and imagination meet for nights full of dreams."
+              }
+            ],
+            "reason": "The DOM establishes a house/cabin-shaped silhouette, while the claim adds the specific visual detail that the frame has a peaked roof shape. Referring to the roof-shaped frame is needed to anchor that added shape detail to the existing house-like structure."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Four corner posts",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not state that the bed frame has four corner posts."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Raised guard panels made of vertical slats along the sides and foot end",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "Reinforced safety with built-in barrier: The fence edging serves as effective protection against night falls, ensuring a serene and secure sleep."
+              },
+              {
+                "field": "product_details.Other Special Features of the Product",
+                "value": "Sturdy construction, With anti-fall edge"
+              }
+            ],
+            "reason": "The DOM already identifies a protective fence or anti-fall edge. The claim adds the guard panels' vertical-slat construction and their placement along the sides and foot end; repeating the guard concept is necessary to identify what those new structural details describe."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Solid back panel behind the low-set sleeping surface",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not describe a solid back panel or state that the sleeping surface is low-set."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Opening at the front",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about an opening at the front of the bed frame."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "White mattress with a lightly quilted cover on the sleeping surface",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[2]",
+                "value": "Cold foam mattress included: The breathable and anti-allergy mattress guarantees optimal comfort all year round, with natural air conditioning that stays cool in summer and warm in winter."
+              },
+              {
+                "field": "product_details.Included Components",
+                "value": "1 x Cot, 1 x standard slatted base, Mattresses"
+              }
+            ],
+            "reason": "The DOM establishes that a mattress is included, while the claim adds its white color and lightly quilted cover. Mentioning the mattress and its placement on the sleeping surface is necessary to anchor those new appearance details."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 0.7777777777777778,
+        "objective_claims": 7,
+        "subjective_claims": 2,
+        "total_claims": 9,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The bed frame is white.",
+            "label": "OBJECTIVE",
+            "reason": "The frame is visibly white in the image."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The bed frame is painted.",
+            "label": "SUBJECTIVE",
+            "reason": "A painted finish cannot be reliably distinguished from other white surface finishes using the image alone."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The bed frame has a peaked, roof-shaped upper frame.",
+            "label": "OBJECTIVE",
+            "reason": "The upper structure visibly forms two sloping sides meeting at a peak, resembling a house roof."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The bed frame has four corner posts.",
+            "label": "OBJECTIVE",
+            "reason": "Four upright posts are visibly positioned at the bed frame's corners."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Raised guard panels made of vertical slats run along the bed's sides and foot end.",
+            "label": "OBJECTIVE",
+            "reason": "The visible side and foot sections have raised rails containing multiple vertical slats."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "A solid back panel is behind the low-set sleeping surface.",
+            "label": "OBJECTIVE",
+            "reason": "A solid white panel is visibly positioned behind the mattress area, and the sleeping surface sits low within the frame."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "There is an opening at the front of the bed frame.",
+            "label": "OBJECTIVE",
+            "reason": "A gap in the surrounding guard structure is visibly present at the front-facing side of the bed."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The sleeping surface contains a white mattress.",
+            "label": "OBJECTIVE",
+            "reason": "A white mattress is visibly placed inside the bed frame."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "The mattress has a lightly quilted cover.",
+            "label": "SUBJECTIVE",
+            "reason": "The image does not clearly show sufficient surface stitching or texture to reliably verify that the mattress cover is quilted."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 55,
+        "relevant_novel_claims": 3,
+        "efficiency_per_100_words": 5.4545
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "Bright nursery with a white house-style crib, pink-and-white bedding, plush toys, and string lights. A plush lion hangs on the wall, while a crocheted toy lies on the wooden floor beside an animal-patterned rug. A rounded inset in the upper left shows a white crib mattress. White walls and pale curtains complete the room.",
+      "relevancy": {
+        "total_claims": 12,
+        "relevant_claims": 1,
+        "supplementary_claims": 0,
+        "visual_only_claims": 11,
+        "relevancy_rate": 0.08333333333333333,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The nursery is bright.",
+            "label": "V"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "A white house-style crib is in the nursery.",
+            "label": "V"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The crib has pink-and-white bedding.",
+            "label": "V"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Plush toys are in the nursery.",
+            "label": "V"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "String lights are in the nursery.",
+            "label": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "A plush lion hangs on the wall.",
+            "label": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A crocheted toy lies on the floor.",
+            "label": "V"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The floor is wooden.",
+            "label": "V"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "An animal-patterned rug is beside the crocheted toy.",
+            "label": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A white crib mattress is shown.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "The walls are white.",
+            "label": "V"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "The curtains are pale.",
+            "label": "V"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 12,
+          "relevant_claims": 1,
+          "irrelevant_claims": 11,
+          "raw_novel_claims": 9,
+          "relevant_novel_claims": 0,
+          "irrelevant_novel_claims": 9,
+          "unavoidable_repetition_claims": 3,
+          "avoidable_redundancy_claims": 0,
+          "novelty_rate": 0.0,
+          "raw_novelty_rate": 0.75,
+          "unavoidable_repetition_rate": 0.25,
+          "avoidable_redundancy_rate": 0.0,
+          "redundancy_rate": 0.25
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The nursery is bright.",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "A white house-style crib is in the nursery.",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The crib has pink-and-white bedding.",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Plush toys are in the nursery.",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "String lights are in the nursery.",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "A plush lion hangs on the wall.",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A crocheted toy lies on the floor.",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The floor is wooden.",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "An animal-patterned rug is beside the crocheted toy.",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A white crib mattress is shown.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "The walls are white.",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "The curtains are pale.",
+            "relevance_code": "V"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The nursery is bright.",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a nursery setting or its brightness."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "A white house-style crib is in the nursery.",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "White"
+              },
+              {
+                "field": "product_details.Item Shape",
+                "value": "House look"
+              },
+              {
+                "field": "product_details.Included Components",
+                "value": "1 x Cot, 1 x standard slatted base, Mattresses"
+              }
+            ],
+            "reason": "The white, house-shaped cot is already represented in the DOM, but referring to it is necessary to anchor the new information that it is situated in a nursery."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The crib has pink-and-white bedding.",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Included Components",
+                "value": "1 x Cot, 1 x standard slatted base, Mattresses"
+              },
+              {
+                "field": "feature_bullets",
+                "value": "Cold foam mattress included: The breathable and anti-allergy mattress guarantees optimal comfort all year round, with natural air conditioning that stays cool in summer and warm in winter."
+              }
+            ],
+            "reason": "The DOM establishes a cot and included mattress, while the pink-and-white bedding is absent. Mentioning the crib is needed to ground the new bedding information as belonging to the product."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Plush toys are in the nursery.",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention plush toys or a nursery setting."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "String lights are in the nursery.",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about string lights or a nursery setting."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "A plush lion hangs on the wall.",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not describe a plush lion, a wall, or anything hanging on one."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A crocheted toy lies on the floor.",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a crocheted toy or a floor."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The floor is wooden.",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "Although the bed is described as made from pine wood and plywood, the DOM gives no information about the material of a floor."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "An animal-patterned rug is beside the crocheted toy.",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention a rug, an animal pattern, or a crocheted toy."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A white crib mattress is shown.",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Included Components",
+                "value": "1 x Cot, 1 x standard slatted base, Mattresses"
+              },
+              {
+                "field": "feature_bullets",
+                "value": "Cold foam mattress included: The breathable and anti-allergy mattress guarantees optimal comfort all year round, with natural air conditioning that stays cool in summer and warm in winter."
+              },
+              {
+                "field": "product_details.Colour",
+                "value": "White"
+              }
+            ],
+            "reason": "The DOM already establishes that the cot includes a mattress and that the product is white, but the claim adds the visual assertion that a white mattress is shown. Referring to the crib mattress is necessary to identify what is being shown."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "The walls are white.",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM states that the product is white but provides no information about walls or their color."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "The curtains are pale.",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about curtains or their color."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 0.8333333333333334,
+        "objective_claims": 10,
+        "subjective_claims": 2,
+        "total_claims": 12,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The image shows a bright nursery.",
+            "label": "SUBJECTIVE",
+            "reason": "While the room is visibly well lit, identifying it as a nursery depends on interpreting the room's intended use rather than a directly verifiable physical feature."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The room contains a white house-style crib.",
+            "label": "OBJECTIVE",
+            "reason": "The crib is visibly white and has a peaked, house-frame structure above the bed."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The crib has pink-and-white bedding.",
+            "label": "OBJECTIVE",
+            "reason": "Pink and white bedding is visibly present inside the crib."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Plush toys are placed in the crib.",
+            "label": "OBJECTIVE",
+            "reason": "Several stuffed animal toys are visibly arranged inside the crib."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "String lights are draped around the crib frame.",
+            "label": "OBJECTIVE",
+            "reason": "A strand of small lights is visibly attached along the crib's house-shaped frame."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "A lion toy hangs on the wall.",
+            "label": "OBJECTIVE",
+            "reason": "A round lion-face decoration with a mane is visibly mounted on the wall above the crib."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A crocheted toy lies on the wooden floor.",
+            "label": "OBJECTIVE",
+            "reason": "A small toy with a visibly knitted or crocheted-looking texture is shown on the wooden floor."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The toy lies beside an animal-patterned rug.",
+            "label": "OBJECTIVE",
+            "reason": "The toy is visibly next to a rug featuring a large animal-face graphic."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "A rounded inset in the upper left shows a white crib mattress.",
+            "label": "OBJECTIVE",
+            "reason": "The upper-left rounded inset visibly depicts a white rectangular mattress."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "The room has white walls.",
+            "label": "OBJECTIVE",
+            "reason": "The visible walls are white."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "Pale curtains are visible in the room.",
+            "label": "OBJECTIVE",
+            "reason": "Light-colored curtains are visibly hanging along the right side of the image."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "The white walls and pale curtains complete the room.",
+            "label": "SUBJECTIVE",
+            "reason": "The phrase 'complete the room' is an evaluative interpretation of the decor rather than a directly observable visual property."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 54,
+        "relevant_novel_claims": 0,
+        "efficiency_per_100_words": 0.0
+      }
+    }
+  }
+}

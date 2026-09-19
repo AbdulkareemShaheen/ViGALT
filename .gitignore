@@ -1,0 +1,13 @@
+.venv/
+.browser_profile/
+downloads/
+__pycache__/
+*.pyc
+*.pyo
+.env
+*.egg-info/
+build/
+dist/
+.DS_Store
+Thumbs.db
+.cursor/

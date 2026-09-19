@@ -1,0 +1,33 @@
+=== ViGALT ===
+Dark gray vertically ribbed upholstery covers the seating, with the right seat reclined and its footrest extended. Illuminated vertical strips run along both front arm edges, with circular cup holders built into the armrests and a control panel mounted on the outside of the left arm. Open compartments beneath and in front of the seating contain a blanket, a cushion, and books; one front compartment has its hinged lid raised.
+
+Dark gray vertically ribbed upholstery covers the seating
+The right seat is reclined
+The right seat's footrest is extended
+Illuminated vertical strips run along both front arm edges
+Circular cup holders are built into the armrests
+A control panel is mounted on the outside of the left arm
+Open compartments are beneath and in front of the seating
+A blanket is in the compartments
+A cushion is in the compartments
+Books are in the compartments
+One front compartment has its hinged lid raised
+
+=== ASSETS24 ===
+A dark gray, vertically ribbed L-shaped sectional sofa features three seats, a reclining chaise, illuminated armrests, cup holders, charging ports, and storage pockets. An open under-seat compartment reveals a light green cushion, while a matching storage ottoman holds books beneath its raised lid. The set sits on a neutral patterned rug over wood flooring.
+
+Dark gray L-shaped sectional sofa
+The sectional sofa is vertically ribbed
+The sectional sofa has three seats
+The sectional sofa has a reclining chaise
+The sectional sofa has illuminated armrests
+The sectional sofa has cup holders
+The sectional sofa has charging ports
+The sectional sofa has storage pockets
+An open under-seat compartment is visible
+A light green cushion is visible in the under-seat compartment
+A matching storage ottoman is present
+The storage ottoman has a raised lid
+Books are beneath the raised lid of the storage ottoman
+The set sits on a neutral patterned rug
+The rug is over wood flooring

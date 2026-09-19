@@ -1,0 +1,370 @@
+{
+  "folder_number": 4,
+  "image_file": "71maVO4tSzL._AC_SX569_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "A black top is shown worn on a person, with broad short sleeves and a straight loose body. It has a visible side slit at the lower left hem and a visible side slit at the lower right hem.",
+      "relevancy": {
+        "total_claims": 5,
+        "relevant_claims": 5,
+        "supplementary_claims": 0,
+        "visual_only_claims": 0,
+        "relevancy_rate": 1.0,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "A black top is worn on a person",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The top has broad short sleeves",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The top has a straight loose body",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A visible side slit is at the lower left hem",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "A visible side slit is at the lower right hem",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 5,
+          "relevant_claims": 5,
+          "irrelevant_claims": 0,
+          "raw_novel_claims": 0,
+          "relevant_novel_claims": 0,
+          "irrelevant_novel_claims": 0,
+          "unavoidable_repetition_claims": 5,
+          "avoidable_redundancy_claims": 0,
+          "novelty_rate": 0.0,
+          "raw_novelty_rate": 0.0,
+          "unavoidable_repetition_rate": 1.0,
+          "avoidable_redundancy_rate": 0.0,
+          "redundancy_rate": 1.0
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "A black top is worn on a person",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The top has broad short sleeves",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The top has a straight loose body",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A visible side slit is at the lower left hem",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "A visible side slit is at the lower right hem",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "A black top is worn on a person",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "Black-1"
+              },
+              {
+                "field": "product_details.Shirt Form Type",
+                "value": "T-Shirt"
+              }
+            ],
+            "reason": "The black top is already identified in the DOM, but repeating that identification anchors the new visual information that the garment is being worn by a person."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The top has broad short sleeves",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Sleeve Type",
+                "value": "Short Sleeve"
+              },
+              {
+                "field": "description",
+                "value": "The V-neck adds a feminine touch while the short sleeves with dropped shoulders highlight your arms."
+              }
+            ],
+            "reason": "Short sleeves are already stated in the DOM, while their broad appearance is new visual information. Referring to the sleeves and their short length anchors the added width description to the product's sleeve design."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The top has a straight loose body",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Fitting type",
+                "value": "Loose Fit"
+              },
+              {
+                "field": "description",
+                "value": "The loose fit allows you to move freely."
+              }
+            ],
+            "reason": "The loose fit is already represented in the DOM, but the straight body shape is new visual information. Repeating the loose fit grounds the new body-shape description in the garment's stated silhouette."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A visible side slit is at the lower left hem",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "Its minimalist design with a side slit makes it a modern and versatile staple."
+              }
+            ],
+            "reason": "The DOM already states that the top has a side slit, while its visible position at the lower left hem is new. Mentioning the slit is necessary to identify what the positional information describes."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "A visible side slit is at the lower right hem",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "Its minimalist design with a side slit makes it a modern and versatile staple."
+              }
+            ],
+            "reason": "The DOM already identifies a side slit, but does not specify a lower-right-hem location. Repeating the slit is necessary to anchor the added positional information."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 5,
+        "subjective_claims": 0,
+        "total_claims": 5,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "A black top is shown worn on a person.",
+            "label": "OBJECTIVE",
+            "reason": "The image visibly shows a person wearing a black top."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The top has broad short sleeves.",
+            "label": "OBJECTIVE",
+            "reason": "The sleeves are visibly wide and extend to around the elbows, making their broad, short-sleeve appearance directly observable."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The top has a straight loose body.",
+            "label": "OBJECTIVE",
+            "reason": "The garment visibly hangs away from the wearer’s torso in a relatively straight, non-fitted silhouette."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The top has a visible side slit at the lower left hem.",
+            "label": "OBJECTIVE",
+            "reason": "An opening along the lower hem edge is visibly present on the left side of the image."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The top has a visible side slit at the lower right hem.",
+            "label": "OBJECTIVE",
+            "reason": "A side opening at the lower hem is visibly present on the right side of the image."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 39,
+        "relevant_novel_claims": 0,
+        "efficiency_per_100_words": 0.0
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "A woman cropped from the neck down wears an oversized black T-shirt, layered necklaces, light-wash ripped jeans, and carries a beige shoulder bag.",
+      "relevancy": {
+        "total_claims": 4,
+        "relevant_claims": 1,
+        "supplementary_claims": 0,
+        "visual_only_claims": 3,
+        "relevancy_rate": 0.25,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Oversized black T-shirt",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Layered necklaces",
+            "label": "V"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Light-wash ripped jeans",
+            "label": "V"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Beige shoulder bag",
+            "label": "V"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 4,
+          "relevant_claims": 1,
+          "irrelevant_claims": 3,
+          "raw_novel_claims": 3,
+          "relevant_novel_claims": 0,
+          "irrelevant_novel_claims": 3,
+          "unavoidable_repetition_claims": 0,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.0,
+          "raw_novelty_rate": 0.75,
+          "unavoidable_repetition_rate": 0.0,
+          "avoidable_redundancy_rate": 0.25,
+          "redundancy_rate": 0.25
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Oversized black T-shirt",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Layered necklaces",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Light-wash ripped jeans",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Beige shoulder bag",
+            "relevance_code": "V"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Oversized black T-shirt",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "Black-1"
+              },
+              {
+                "field": "product_details.Bikini top style",
+                "value": "Oversized loose T-shirt with crew neck and short sleeves"
+              },
+              {
+                "field": "product_details.Shirt Form Type",
+                "value": "T-Shirt"
+              }
+            ],
+            "reason": "The DOM already identifies the product as a black oversized loose T-shirt, so the claim adds no necessary semantic information."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Layered necklaces",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about necklaces or layered jewelry."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Light-wash ripped jeans",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "Although the description mentions jeans as a possible styling option, it does not specify light-wash or ripped jeans; that combined clothing information is absent from the DOM."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Beige shoulder bag",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a shoulder bag or its beige color."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 5,
+        "subjective_claims": 0,
+        "total_claims": 5,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "A woman is cropped from the neck down.",
+            "label": "OBJECTIVE",
+            "reason": "The image shows a person whose head is mostly outside the frame, with the view beginning around the neck."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "She wears an oversized black T-shirt.",
+            "label": "OBJECTIVE",
+            "reason": "The shirt is visibly black and has a loose, oversized silhouette relative to the model's torso and arms."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "She wears layered necklaces.",
+            "label": "OBJECTIVE",
+            "reason": "Multiple necklaces of differing lengths are visibly worn around the neck."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "She wears light-wash ripped jeans.",
+            "label": "OBJECTIVE",
+            "reason": "The visible jeans are light blue and have clearly visible distressed tears across the legs."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "She carries a beige shoulder bag.",
+            "label": "OBJECTIVE",
+            "reason": "A light beige/taupe bag with a shoulder strap is visibly held at the model's side."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 23,
+        "relevant_novel_claims": 0,
+        "efficiency_per_100_words": 0.0
+      }
+    }
+  }
+}

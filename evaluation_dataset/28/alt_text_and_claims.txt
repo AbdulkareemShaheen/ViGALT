@@ -1,0 +1,25 @@
+=== ViGALT ===
+A mirror has a narrow border and a dark-colored frame, with straight, slightly angled side edges. A separate support extends behind the mirror on the right and holds it upright on the floor
+
+The mirror has a narrow border.
+The mirror has a dark-colored frame.
+The mirror has straight, slightly angled side edges.
+A separate support extends behind the mirror on the right.
+The support holds the mirror upright on the floor.
+
+=== ASSETS24 ===
+A warm, neutral living room features a light sofa with a gray knitted throw, an arched black-framed floor mirror leaning against a paneled cream wall, and a wooden side table with a glass vase of white flowers. The mirror reflects an upholstered armchair, bright window, and sheer curtains. Fashion books sit on the table’s lower shelf, while sunlight casts shadows across the room.
+
+Warm, neutral living room
+Light sofa
+Gray knitted throw on the sofa
+Arched black-framed floor mirror leaning against a paneled cream wall
+Paneled cream wall
+Wooden side table
+Glass vase on the side table
+White flowers in the glass vase
+Upholstered armchair reflected in the mirror
+Bright window reflected in the mirror
+Sheer curtains reflected in the mirror
+Fashion books on the table’s lower shelf
+Sunlight casts shadows across the room

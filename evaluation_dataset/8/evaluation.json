@@ -1,0 +1,573 @@
+{
+  "folder_number": 8,
+  "image_file": "B1pppR4gVKL._CLa_2140_2000_91CsLk6BLRL.png_0_0_2140_2000-0.0_0.0_2140.0_2000.0_AC_SX679_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "It is a black T-shirt with a crew neckline and short sleeves. Its front graphic has large orange “NIVEAU” lettering above a cream video-game controller; the cream video-game controller has multiple colored buttons, and a cream “40” appears on the front. Multicolored stars, orange and yellow diagonal stripes above the green banner, and a green banner on the front reading “DÉBLOQUÉ,” meaning “unlocked,” complete the graphic.",
+      "relevancy": {
+        "total_claims": 9,
+        "relevant_claims": 9,
+        "supplementary_claims": 0,
+        "visual_only_claims": 0,
+        "relevancy_rate": 1.0,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Black T-shirt",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Crew neckline",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Short sleeves",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Large orange “NIVEAU” lettering above the cream video-game controller",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Cream video-game controller with multiple colored buttons",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Cream “40” on the front",
+            "label": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Multicolored stars on the front graphic",
+            "label": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Orange and yellow diagonal stripes above the green banner",
+            "label": "R"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Green banner on the front reading “DÉBLOQUÉ,” meaning “unlocked”",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 9,
+          "relevant_claims": 9,
+          "irrelevant_claims": 0,
+          "raw_novel_claims": 4,
+          "relevant_novel_claims": 4,
+          "irrelevant_novel_claims": 0,
+          "unavoidable_repetition_claims": 4,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.4444444444444444,
+          "raw_novelty_rate": 0.4444444444444444,
+          "unavoidable_repetition_rate": 0.4444444444444444,
+          "avoidable_redundancy_rate": 0.1111111111111111,
+          "redundancy_rate": 0.5555555555555556
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Black T-shirt",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Crew neckline",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Short sleeves",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Large orange “NIVEAU” lettering above the cream video-game controller",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Cream video-game controller with multiple colored buttons",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Cream “40” on the front",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Multicolored stars on the front graphic",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Orange and yellow diagonal stripes above the green banner",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Green banner on the front reading “DÉBLOQUÉ,” meaning “unlocked”",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Black T-shirt",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "Black"
+              },
+              {
+                "field": "title",
+                "value": "Level 40 Unlocked Gamer Birthday Gift Humor Man T-Shirt"
+              }
+            ],
+            "reason": "The DOM already identifies the product as black and as a T-shirt. Repeating this adds no new semantic information."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Crew neckline",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM identifies the item as a T-shirt but does not specify its neckline style."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Short sleeves",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not state the sleeve length."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Large orange “NIVEAU” lettering above the cream video-game controller",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "Funny gamer t-shirt perfect for celebrating the move to level 40 with style, vintage console and joystick design."
+              }
+            ],
+            "reason": "The DOM establishes a video-game-themed console/joystick design, while the claim adds the specific French lettering, its orange color, size, and position. Referring to the controller is necessary to anchor the lettering's spatial relationship within the graphic."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Cream video-game controller with multiple colored buttons",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "Funny gamer t-shirt perfect for celebrating the move to level 40 with style, vintage console and joystick design."
+              }
+            ],
+            "reason": "The DOM already indicates a vintage console and joystick design. The claim adds the controller's cream color and multicolored buttons; identifying the controller is necessary to make those new visual details understandable."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Cream “40” on the front",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "Level 40 Unlocked Gamer Birthday Gift Humor Man T-Shirt"
+              },
+              {
+                "field": "feature_bullets[1]",
+                "value": "Funny gamer t-shirt perfect for celebrating the move to level 40 with style, vintage console and joystick design."
+              }
+            ],
+            "reason": "The DOM already conveys the level-40 concept, but not that the number itself appears in cream on the shirt front. Repeating “40” is necessary to identify which displayed graphic element has the new color and placement."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Multicolored stars on the front graphic",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention stars, their colors, or their presence in the front graphic."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Orange and yellow diagonal stripes above the green banner",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not describe diagonal stripes, their colors, or their position relative to a banner."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Green banner on the front reading “DÉBLOQUÉ,” meaning “unlocked”",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "Level 40 Unlocked Gamer Birthday Gift Humor Man T-Shirt"
+              },
+              {
+                "field": "feature_bullets[1]",
+                "value": "Funny gamer t-shirt perfect for celebrating the move to level 40 with style, vintage console and joystick design."
+              }
+            ],
+            "reason": "The DOM already supplies the concept “unlocked,” while the claim adds that it is expressed as “DÉBLOQUÉ” on a green front banner. Stating the meaning is necessary to disambiguate and explain the newly identified French text."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 0.9166666666666666,
+        "objective_claims": 11,
+        "subjective_claims": 1,
+        "total_claims": 12,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The shirt is black.",
+            "label": "OBJECTIVE",
+            "reason": "The garment's visible fabric is black in the image."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The shirt has a crew neckline.",
+            "label": "OBJECTIVE",
+            "reason": "A round, close-fitting neckline is directly visible at the top of the shirt."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The shirt has short sleeves.",
+            "label": "OBJECTIVE",
+            "reason": "The sleeves visibly end high on the upper arms."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A front graphic includes large orange lettering reading “NIVEAU.”",
+            "label": "OBJECTIVE",
+            "reason": "The orange word “NIVEAU” is visibly printed in large letters near the upper portion of the shirt's front."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "A cream video-game controller appears below the “NIVEAU” lettering.",
+            "label": "OBJECTIVE",
+            "reason": "A cream-colored graphic shaped like a game controller is visibly positioned beneath the lettering."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The controller graphic has multiple colored buttons.",
+            "label": "OBJECTIVE",
+            "reason": "Several buttons in visibly different colors appear on the right side of the controller graphic."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A cream “40” appears on the front.",
+            "label": "OBJECTIVE",
+            "reason": "The number “40” is visibly printed in a light cream color below the controller graphic."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The graphic includes multicolored stars.",
+            "label": "OBJECTIVE",
+            "reason": "Stars in several visible colors surround the controller graphic."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Orange and yellow diagonal stripes appear above the green banner.",
+            "label": "OBJECTIVE",
+            "reason": "Diagonal orange and yellow stripe elements are visibly positioned immediately above the green banner."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A green banner on the front reads “DÉBLOQUÉ.”",
+            "label": "OBJECTIVE",
+            "reason": "A green banner containing the visibly printed word “DÉBLOQUÉ” appears on the lower part of the front graphic."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "“DÉBLOQUÉ” means “unlocked.”",
+            "label": "SUBJECTIVE",
+            "reason": "This is a translation and semantic interpretation of the visible text rather than a visual property that can be verified from the image alone."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "The listed elements complete the graphic.",
+            "label": "OBJECTIVE",
+            "reason": "The lettering, controller, number, stars, stripes, and banner are all visibly part of the shirt's single front graphic."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 66,
+        "relevant_novel_claims": 4,
+        "efficiency_per_100_words": 6.0606
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "Front-facing black T-shirt featuring distressed orange-red “NIVEAU” lettering, a cream video game controller surrounded by colorful stars, and a large cream “40.” Orange and yellow stripes sit above a teal banner reading “DÉBLOQUÉ” in black.",
+      "relevancy": {
+        "total_claims": 7,
+        "relevant_claims": 7,
+        "supplementary_claims": 0,
+        "visual_only_claims": 0,
+        "relevancy_rate": 1.0,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Black T-shirt",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Distressed orange-red “NIVEAU” lettering",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Cream video game controller",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Colorful stars surrounding the video game controller",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Large cream “40”",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Orange and yellow stripes",
+            "label": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Teal banner reading “DÉBLOQUÉ” in black",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 7,
+          "relevant_claims": 7,
+          "irrelevant_claims": 0,
+          "raw_novel_claims": 3,
+          "relevant_novel_claims": 3,
+          "irrelevant_novel_claims": 0,
+          "unavoidable_repetition_claims": 3,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.42857142857142855,
+          "raw_novelty_rate": 0.42857142857142855,
+          "unavoidable_repetition_rate": 0.42857142857142855,
+          "avoidable_redundancy_rate": 0.14285714285714285,
+          "redundancy_rate": 0.5714285714285714
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Black T-shirt",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Distressed orange-red “NIVEAU” lettering",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Cream video game controller",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Colorful stars surrounding the video game controller",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Large cream “40”",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Orange and yellow stripes",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Teal banner reading “DÉBLOQUÉ” in black",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Black T-shirt",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "Black"
+              },
+              {
+                "field": "title",
+                "value": "Level 40 Unlocked Gamer Birthday Gift Humor Man T-Shirt"
+              }
+            ],
+            "reason": "The DOM already identifies the product as a black T-shirt. The claim adds no further semantic information."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Distressed orange-red “NIVEAU” lettering",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "Level 40 Unlocked Gamer Birthday Gift Humor Man T-Shirt"
+              },
+              {
+                "field": "feature_bullets[1]",
+                "value": "Funny gamer t-shirt perfect for celebrating the move to level 40 with style, vintage console and joystick design."
+              }
+            ],
+            "reason": "“NIVEAU” conveys the displayed level concept already represented by the DOM, but repeating that text is needed to anchor the new visual details: distressed treatment and orange-red color of the lettering."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Cream video game controller",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "Funny gamer t-shirt perfect for celebrating the move to level 40 with style, vintage console and joystick design."
+              }
+            ],
+            "reason": "The DOM generally mentions a vintage console and joystick design, but does not specify a video game controller or its cream color."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Colorful stars surrounding the video game controller",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "Funny gamer t-shirt perfect for celebrating the move to level 40 with style, vintage console and joystick design."
+              }
+            ],
+            "reason": "The DOM does not mention stars, their colors, or their placement around a controller."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Large cream “40”",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "Level 40 Unlocked Gamer Birthday Gift Humor Man T-Shirt"
+              },
+              {
+                "field": "feature_bullets[1]",
+                "value": "Funny gamer t-shirt perfect for celebrating the move to level 40 with style, vintage console and joystick design."
+              }
+            ],
+            "reason": "The number 40 is already stated in the DOM, but repeating it is necessary to identify what the new visual attributes—large size and cream color—describe."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Orange and yellow stripes",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about stripes or orange and yellow coloring."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Teal banner reading “DÉBLOQUÉ” in black",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "Level 40 Unlocked Gamer Birthday Gift Humor Man T-Shirt"
+              }
+            ],
+            "reason": "“DÉBLOQUÉ” semantically overlaps with “Unlocked” in the title, but repeating the displayed word is necessary to anchor the new visual information that it appears in black on a teal banner."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 6,
+        "subjective_claims": 0,
+        "total_claims": 6,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The T-shirt is shown front-facing and is black.",
+            "label": "OBJECTIVE",
+            "reason": "The garment's front is visible in the image, and its fabric appears black."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The shirt features distressed orange-red “NIVEAU” lettering.",
+            "label": "OBJECTIVE",
+            "reason": "The word “NIVEAU” is visibly printed near the upper front in orange-red letters with a worn, speckled appearance."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "A cream video game controller is surrounded by colorful stars.",
+            "label": "OBJECTIVE",
+            "reason": "A light cream controller graphic is visibly centered on the shirt, with stars in several visible colors around it."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The shirt has a large cream “40.”",
+            "label": "OBJECTIVE",
+            "reason": "A large light cream number “40” is visibly printed below the controller graphic."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Orange and yellow stripes sit above a teal banner.",
+            "label": "OBJECTIVE",
+            "reason": "Orange and yellow horizontal radiating stripe elements are visibly positioned above a teal-colored banner."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The teal banner reads “DÉBLOQUÉ” in black.",
+            "label": "OBJECTIVE",
+            "reason": "The banner visibly contains the word “DÉBLOQUÉ” in black lettering."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 35,
+        "relevant_novel_claims": 3,
+        "efficiency_per_100_words": 8.5714
+      }
+    }
+  }
+}

@@ -1,0 +1,603 @@
+{
+  "folder_number": 7,
+  "image_file": "71jyUStW2dL._AC_SY879_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "Intersecting white and dark-blue stripes are visible. Visible features include a pointed turn-down collar, long sleeves, a chest pocket on the wearer’s left with diagonally oriented stripes, and a striped front placket with white buttons down the front. The hem is gently curved.",
+      "relevancy": {
+        "total_claims": 7,
+        "relevant_claims": 7,
+        "supplementary_claims": 0,
+        "visual_only_claims": 0,
+        "relevancy_rate": 1.0,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Intersecting white and dark-blue stripes are visible.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The garment has a pointed turn-down collar.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The garment has long sleeves.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A chest pocket on the wearer’s left has diagonally oriented stripes.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The garment has a striped front placket.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "White buttons run down the front.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The hem is gently curved.",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 7,
+          "relevant_claims": 7,
+          "irrelevant_claims": 0,
+          "raw_novel_claims": 2,
+          "relevant_novel_claims": 2,
+          "irrelevant_novel_claims": 0,
+          "unavoidable_repetition_claims": 3,
+          "avoidable_redundancy_claims": 2,
+          "novelty_rate": 0.2857142857142857,
+          "raw_novelty_rate": 0.2857142857142857,
+          "unavoidable_repetition_rate": 0.42857142857142855,
+          "avoidable_redundancy_rate": 0.2857142857142857,
+          "redundancy_rate": 0.7142857142857143
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Intersecting white and dark-blue stripes are visible.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The garment has a pointed turn-down collar.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The garment has long sleeves.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A chest pocket on the wearer’s left has diagonally oriented stripes.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The garment has a striped front placket.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "White buttons run down the front.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The hem is gently curved.",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Intersecting white and dark-blue stripes are visible.",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Pattern",
+                "value": "Checkered"
+              },
+              {
+                "field": "product_details.Colour",
+                "value": "Grey-blue"
+              }
+            ],
+            "reason": "The DOM already identifies a checkered pattern, which overlaps with intersecting stripes, but it does not specify white and dark-blue stripe colors. Referring to the intersecting stripe pattern is needed to anchor the new color information."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The garment has a pointed turn-down collar.",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Collar Style",
+                "value": "Button Down"
+              },
+              {
+                "field": "feature_bullets[1]",
+                "value": "This men's plaid shirt features a classic collar, adjustable cuffs, and an elegant chest pocket."
+              }
+            ],
+            "reason": "A button-down, classic collar already conveys the same collar style, including its pointed turn-down construction. The claim adds no necessary distinct information."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The garment has long sleeves.",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Sleeve Type",
+                "value": "Long Sleeve"
+              },
+              {
+                "field": "feature_bullets[0]",
+                "value": "This lightweight long-sleeve shirt is made of 120% breathable cotton, which makes it soft, comfortable, and ideal for all-day wear."
+              }
+            ],
+            "reason": "The DOM explicitly states that the shirt has long sleeves, so repeating this adds no new information."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A chest pocket on the wearer’s left has diagonally oriented stripes.",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "JupiterSecret Mens Casual Plaid Cotton Shirt Suit Shirt With Chest Pocket"
+              },
+              {
+                "field": "feature_bullets[1]",
+                "value": "This men's plaid shirt features a classic collar, adjustable cuffs, and an elegant chest pocket."
+              }
+            ],
+            "reason": "The DOM establishes that the shirt has a chest pocket, but does not state its wearer-relative location or that its stripes are diagonal. Repeating the pocket is necessary to anchor those new visual details to the correct garment feature."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The garment has a striped front placket.",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Closure Type",
+                "value": "Button"
+              },
+              {
+                "field": "product_details.Pattern",
+                "value": "Checkered"
+              }
+            ],
+            "reason": "The DOM identifies a button closure and a checkered overall pattern, but does not describe a front placket or state that the placket is striped."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "White buttons run down the front.",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Closure Type",
+                "value": "Button"
+              }
+            ],
+            "reason": "The DOM establishes that the garment uses a button closure, but does not specify white button color or their visible front placement. Mentioning the buttons is necessary to anchor the new color and arrangement information."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The hem is gently curved.",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about the hem shape or curvature."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 8,
+        "subjective_claims": 0,
+        "total_claims": 8,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Intersecting white and dark-blue stripes are visible.",
+            "label": "OBJECTIVE",
+            "reason": "The shirt visibly has a plaid pattern made of intersecting white and dark-blue lines."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The shirt has a pointed turn-down collar.",
+            "label": "OBJECTIVE",
+            "reason": "The pointed collar folded down around the neckline is directly visible."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The shirt has long sleeves.",
+            "label": "OBJECTIVE",
+            "reason": "Both sleeves visibly extend from the shoulders to the cuffs."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The shirt has a chest pocket on the wearer’s left.",
+            "label": "OBJECTIVE",
+            "reason": "A single patch pocket is visibly located on the left side of the shirt as worn."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The chest pocket has diagonally oriented stripes.",
+            "label": "OBJECTIVE",
+            "reason": "The plaid stripes on the visible pocket are oriented diagonally relative to the shirt front."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The shirt has a striped front placket.",
+            "label": "OBJECTIVE",
+            "reason": "A vertical button placket with a visibly striped fabric pattern runs down the center front."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "White buttons run down the front.",
+            "label": "OBJECTIVE",
+            "reason": "Several light-colored, visibly white buttons are shown along the front placket."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The hem is gently curved.",
+            "label": "OBJECTIVE",
+            "reason": "The lower edge of the shirt visibly curves upward slightly at the sides rather than forming a straight horizontal line."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 44,
+        "relevant_novel_claims": 2,
+        "efficiency_per_100_words": 4.5455
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "A front-facing long-sleeved button-up shirt with a blue, white, and gray plaid pattern, pointed collar, white-buttoned placket, single chest pocket with a matching flap, and buttoned cuffs, shown against a white background.",
+      "relevancy": {
+        "total_claims": 9,
+        "relevant_claims": 8,
+        "supplementary_claims": 0,
+        "visual_only_claims": 1,
+        "relevancy_rate": 0.8888888888888888,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Front-facing shirt",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Long sleeves",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Button-up shirt",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Blue, white, and gray plaid pattern",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Pointed collar",
+            "label": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Placket with white buttons",
+            "label": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Single chest pocket with a matching flap",
+            "label": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Buttoned cuffs",
+            "label": "R"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "White background",
+            "label": "V"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 9,
+          "relevant_claims": 8,
+          "irrelevant_claims": 1,
+          "raw_novel_claims": 2,
+          "relevant_novel_claims": 1,
+          "irrelevant_novel_claims": 1,
+          "unavoidable_repetition_claims": 4,
+          "avoidable_redundancy_claims": 3,
+          "novelty_rate": 0.1111111111111111,
+          "raw_novelty_rate": 0.2222222222222222,
+          "unavoidable_repetition_rate": 0.4444444444444444,
+          "avoidable_redundancy_rate": 0.3333333333333333,
+          "redundancy_rate": 0.7777777777777778
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Front-facing shirt",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Long sleeves",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Button-up shirt",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Blue, white, and gray plaid pattern",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Pointed collar",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Placket with white buttons",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Single chest pocket with a matching flap",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Buttoned cuffs",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "White background",
+            "relevance_code": "V"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Front-facing shirt",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM identifies the item as a shirt but does not state its viewing orientation or that it is shown front-facing."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Long sleeves",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Sleeve Type",
+                "value": "Long Sleeve"
+              },
+              {
+                "field": "feature_bullets[0]",
+                "value": "This lightweight long-sleeve shirt is made of 120% breathable cotton..."
+              }
+            ],
+            "reason": "The DOM explicitly identifies the shirt as long-sleeved, so the claim adds no further information."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Button-up shirt",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Closure Type",
+                "value": "Button"
+              },
+              {
+                "field": "title",
+                "value": "JupiterSecret Mens Casual Plaid Cotton Shirt Suit Shirt With Chest Pocket"
+              }
+            ],
+            "reason": "The DOM already identifies the product as a shirt with a button closure, which sufficiently conveys that it is button-up."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Blue, white, and gray plaid pattern",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "Grey-blue"
+              },
+              {
+                "field": "product_details.Pattern",
+                "value": "Checkered"
+              },
+              {
+                "field": "title",
+                "value": "JupiterSecret Mens Casual Plaid Cotton Shirt Suit Shirt With Chest Pocket"
+              }
+            ],
+            "reason": "The DOM already establishes a grey-blue checkered/plaid pattern, but it does not state that white is part of the pattern. Repeating the existing colors and pattern is needed to express the complete multicolor pattern description."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Pointed collar",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Collar Style",
+                "value": "Button Down"
+              },
+              {
+                "field": "feature_bullets[1]",
+                "value": "This men's plaid shirt features a classic collar, adjustable cuffs, and an elegant chest pocket."
+              }
+            ],
+            "reason": "A button-down collar is a collar style characterized by collar points, and the DOM already specifies this collar style."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Placket with white buttons",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Closure Type",
+                "value": "Button"
+              }
+            ],
+            "reason": "The DOM establishes that the shirt uses buttons, but does not describe a front placket or the buttons' white color. Mentioning buttons anchors the new color detail to the closure."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Single chest pocket with a matching flap",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "JupiterSecret Mens Casual Plaid Cotton Shirt Suit Shirt With Chest Pocket"
+              },
+              {
+                "field": "feature_bullets[1]",
+                "value": "This men's plaid shirt features a classic collar, adjustable cuffs, and an elegant chest pocket."
+              }
+            ],
+            "reason": "The DOM already states that there is a chest pocket, but not that it is single or has a matching flap. Repeating the pocket reference is needed to anchor those new details."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Buttoned cuffs",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "This men's plaid shirt features a classic collar, adjustable cuffs, and an elegant chest pocket."
+              }
+            ],
+            "reason": "The DOM establishes that the shirt has adjustable cuffs, but does not specify that their adjustment is by buttons. The cuff reference is needed to identify what the new buttoned detail describes."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "White background",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about the image background color."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 10,
+        "subjective_claims": 0,
+        "total_claims": 10,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The shirt is front-facing.",
+            "label": "OBJECTIVE",
+            "reason": "The garment is visibly shown from the front in the image."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The shirt has long sleeves.",
+            "label": "OBJECTIVE",
+            "reason": "Both sleeves visibly extend from the shoulders to the wrists."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The shirt is button-up.",
+            "label": "OBJECTIVE",
+            "reason": "A vertical front placket with multiple visible buttons is directly observable."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The shirt has a blue, white, and gray plaid pattern.",
+            "label": "OBJECTIVE",
+            "reason": "The visible fabric has intersecting horizontal and vertical lines in blue, white, and gray tones."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The shirt has a pointed collar.",
+            "label": "OBJECTIVE",
+            "reason": "The collar has two visibly pointed ends."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The shirt has a white-buttoned placket.",
+            "label": "OBJECTIVE",
+            "reason": "The center front placket visibly contains light-colored, white buttons."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The shirt has a single chest pocket.",
+            "label": "OBJECTIVE",
+            "reason": "One patch pocket is visibly present on the chest area."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "The chest pocket has a matching flap.",
+            "label": "OBJECTIVE",
+            "reason": "The pocket area is visibly made from the same plaid fabric; its upper edge is visible, though it does not clearly appear to be a distinct flap."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "The shirt has buttoned cuffs.",
+            "label": "OBJECTIVE",
+            "reason": "The sleeve cuffs are visibly defined and show button closures."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "The shirt is shown against a white background.",
+            "label": "OBJECTIVE",
+            "reason": "The area surrounding the shirt is visibly white."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 32,
+        "relevant_novel_claims": 1,
+        "efficiency_per_100_words": 3.125
+      }
+    }
+  }
+}

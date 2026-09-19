@@ -1,0 +1,28 @@
+=== ViGALT ===
+A two-piece outfit consisting of a shirt and shorts is shown worn. The burgundy shirt has short sleeves, narrow navy vertical stripes, yellow “BARÇA” lettering across the shirt's chest, football graphics, and an FC Barcelona crest. The matching navy shorts have vertical yellow “BARÇA” lettering on one leg and an FC Barcelona crest on the other leg.
+
+A two-piece outfit consisting of a shirt and shorts is shown worn.
+The shirt is burgundy.
+The shirt has short sleeves.
+The shirt has narrow navy vertical stripes.
+The shirt has yellow “BARÇA” lettering across the chest.
+The shirt has football graphics.
+The shirt has an FC Barcelona crest.
+The shorts are matching navy shorts.
+The shorts have vertical yellow “BARÇA” lettering on one leg.
+The shorts have an FC Barcelona crest on the other leg.
+
+=== ASSETS24 ===
+Photograph of a smiling male model against a white background, wearing a Barcelona football kit consisting of a red-and-blue vertically striped short-sleeved shirt and navy shorts. The shirt features a navy crew neck, yellow Barça lettering, a yellow football graphic, and the FC Barcelona crest. The shorts feature vertical yellow Barça lettering on the left leg and the FC Barcelona crest on the right.
+
+A smiling male model
+A white background
+A Barcelona football kit
+A red-and-blue vertically striped short-sleeved shirt
+Navy shorts
+A navy crew neck on the shirt
+Yellow Barça lettering on the shirt
+A yellow football graphic on the shirt
+The FC Barcelona crest on the shirt
+Vertical yellow Barça lettering on the left leg of the shorts
+The FC Barcelona crest on the right of the shorts

@@ -1,0 +1,42 @@
+=== ViGALT ===
+An L-shaped frame surrounds the head and right side, with open shelving illuminated by cyan LEDs. A work surface extends across the foot and right side, with a laptop sitting on it. Storage compartments beneath the mattress are pulled open on the left, and fabric organizer pockets hang from the near side.
+
+An L-shaped frame surrounds the head and right side
+Open shelving is present
+Cyan LEDs illuminate the open shelving
+A work surface extends across the foot and right side
+A laptop sits on the work surface
+Storage compartments beneath the mattress are pulled open on the left
+Fabric organizer pockets hang from the near side
+
+=== ASSETS24 ===
+Bright bedroom featuring a white raised bed with integrated shelving, a desk, storage cubbies, fabric pockets, and large pull-out drawers filled with folded clothing. The bed has white bedding, a folded blue quilt, and a tablet. Open shelves display books, toys, plants, and decor with blue LED lighting. A laptop, cup, notebooks, and stationery sit on the desk, with headphones on a stand. The room includes a window overlooking greenery, space-themed artwork, decorative items, and a gray patterned rug. Two smaller diagrams at the bottom show alternate desk configurations.
+
+Bright bedroom
+White raised bed
+Integrated shelving on the bed
+Desk
+Storage cubbies
+Fabric pockets
+Large pull-out drawers
+Folded clothing fills the drawers
+White bedding on the bed
+Folded blue quilt on the bed
+Tablet on the bed
+Open shelves
+Books on the open shelves
+Toys on the open shelves
+Plants on the open shelves
+Decor on the open shelves
+Blue LED lighting on the open shelves
+Laptop on the desk
+Cup on the desk
+Notebooks on the desk
+Stationery on the desk
+Headphones on a stand
+Window overlooking greenery
+Space-themed artwork
+Decorative items
+Gray patterned rug
+Two smaller diagrams at the bottom
+The diagrams show alternate desk configurations

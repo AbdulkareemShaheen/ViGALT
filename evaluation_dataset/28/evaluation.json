@@ -1,0 +1,626 @@
+{
+  "folder_number": 28,
+  "image_file": "81cpwsq3BrL._AC_SX679_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "A mirror has a narrow border and a dark-colored frame, with straight, slightly angled side edges. A separate support extends behind the mirror on the right and holds it upright on the floor",
+      "relevancy": {
+        "total_claims": 5,
+        "relevant_claims": 5,
+        "supplementary_claims": 0,
+        "visual_only_claims": 0,
+        "relevancy_rate": 1.0,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The mirror has a narrow border.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The mirror has a dark-colored frame.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The mirror has straight, slightly angled side edges.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A separate support extends behind the mirror on the right.",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The support holds the mirror upright on the floor.",
+            "label": "R"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 5,
+          "relevant_claims": 5,
+          "irrelevant_claims": 0,
+          "raw_novel_claims": 3,
+          "relevant_novel_claims": 3,
+          "irrelevant_novel_claims": 0,
+          "unavoidable_repetition_claims": 1,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.6,
+          "raw_novelty_rate": 0.6,
+          "unavoidable_repetition_rate": 0.2,
+          "avoidable_redundancy_rate": 0.2,
+          "redundancy_rate": 0.4
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The mirror has a narrow border.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The mirror has a dark-colored frame.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The mirror has straight, slightly angled side edges.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A separate support extends behind the mirror on the right.",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The support holds the mirror upright on the floor.",
+            "relevance_code": "R"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The mirror has a narrow border.",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Frame Type",
+                "value": "Arched metal edging"
+              },
+              {
+                "field": "feature_bullets",
+                "value": "This psyche mirror features a streamlined arched frame."
+              }
+            ],
+            "reason": "The DOM establishes that the mirror has an arched metal frame, but does not specify that the border is narrow."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The mirror has a dark-colored frame.",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Frame Color",
+                "value": "Black"
+              },
+              {
+                "field": "product_details.Colour",
+                "value": "Ink Black"
+              },
+              {
+                "field": "title",
+                "value": "Ink Black"
+              }
+            ],
+            "reason": "A black, specifically ink-black, frame is already explicitly represented in the DOM. Describing it as dark-colored adds no necessary information."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The mirror has straight, slightly angled side edges.",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Frame Type",
+                "value": "Arched metal edging"
+              },
+              {
+                "field": "product_details.Item Shape",
+                "value": "Semicircular"
+              }
+            ],
+            "reason": "The DOM identifies an arched or semicircular mirror shape, but does not describe the side edges as straight and slightly angled."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A separate support extends behind the mirror on the right.",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "product_details.Mounting Type",
+                "value": "Floor Mount"
+              },
+              {
+                "field": "product_details.Surface Recommendation",
+                "value": "Freestanding, Wall-mounted"
+              }
+            ],
+            "reason": "The DOM supports that the mirror can stand on the floor, but does not specify a separate rear support or its position on the right."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The support holds the mirror upright on the floor.",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Mounting Type",
+                "value": "Floor Mount"
+              },
+              {
+                "field": "product_details.Surface Recommendation",
+                "value": "Freestanding, Wall-mounted"
+              },
+              {
+                "field": "feature_bullets",
+                "value": "Whether it is on the floor or fixed to the wall, its reflection is always perfect"
+              }
+            ],
+            "reason": "The DOM already states that the mirror is floor-mounted and freestanding. Repeating that floor-upright function is necessary to explain the new support referenced by the claim and how that support functions."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 5,
+        "subjective_claims": 0,
+        "total_claims": 5,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The mirror has a narrow border.",
+            "label": "OBJECTIVE",
+            "reason": "A thin visible border surrounding the reflective surface can be directly observed in the image."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The mirror has a dark-colored frame.",
+            "label": "OBJECTIVE",
+            "reason": "The frame around the mirror appears dark, which is directly visible."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The mirror has straight, slightly angled side edges.",
+            "label": "OBJECTIVE",
+            "reason": "The long side edges of the mirror are visibly straight and lean inward slightly toward the top."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A separate support extends behind the mirror on the right.",
+            "label": "OBJECTIVE",
+            "reason": "A dark support leg is visibly positioned behind the mirror along its right side."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The support holds the mirror upright on the floor.",
+            "label": "OBJECTIVE",
+            "reason": "The support and mirror are visibly arranged as a freestanding structure resting upright on the floor."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 33,
+        "relevant_novel_claims": 3,
+        "efficiency_per_100_words": 9.0909
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "A warm, neutral living room features a light sofa with a gray knitted throw, an arched black-framed floor mirror leaning against a paneled cream wall, and a wooden side table with a glass vase of white flowers. The mirror reflects an upholstered armchair, bright window, and sheer curtains. Fashion books sit on the table’s lower shelf, while sunlight casts shadows across the room.",
+      "relevancy": {
+        "total_claims": 13,
+        "relevant_claims": 1,
+        "supplementary_claims": 0,
+        "visual_only_claims": 12,
+        "relevancy_rate": 0.07692307692307693,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Warm, neutral living room",
+            "label": "V"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Light sofa",
+            "label": "V"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Gray knitted throw on the sofa",
+            "label": "V"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Arched black-framed floor mirror leaning against a paneled cream wall",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Paneled cream wall",
+            "label": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Wooden side table",
+            "label": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Glass vase on the side table",
+            "label": "V"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "White flowers in the glass vase",
+            "label": "V"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Upholstered armchair reflected in the mirror",
+            "label": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Bright window reflected in the mirror",
+            "label": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "Sheer curtains reflected in the mirror",
+            "label": "V"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Fashion books on the table’s lower shelf",
+            "label": "V"
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Sunlight casts shadows across the room",
+            "label": "V"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 13,
+          "relevant_claims": 1,
+          "irrelevant_claims": 12,
+          "raw_novel_claims": 8,
+          "relevant_novel_claims": 0,
+          "irrelevant_novel_claims": 8,
+          "unavoidable_repetition_claims": 5,
+          "avoidable_redundancy_claims": 0,
+          "novelty_rate": 0.0,
+          "raw_novelty_rate": 0.6153846153846154,
+          "unavoidable_repetition_rate": 0.38461538461538464,
+          "avoidable_redundancy_rate": 0.0,
+          "redundancy_rate": 0.38461538461538464
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Warm, neutral living room",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Light sofa",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Gray knitted throw on the sofa",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Arched black-framed floor mirror leaning against a paneled cream wall",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Paneled cream wall",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Wooden side table",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Glass vase on the side table",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "White flowers in the glass vase",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Upholstered armchair reflected in the mirror",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Bright window reflected in the mirror",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "Sheer curtains reflected in the mirror",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Fashion books on the table’s lower shelf",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Sunlight casts shadows across the room",
+            "relevance_code": "V"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Warm, neutral living room",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets",
+                "value": "More than just a mirror, it is also a decorative piece that elevates the style of your bedroom, entryway, living room or gym"
+              }
+            ],
+            "reason": "The DOM identifies a living room as a relevant room context, while the warm, neutral atmosphere is absent. Repeating the room type is needed to anchor the new atmosphere description to a space."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Light sofa",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a sofa or its light color."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Gray knitted throw on the sofa",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a sofa, a knitted throw, or its gray color."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Arched black-framed floor mirror leaning against a paneled cream wall",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "SONGMICS Full Body Mirror, 150 x 40 cm, Arched Floor Mirror, Aluminium Alloy Frame, Tempered Glass, for Bedroom, Living Room, Dressing Room, Ink Black LFM035B01"
+              },
+              {
+                "field": "product_details.Frame Color",
+                "value": "Black"
+              },
+              {
+                "field": "product_details.Frame Type",
+                "value": "Arched metal edging"
+              },
+              {
+                "field": "product_details.Mounting Type",
+                "value": "Floor Mount"
+              }
+            ],
+            "reason": "The DOM already identifies the product as an arched black floor mirror. Repeating that product identity is necessary to anchor the new visual information that it is leaning against a paneled cream wall."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Paneled cream wall",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM provides no information about a wall, paneling, or cream color."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Wooden side table",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a side table or wood material."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Glass vase on the side table",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a vase, glass material, or a side table."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "White flowers in the glass vase",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about flowers, their white color, or a glass vase."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Upholstered armchair reflected in the mirror",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "SONGMICS Full Body Mirror, 150 x 40 cm, Arched Floor Mirror, Aluminium Alloy Frame, Tempered Glass, for Bedroom, Living Room, Dressing Room, Ink Black LFM035B01"
+              }
+            ],
+            "reason": "The DOM establishes that the product is a mirror, but contains no armchair or reflection content. Mentioning the mirror is necessary to express where the newly described armchair appears."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "Bright window reflected in the mirror",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "SONGMICS Full Body Mirror, 150 x 40 cm, Arched Floor Mirror, Aluminium Alloy Frame, Tempered Glass, for Bedroom, Living Room, Dressing Room, Ink Black LFM035B01"
+              }
+            ],
+            "reason": "The DOM establishes the mirror but does not mention a window, brightness, or a reflected window. Repeating the mirror is necessary to anchor the new reflection information."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "Sheer curtains reflected in the mirror",
+            "relevance_code": "V",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "SONGMICS Full Body Mirror, 150 x 40 cm, Arched Floor Mirror, Aluminium Alloy Frame, Tempered Glass, for Bedroom, Living Room, Dressing Room, Ink Black LFM035B01"
+              }
+            ],
+            "reason": "The DOM establishes the mirror but provides no information about curtains, their sheerness, or their reflection. Mentioning the mirror is necessary to specify where the new curtain detail is seen."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Fashion books on the table’s lower shelf",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about a table, a lower shelf, books, or fashion-related books."
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Sunlight casts shadows across the room",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about sunlight, shadows, or illumination across a room."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 0.8571428571428571,
+        "objective_claims": 12,
+        "subjective_claims": 2,
+        "total_claims": 14,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The scene is a warm living room.",
+            "label": "SUBJECTIVE",
+            "reason": "“Warm” conveys an atmospheric or aesthetic impression, and identifying the space specifically as a living room involves an interpretation of its intended use rather than a directly visible product feature."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The room has a neutral color palette.",
+            "label": "OBJECTIVE",
+            "reason": "The visible furnishings and walls are predominantly cream, beige, gray, and light wood tones, which can be visually identified as neutral colors."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "A light-colored sofa is visible.",
+            "label": "OBJECTIVE",
+            "reason": "A sofa with pale beige or cream upholstery is directly visible on the left side of the image."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "A gray knitted throw is draped over the sofa.",
+            "label": "OBJECTIVE",
+            "reason": "A gray textile with a visibly knitted texture is shown hanging over the sofa arm and seat."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "An arched floor mirror with a black frame is visible.",
+            "label": "OBJECTIVE",
+            "reason": "The product is visibly a tall mirror with a rounded arch at the top and a narrow dark frame."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The mirror is leaning against the wall.",
+            "label": "OBJECTIVE",
+            "reason": "The mirror is visibly angled back toward the wall rather than mounted flat against it."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "The wall behind the mirror is cream colored and paneled.",
+            "label": "OBJECTIVE",
+            "reason": "The wall appears light cream and has visible rectangular decorative molding panels."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "A wooden side table is beside the mirror.",
+            "label": "OBJECTIVE",
+            "reason": "A light wood table is visibly positioned to the right of the mirror."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "A glass vase containing white flowers sits on the side table.",
+            "label": "OBJECTIVE",
+            "reason": "A transparent vase holding white flowers is directly visible on the tabletop."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "The mirror reflects an upholstered armchair.",
+            "label": "OBJECTIVE",
+            "reason": "The mirror surface visibly shows a light-colored chair with fabric upholstery."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "The mirror reflects a bright window.",
+            "label": "OBJECTIVE",
+            "reason": "A large brightly lit window is visibly reflected in the mirror."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "The mirror reflects sheer curtains.",
+            "label": "OBJECTIVE",
+            "reason": "Thin, translucent-looking curtains are visibly shown in the mirror reflection."
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Books labeled “Fashion Book” sit on the table's lower shelf.",
+            "label": "OBJECTIVE",
+            "reason": "Several books are visibly stacked on the lower shelf, and the readable spine text says “FASHION BOOK.”"
+          },
+          {
+            "claim_id": "C14",
+            "claim": "Sunlight casts shadows across the room.",
+            "label": "SUBJECTIVE",
+            "reason": "Shadows and strong illumination are visible, but identifying the light source specifically as sunlight cannot be verified from the image alone."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 64,
+        "relevant_novel_claims": 0,
+        "efficiency_per_100_words": 0.0
+      }
+    }
+  }
+}

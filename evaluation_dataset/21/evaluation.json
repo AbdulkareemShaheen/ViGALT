@@ -1,0 +1,702 @@
+{
+  "folder_number": 21,
+  "image_file": "71ZScCnweOL._AC_SX679_.jpg",
+  "methods": {
+    "ViGALT": {
+      "alt_text": "Dark upholstered bed frame with rounded corners, rounded, raised side rails, and a wide headboard that curves around the sides. A cyan LED strip follows the front and right-side edges of the base and rises beside the headboard. A mattress, pillows, and blankets are shown inside the frame.",
+      "relevancy": {
+        "total_claims": 7,
+        "relevant_claims": 4,
+        "supplementary_claims": 0,
+        "visual_only_claims": 3,
+        "relevancy_rate": 0.5714285714285714,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Dark upholstered bed frame with rounded corners",
+            "label": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Rounded, raised side rails",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Wide headboard that curves around the sides",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Cyan LED strip follows the front and right-side edges of the base and rises beside the headboard",
+            "label": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Mattress inside the bed frame",
+            "label": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Pillows inside the bed frame",
+            "label": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Blankets inside the bed frame",
+            "label": "V"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 7,
+          "relevant_claims": 4,
+          "irrelevant_claims": 3,
+          "raw_novel_claims": 4,
+          "relevant_novel_claims": 1,
+          "irrelevant_novel_claims": 3,
+          "unavoidable_repetition_claims": 3,
+          "avoidable_redundancy_claims": 0,
+          "novelty_rate": 0.14285714285714285,
+          "raw_novelty_rate": 0.5714285714285714,
+          "unavoidable_repetition_rate": 0.42857142857142855,
+          "avoidable_redundancy_rate": 0.0,
+          "redundancy_rate": 0.42857142857142855
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Dark upholstered bed frame with rounded corners",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Rounded, raised side rails",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Wide headboard that curves around the sides",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Cyan LED strip follows the front and right-side edges of the base and rises beside the headboard",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Mattress inside the bed frame",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Pillows inside the bed frame",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Blankets inside the bed frame",
+            "relevance_code": "V"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "Dark upholstered bed frame with rounded corners",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "Black"
+              },
+              {
+                "field": "product_details.Upholstery Fabric Type",
+                "value": "Faux Leather"
+              },
+              {
+                "field": "description",
+                "value": "The unique ergonomic design of the curved bed"
+              }
+            ],
+            "reason": "The DOM already identifies a black faux-leather padded bed and describes it as curved. The added information about rounded corners needs to remain anchored to the bed frame, so repeating the frame's dark upholstered identity serves a grounding function."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "Rounded, raised side rails",
+            "relevance_code": "R",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM describes a curved bed design but does not identify side rails or state that they are raised and rounded."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Wide headboard that curves around the sides",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[3]",
+                "value": "This bed features a unique curved design... The well-designed headboard provides great support so you can lean back comfortably."
+              }
+            ],
+            "reason": "The DOM already establishes that the bed has a headboard and an overall curved design. The new information specifies the headboard's width and its wraparound curve; referring to the headboard and curvature is necessary to identify what those added shape details describe."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Cyan LED strip follows the front and right-side edges of the base and rises beside the headboard",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "The bed is surrounded by LED lights, controlled by a 24-key remote control. You can adjust the color and brightness according to your mood."
+              },
+              {
+                "field": "product_details.Special Features",
+                "value": "LED Mood Light"
+              }
+            ],
+            "reason": "The DOM already establishes adjustable LED lighting around the bed. The cyan color and precise route along the base and beside the headboard are new; repeating the LED-light context is necessary to anchor those positional details."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Mattress inside the bed frame",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [
+              {
+                "field": "title",
+                "value": "PU (without Mattress)"
+              }
+            ],
+            "reason": "The DOM does not provide the claimed information that a mattress is inside the frame; instead, it states that the product is sold without a mattress. That contrary statement does not make the claim a repetition."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Pillows inside the bed frame",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about pillows being present inside the bed frame."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Blankets inside the bed frame",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about blankets being present inside the bed frame."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 1.0,
+        "objective_claims": 7,
+        "subjective_claims": 0,
+        "total_claims": 7,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The bed frame is dark and upholstered.",
+            "label": "OBJECTIVE",
+            "reason": "The frame appears dark, and its padded, fabric-like surface is visibly observable."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The bed frame has rounded corners.",
+            "label": "OBJECTIVE",
+            "reason": "The corners of the base and frame are visibly curved rather than sharply angled."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The bed frame has rounded, raised side rails.",
+            "label": "OBJECTIVE",
+            "reason": "The side rails visibly extend above the mattress area and have rounded outer edges."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "The bed has a wide headboard that curves around the sides.",
+            "label": "OBJECTIVE",
+            "reason": "A broad headboard is visible behind the pillows, with its outer ends curving forward along both sides of the bed."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "A cyan LED strip follows the front and right-side edges of the base.",
+            "label": "OBJECTIVE",
+            "reason": "A bright cyan-colored illuminated strip is visibly present along the front edge and the image-right side of the bed base."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "The cyan LED strip rises beside the headboard.",
+            "label": "OBJECTIVE",
+            "reason": "The illuminated strip visibly continues upward at the side near the headboard."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A mattress, pillows, and blankets are shown inside the frame.",
+            "label": "OBJECTIVE",
+            "reason": "The image visibly shows a mattress with pillows and layered bedding positioned within the bed frame."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 48,
+        "relevant_novel_claims": 1,
+        "efficiency_per_100_words": 2.0833
+      }
+    },
+    "ASSETS24": {
+      "alt_text": "A modern bedroom with a black upholstered platform bed featuring bright cyan LED lighting along the base and headboard. Beige bedding, gray blankets, and matching pillows cover the bed. A large light-gray rug rests on the wooden floor, with slippers and stacked books nearby. A light-gray lounge chair sits beside white curtains, while wall-mounted shelving, built-in cabinets, and a bedside tray with bottles and glasses complete the room.",
+      "relevancy": {
+        "total_claims": 16,
+        "relevant_claims": 2,
+        "supplementary_claims": 0,
+        "visual_only_claims": 14,
+        "relevancy_rate": 0.125,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "A modern bedroom",
+            "label": "V"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "A black upholstered platform bed",
+            "label": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Bright cyan LED lighting along the bed's base and headboard",
+            "label": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Beige bedding covers the bed",
+            "label": "V"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Gray blankets cover the bed",
+            "label": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Matching pillows cover the bed",
+            "label": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A large light-gray rug rests on the wooden floor",
+            "label": "V"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Slippers are nearby",
+            "label": "V"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Stacked books are nearby",
+            "label": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A light-gray lounge chair sits beside the curtains",
+            "label": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "White curtains",
+            "label": "V"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Wall-mounted shelving",
+            "label": "V"
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Built-in cabinets",
+            "label": "V"
+          },
+          {
+            "claim_id": "C14",
+            "claim": "A bedside tray",
+            "label": "V"
+          },
+          {
+            "claim_id": "C15",
+            "claim": "Bottles are on the bedside tray",
+            "label": "V"
+          },
+          {
+            "claim_id": "C16",
+            "claim": "Glasses are on the bedside tray",
+            "label": "V"
+          }
+        ]
+      },
+      "redundancy": {
+        "metrics": {
+          "total_claims": 16,
+          "relevant_claims": 2,
+          "irrelevant_claims": 14,
+          "raw_novel_claims": 14,
+          "relevant_novel_claims": 0,
+          "irrelevant_novel_claims": 14,
+          "unavoidable_repetition_claims": 1,
+          "avoidable_redundancy_claims": 1,
+          "novelty_rate": 0.0,
+          "raw_novelty_rate": 0.875,
+          "unavoidable_repetition_rate": 0.0625,
+          "avoidable_redundancy_rate": 0.0625,
+          "redundancy_rate": 0.125
+        },
+        "input_claims": [
+          {
+            "claim_id": "C1",
+            "claim": "A modern bedroom",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C2",
+            "claim": "A black upholstered platform bed",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Bright cyan LED lighting along the bed's base and headboard",
+            "relevance_code": "R"
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Beige bedding covers the bed",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Gray blankets cover the bed",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Matching pillows cover the bed",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A large light-gray rug rests on the wooden floor",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Slippers are nearby",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Stacked books are nearby",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A light-gray lounge chair sits beside the curtains",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C11",
+            "claim": "White curtains",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Wall-mounted shelving",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Built-in cabinets",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C14",
+            "claim": "A bedside tray",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C15",
+            "claim": "Bottles are on the bedside tray",
+            "relevance_code": "V"
+          },
+          {
+            "claim_id": "C16",
+            "claim": "Glasses are on the bedside tray",
+            "relevance_code": "V"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "A modern bedroom",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM describes the bed itself as modern, but does not describe a modern bedroom setting."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "A black upholstered platform bed",
+            "relevance_code": "R",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "dom_evidence": [
+              {
+                "field": "product_details.Colour",
+                "value": "Black"
+              },
+              {
+                "field": "product_details.Upholstery Fabric Type",
+                "value": "Faux Leather"
+              },
+              {
+                "field": "product_details.Form Factor",
+                "value": "Flat Bed"
+              },
+              {
+                "field": "title",
+                "value": "KOMHTOM Double Padded Bed with LED Mood Light, Flat Bed with Wooden Slatted Base, Unique Modern Design, PU (without Mattress) (Black, 140 x 200 cm)"
+              }
+            ],
+            "reason": "The DOM already identifies a black, faux-leather upholstered flat bed with a slatted base. Repeating this bed description adds no necessary information."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "Bright cyan LED lighting along the bed's base and headboard",
+            "relevance_code": "R",
+            "label": "UNAVOIDABLE_REPETITION",
+            "dom_evidence": [
+              {
+                "field": "feature_bullets[1]",
+                "value": "The bed is surrounded by LED lights, controlled by a 24-key remote control. You can adjust the color and brightness according to your mood."
+              },
+              {
+                "field": "product_details.Special Features",
+                "value": "LED Mood Light"
+              }
+            ],
+            "reason": "The DOM establishes that the bed has adjustable LED lighting, but does not specify bright cyan illumination or its placement along the base and headboard. Referring to LED lighting is needed to anchor those new color and location details to the product feature."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Beige bedding covers the bed",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not describe beige bedding or bedding covering the bed."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "Gray blankets cover the bed",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention gray blankets or blankets covering the bed."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Matching pillows cover the bed",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM contains no information about pillows or matching pillows on the bed."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "A large light-gray rug rests on the wooden floor",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not describe a rug, its color or size, or a wooden floor."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Slippers are nearby",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention slippers."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "Stacked books are nearby",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention books or stacked books."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A light-gray lounge chair sits beside the curtains",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not describe a lounge chair, curtains, or their spatial relationship."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "White curtains",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention curtains or their color."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "Wall-mounted shelving",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not describe wall-mounted shelving."
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Built-in cabinets",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention built-in cabinets."
+          },
+          {
+            "claim_id": "C14",
+            "claim": "A bedside tray",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not mention a bedside tray."
+          },
+          {
+            "claim_id": "C15",
+            "claim": "Bottles are on the bedside tray",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not describe bottles, a bedside tray, or bottles placed on one."
+          },
+          {
+            "claim_id": "C16",
+            "claim": "Glasses are on the bedside tray",
+            "relevance_code": "V",
+            "label": "NOVEL",
+            "dom_evidence": [],
+            "reason": "The DOM does not describe glasses, a bedside tray, or glasses placed on one."
+          }
+        ]
+      },
+      "objectivity": {
+        "objectivity_score": 0.7333333333333333,
+        "objective_claims": 11,
+        "subjective_claims": 4,
+        "total_claims": 15,
+        "claims": [
+          {
+            "claim_id": "C1",
+            "claim": "The image depicts a bedroom.",
+            "label": "OBJECTIVE",
+            "reason": "A bed and other bedroom furnishings are visibly shown in an indoor room setting."
+          },
+          {
+            "claim_id": "C2",
+            "claim": "The bedroom has a modern style.",
+            "label": "SUBJECTIVE",
+            "reason": "“Modern” is a stylistic judgment that depends on interpretation rather than a directly measurable visual property."
+          },
+          {
+            "claim_id": "C3",
+            "claim": "The bed has a black upholstered platform frame.",
+            "label": "OBJECTIVE",
+            "reason": "The bed visibly has a low black frame extending around the mattress, with a padded-looking upholstered exterior."
+          },
+          {
+            "claim_id": "C4",
+            "claim": "Bright cyan lighting runs along the bed's base and headboard.",
+            "label": "OBJECTIVE",
+            "reason": "A luminous cyan strip is visibly present around the lower edge of the bed and along the headboard area."
+          },
+          {
+            "claim_id": "C5",
+            "claim": "The cyan lighting is LED lighting.",
+            "label": "SUBJECTIVE",
+            "reason": "Although cyan illumination is visible, the specific lighting technology cannot be verified from the image alone."
+          },
+          {
+            "claim_id": "C6",
+            "claim": "Beige bedding covers the bed.",
+            "label": "OBJECTIVE",
+            "reason": "Beige sheets and a beige comforter or mattress covering are visibly placed on the bed."
+          },
+          {
+            "claim_id": "C7",
+            "claim": "Gray blankets cover the bed.",
+            "label": "OBJECTIVE",
+            "reason": "Gray blanket material is visibly draped across the bed."
+          },
+          {
+            "claim_id": "C8",
+            "claim": "Pillows are placed on the bed.",
+            "label": "OBJECTIVE",
+            "reason": "Several pillows are clearly visible at the head of the bed."
+          },
+          {
+            "claim_id": "C9",
+            "claim": "The pillows match the bedding.",
+            "label": "SUBJECTIVE",
+            "reason": "Whether the pillows “match” is an aesthetic assessment of color coordination rather than a directly verifiable property."
+          },
+          {
+            "claim_id": "C10",
+            "claim": "A large light-gray rug lies on the wooden floor.",
+            "label": "OBJECTIVE",
+            "reason": "A light-gray rug visibly spans much of the floor area beneath and in front of the bed, and the surrounding floor has visible wood planks."
+          },
+          {
+            "claim_id": "C11",
+            "claim": "Slippers and a stack of books are near the rug.",
+            "label": "OBJECTIVE",
+            "reason": "A pair of slippers and stacked books are visibly positioned on or beside the rug in front of the bed."
+          },
+          {
+            "claim_id": "C12",
+            "claim": "A light-gray lounge chair sits beside white curtains.",
+            "label": "OBJECTIVE",
+            "reason": "A pale gray upholstered chair is visibly positioned near the light-colored curtains on the left side of the image."
+          },
+          {
+            "claim_id": "C13",
+            "claim": "Wall-mounted shelving and built-in cabinets are visible.",
+            "label": "OBJECTIVE",
+            "reason": "Visible shelving is attached to the wall, and large flush cabinet panels appear integrated into the wall."
+          },
+          {
+            "claim_id": "C14",
+            "claim": "A bedside tray holds bottles and glasses.",
+            "label": "OBJECTIVE",
+            "reason": "Small bottle-like containers and glassware are visibly placed on a tray or surface beside the bed."
+          },
+          {
+            "claim_id": "C15",
+            "claim": "The furnishings complete the room.",
+            "label": "SUBJECTIVE",
+            "reason": "Saying the furnishings “complete” the room is an evaluative interpretation of the room's arrangement, not a directly observable physical feature."
+          }
+        ]
+      },
+      "efficiency": {
+        "word_count": 68,
+        "relevant_novel_claims": 0,
+        "efficiency_per_100_words": 0.0
+      }
+    }
+  }
+}
