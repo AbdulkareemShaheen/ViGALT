@@ -1,4 +1,4 @@
-# ViGALT — Visual-Grounded ALT Text Generation
+# ViGALT — Visual Gap-Aware ALT Text Generation
 
 Research codebase for **ViGALT**, a multi-stage pipeline that generates high-quality, screen-reader-friendly alt text for e-commerce product images. The system takes a product image plus surrounding page text and produces objective, hallucination-filtered alt text through a 7-stage generate → deconstruct → validate → fuse pipeline.
 
@@ -25,7 +25,7 @@ Every product is classified as **CLOTHING** or **FURNITURE**. Stages 4–6 run i
 
 ```
 .
-├── src/atsn/              Python package (pipeline + evaluators)
+├── src/viglat/              Python package (pipeline + evaluators)
 ├── prompts/               Stage prompts and evaluation rubrics
 ├── evaluation_dataset/    Published per-image results (30 folders + summary.json)
 ├── docs/                  Architecture documentation
@@ -35,10 +35,10 @@ Every product is classified as **CLOTHING** or **FURNITURE**. Stages 4–6 run i
 └── .env.example           API key template
 ```
 
-### `src/atsn/` structure
+### `src/viglat/` structure
 
 ```
-src/atsn/
+src/viglat/
 ├── paths.py                 Stable project-root resolution
 ├── pipeline/                7-stage runner, utils, types
 ├── backend/                 OpenAI client, config, JSON schemas
@@ -57,7 +57,7 @@ src/atsn/
 | Evaluators | `evaluation/relevancy.py`, `redundancy.py`, `objectivity.py`, `efficiency.py`, `alt_to_list.py` |
 | Dataset tools | `cli/build_dataset.py`, `cli/combine_claims.py` |
 
-All documented `python -m atsn.*` commands still work via thin shims at the package root.
+All documented `python -m viglat.*` commands still work via thin shims at the package root.
 
 ## Setup
 
@@ -89,9 +89,9 @@ cp .env.example .env
 export OPENAI_API_KEY=sk-...
 ```
 
-The `.env` file in the project root is loaded automatically when you run any `python -m atsn.*` command.
+The `.env` file in the project root is loaded automatically when you run any `python -m viglat.*` command.
 
-Default pipeline model is **`gpt-5.6-luna`**; evaluation stages (relevancy, redundancy, objectivity) use **`gpt-5.6-terra`** (configured in [`src/atsn/backend/config.py`](src/atsn/backend/config.py)). Override with `--single-model` or `--model` on any command.
+Default pipeline model is **`gpt-5.6-luna`**; evaluation stages (relevancy, redundancy, objectivity) use **`gpt-5.6-terra`** (configured in [`src/viglat/backend/config.py`](src/viglat/backend/config.py)). Override with `--single-model` or `--model` on any command.
 
 ---
 
@@ -100,7 +100,7 @@ Default pipeline model is **`gpt-5.6-luna`**; evaluation stages (relevancy, redu
 Runs DOM extraction, alt-text generation, claim export, and all four evaluation metrics:
 
 ```bash
-python -m atsn.run_from_url --url "https://www.amazon.fr/dp/B077XM3DV5"
+python -m viglat.run_from_url --url "https://www.amazon.fr/dp/B077XM3DV5"
 ```
 
 Each run is written to a numbered folder with fixed filenames:
@@ -126,11 +126,11 @@ The next free run number is chosen automatically (`1`, then `2`, …).
 Options:
 
 ```bash
-python -m atsn.run_from_url --url "..." --run-id 5           # use output/runs/5/
-python -m atsn.run_from_url --url "..." --work-dir output/runs/custom
-python -m atsn.run_from_url --html saved_page.html --work-dir output/runs/3
-python -m atsn.run_from_url --url "..." --skip-eval          # pipeline only
-python -m atsn.run_from_url --url "..." --single-model gpt-5.6-luna
+python -m viglat.run_from_url --url "..." --run-id 5           # use output/runs/5/
+python -m viglat.run_from_url --url "..." --work-dir output/runs/custom
+python -m viglat.run_from_url --html saved_page.html --work-dir output/runs/3
+python -m viglat.run_from_url --url "..." --skip-eval          # pipeline only
+python -m viglat.run_from_url --url "..." --single-model gpt-5.6-luna
 ```
 
 ---
@@ -142,7 +142,7 @@ python -m atsn.run_from_url --url "..." --single-model gpt-5.6-luna
 Build a product JSON from an Amazon URL. Downloads the main product image into the same folder.
 
 ```bash
-python -m atsn.extract_dom \
+python -m viglat.extract_dom \
   --url "https://www.amazon.fr/dp/B077XM3DV5" \
   --output-dir output/runs/1
 ```
@@ -155,7 +155,7 @@ Creates:
 If Amazon blocks automated requests, save the page HTML in your browser and parse locally:
 
 ```bash
-python -m atsn.extract_dom --html saved_page.html --output-dir output/runs/1
+python -m viglat.extract_dom --html saved_page.html --output-dir output/runs/1
 ```
 
 You can also use a product JSON from the paper dataset: `evaluation_dataset/1/dom.json` (each folder `1/` … `30/` contains metadata for one product).
@@ -175,13 +175,13 @@ One command runs all generation stages via OpenAI:
 | 7 | Fuser | `prompts/fuser.txt` | validator outputs |
 
 ```bash
-python -m atsn.pipeline --product output/runs/1/dom.json --output output/runs/1/pipeline.json
+python -m viglat.pipeline --product output/runs/1/dom.json --output output/runs/1/pipeline.json
 ```
 
 Or with a paper-dataset product:
 
 ```bash
-python -m atsn.pipeline --product evaluation_dataset/1/dom.json
+python -m viglat.pipeline --product evaluation_dataset/1/dom.json
 ```
 
 Output: `output/<stem>_pipeline.json` with `final_alt_text` and per-stage results.
@@ -191,7 +191,7 @@ Output: `output/<stem>_pipeline.json` with `final_alt_text` and per-stage result
 The pipeline already runs claim extraction inline (stage 3). This step re-extracts claims into the batch format used by evaluators:
 
 ```bash
-python -m atsn.alt_to_list_batch \
+python -m viglat.alt_to_list_batch \
   --source pipeline \
   --pipeline output/B077XM3DV5_pipeline.json \
   --output-dir output/runs/B077XM3DV5/final_alt_claim_lists
@@ -202,7 +202,7 @@ Output: `output/runs/B077XM3DV5/final_alt_claim_lists/B077XM3DV5_claims.json`
 ### Step 4 — Relevancy evaluation
 
 ```bash
-python -m atsn.relevancy_evaluator_batch \
+python -m viglat.relevancy_evaluator_batch \
   --algorithm our \
   --our-claims-dir output/runs/B077XM3DV5/final_alt_claim_lists \
   --products-dir output/runs/B077XM3DV5 \
@@ -215,7 +215,7 @@ Prompt: `prompts/evaluators/relevancy.txt`
 ### Step 5 — Redundancy evaluation
 
 ```bash
-python -m atsn.redundancy_evaluator_batch \
+python -m viglat.redundancy_evaluator_batch \
   --algorithm our \
   --relevancy-input output/runs/B077XM3DV5/relevancy_evaluations.json \
   --products-dir output/runs/B077XM3DV5 \
@@ -227,7 +227,7 @@ Prompt: `prompts/evaluators/redundancy.txt`
 ### Step 6 — Objectivity evaluation
 
 ```bash
-python -m atsn.objectivity_evaluator_batch \
+python -m viglat.objectivity_evaluator_batch \
   --algorithm our \
   --relevancy-input output/runs/B077XM3DV5/relevancy_evaluations.json \
   --products-dir output/runs/B077XM3DV5 \
@@ -242,7 +242,7 @@ Prompt: `prompts/evaluators/objectivity.txt`
 Deterministic metric (no LLM): `(relevant_novel_claims / ALT word count) × 100`
 
 ```bash
-python -m atsn.efficiency_evaluator_batch \
+python -m viglat.efficiency_evaluator_batch \
   --algorithm our \
   --redundancy-input output/runs/B077XM3DV5/redundancy_evaluations.json \
   --relevancy-input output/runs/B077XM3DV5/relevancy_evaluations.json \
@@ -272,8 +272,8 @@ Top-level `evaluation_dataset/summary.json` holds averaged metrics across all 30
 ### Re-run pipeline on a paper product
 
 ```bash
-python -m atsn.pipeline --product evaluation_dataset/1/dom.json
-python -m atsn.pipeline --product evaluation_dataset/1/dom.json --single-model gpt-5.6-luna
+python -m viglat.pipeline --product evaluation_dataset/1/dom.json
+python -m viglat.pipeline --product evaluation_dataset/1/dom.json --single-model gpt-5.6-luna
 ```
 
 To process all 30 products, run the pipeline once per folder (or use a shell loop over `evaluation_dataset/*/dom.json`).
@@ -297,7 +297,7 @@ Compare your outputs to the pre-computed files in `evaluation_dataset/N/evaluati
 
 - Amazon DOM extraction may be blocked by bot detection; use `--html` with a saved page when needed. Scraping is your responsibility under Amazon's terms of service.
 - Re-running the pipeline produces new alt texts; LLM outputs vary. Use `evaluation_dataset/` to verify published paper numbers.
-- If you see `atsn.egg-info/` under `src/` after `pip install -e .`, that is a local build artifact (gitignored).
+- If you see `viglat.egg-info/` under `src/` after `pip install -e .`, that is a local build artifact (gitignored).
 
 ## Citation
 
@@ -305,7 +305,7 @@ If you use this code or dataset in your research, please cite:
 
 ```bibtex
 @article{vigalt2026,
-  title   = {ViGALT: Visual-Grounded ALT Text Generation for E-Commerce Product Images},
+  title   = {ViGALT: Visual Gap-Aware ALT Text Generation for E-Commerce Product Images},
   author  = {TODO: Add authors},
   journal = {TODO: Add venue},
   year    = {2026}

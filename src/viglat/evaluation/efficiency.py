@@ -9,8 +9,8 @@ Sources:
   alt text   — embedded in redundancy records or relevancy input
 
 Usage:
-  python -m atsn.efficiency_evaluator_batch
-  python -m atsn.efficiency_evaluator_batch --skip-existing
+  python -m viglat.efficiency_evaluator_batch
+  python -m viglat.efficiency_evaluator_batch --skip-existing
 """
 
 from __future__ import annotations

@@ -5,10 +5,10 @@ Extract product DOM metadata from an Amazon product page URL.
 Writes JSON matching data/products/*.json and evaluation_dataset/*/dom.json.
 
 Usage:
-  python -m atsn.extract_dom --url "https://www.amazon.com/dp/B0..."
-  python -m atsn.extract_dom --url "https://www.amazon.com/dp/B0..." --output-dir output/runs/1
-  python -m atsn.extract_dom --html saved_page.html --output dom.json
-  python -m atsn.extract_dom --url "https://www.amazon.com/dp/B0..." --stdout
+  python -m viglat.extract_dom --url "https://www.amazon.com/dp/B0..."
+  python -m viglat.extract_dom --url "https://www.amazon.com/dp/B0..." --output-dir output/runs/1
+  python -m viglat.extract_dom --html saved_page.html --output dom.json
+  python -m viglat.extract_dom --url "https://www.amazon.com/dp/B0..." --stdout
 """
 
 from __future__ import annotations

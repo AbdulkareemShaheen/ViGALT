@@ -10,9 +10,9 @@ summary.json with averaged metrics.
 Renames the AAAA method to ViGALT everywhere.
 
 Usage:
-  python -m atsn.build_dataset
-  python -m atsn.build_dataset --source Dataset --output evaluation_dataset
-  python -m atsn.build_dataset --force
+  python -m viglat.build_dataset
+  python -m viglat.build_dataset --source Dataset --output evaluation_dataset
+  python -m viglat.build_dataset --force
 """
 
 from __future__ import annotations

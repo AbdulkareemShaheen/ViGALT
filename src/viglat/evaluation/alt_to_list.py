@@ -4,14 +4,14 @@ Batch-run claim extraction on ALT texts via GPT 5.6 and alt_to_list.txt.
 
 Sources:
   pipeline — final_alt_text from output/*_pipeline.json
-  asset24  — ASSEST24 column from data/ATSN_Dataset.xlsx
+  asset24  — ASSEST24 column from data/viglat_Dataset.xlsx
 
 Usage:
-  python -m atsn.alt_to_list_batch --source pipeline --all
-  python -m atsn.alt_to_list_batch --source asset24 --all
-  python -m atsn.alt_to_list_batch --source pipeline --pipeline output/1_clothing_pipeline.json
-  python -m atsn.alt_to_list_batch --source asset24 --index 5
-  python -m atsn.alt_to_list_batch --source asset24 --all --skip-existing
+  python -m viglat.alt_to_list_batch --source pipeline --all
+  python -m viglat.alt_to_list_batch --source asset24 --all
+  python -m viglat.alt_to_list_batch --source pipeline --pipeline output/1_clothing_pipeline.json
+  python -m viglat.alt_to_list_batch --source asset24 --index 5
+  python -m viglat.alt_to_list_batch --source asset24 --all --skip-existing
 """
 
 from __future__ import annotations
@@ -36,7 +36,7 @@ from ..pipeline.types import StageConfig, StageResult
 PROMPTS_DIR = "prompts"
 DEFAULT_PIPELINE_DIR = "output"
 DEFAULT_PIPELINE_OUTPUT_DIR = "output/final_alt_claim_lists"
-DEFAULT_ASSET24_EXCEL = "data/ATSN_Dataset.xlsx"
+DEFAULT_ASSET24_EXCEL = "data/viglat_Dataset.xlsx"
 DEFAULT_ASSET24_OUTPUT_DIR = "output/ASSEST24_claim_lists"
 ASSET24_COLUMN = "ASSEST24 GENERATED SHORT CONTEXT-Aware ALT TEXT"
 PROMPT_FILE = "alt_to_list.txt"
@@ -67,7 +67,7 @@ def parse_args() -> argparse.Namespace:
         "--source",
         choices=["pipeline", "asset24"],
         default="pipeline",
-        help="ALT text source: pipeline JSON outputs or ATSN Dataset.xlsx (default: pipeline).",
+        help="ALT text source: pipeline JSON outputs or viglat Dataset.xlsx (default: pipeline).",
     )
     parser.add_argument(
         "--all",
@@ -94,7 +94,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--excel-file",
         default=DEFAULT_ASSET24_EXCEL,
-        help=f"ATSN Dataset workbook (default: {DEFAULT_ASSET24_EXCEL}).",
+        help=f"viglat Dataset workbook (default: {DEFAULT_ASSET24_EXCEL}).",
     )
     parser.add_argument(
         "--output-dir",

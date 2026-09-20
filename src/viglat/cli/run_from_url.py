@@ -5,11 +5,11 @@ Run the full ViGALT workflow from an Amazon product URL.
 Steps: extract DOM + image → 7-stage pipeline → export claims → evaluation.
 
 Usage:
-  python -m atsn.run_from_url --url "https://www.amazon.fr/dp/B077XM3DV5"
-  python -m atsn.run_from_url --url "..." --run-id 5
-  python -m atsn.run_from_url --url "..." --work-dir output/runs/3
-  python -m atsn.run_from_url --html saved_page.html --work-dir output/runs/3
-  python -m atsn.run_from_url --url "..." --skip-eval
+  python -m viglat.run_from_url --url "https://www.amazon.fr/dp/B077XM3DV5"
+  python -m viglat.run_from_url --url "..." --run-id 5
+  python -m viglat.run_from_url --url "..." --work-dir output/runs/3
+  python -m viglat.run_from_url --html saved_page.html --work-dir output/runs/3
+  python -m viglat.run_from_url --url "..." --skip-eval
 """
 
 from __future__ import annotations
@@ -182,7 +182,7 @@ def run(args: argparse.Namespace) -> int:
     extract_cmd = [
         sys.executable,
         "-m",
-        "atsn.cli.extract_dom",
+        "viglat.cli.extract_dom",
         "--output-dir",
         str(paths.work_dir),
         "--run-id",
@@ -204,7 +204,7 @@ def run(args: argparse.Namespace) -> int:
     pipeline_cmd = [
         sys.executable,
         "-m",
-        "atsn.pipeline",
+        "viglat.pipeline",
         "--product",
         str(paths.dom_json),
         "--output",
@@ -249,7 +249,7 @@ def run(args: argparse.Namespace) -> int:
     relevancy_cmd = [
         sys.executable,
         "-m",
-        "atsn.evaluation.relevancy",
+        "viglat.evaluation.relevancy",
         *eval_with_image,
         "--our-claims-dir",
         str(paths.work_dir),
@@ -262,7 +262,7 @@ def run(args: argparse.Namespace) -> int:
     redundancy_cmd = [
         sys.executable,
         "-m",
-        "atsn.evaluation.redundancy",
+        "viglat.evaluation.redundancy",
         *eval_base,
         "--relevancy-input",
         str(paths.relevancy_json),
@@ -275,7 +275,7 @@ def run(args: argparse.Namespace) -> int:
     objectivity_cmd = [
         sys.executable,
         "-m",
-        "atsn.evaluation.objectivity",
+        "viglat.evaluation.objectivity",
         *eval_with_image,
         "--relevancy-input",
         str(paths.relevancy_json),
@@ -288,7 +288,7 @@ def run(args: argparse.Namespace) -> int:
     efficiency_cmd = [
         sys.executable,
         "-m",
-        "atsn.evaluation.efficiency",
+        "viglat.evaluation.efficiency",
         "--algorithm",
         "our",
         "--redundancy-input",

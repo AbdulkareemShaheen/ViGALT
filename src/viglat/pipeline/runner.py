@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-Multi-stage ALT-text pipeline.
+ViGALT: Visual Gap-Aware ALT Text Generation pipeline.
 
 Runs 7 stages (classifier → generator → claim extraction → 3 validators → fuser)
 via the OpenAI Chat Completions API.
 
 Usage:
-  python -m atsn.pipeline                          # first product only (validation)
-  python -m atsn.pipeline --product data/products/1_clothing.json
-  python -m atsn.pipeline --all
-  python -m atsn.pipeline --single-model gpt-4o
+  python -m viglat.pipeline                          # first product only (validation)
+  python -m viglat.pipeline --product data/products/1_clothing.json
+  python -m viglat.pipeline --all
+  python -m viglat.pipeline --single-model gpt-4o
 """
 
 from __future__ import annotations

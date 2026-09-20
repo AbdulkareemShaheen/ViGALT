@@ -10,10 +10,10 @@ Each run sends the product image, category, and atomic claims to the relevancy
 prompt and writes all 60 evaluations into one combined JSON file.
 
 Usage:
-  python -m atsn.relevancy_evaluator_batch
-  python -m atsn.relevancy_evaluator_batch --output output/relevancy_evaluations.json
-  python -m atsn.relevancy_evaluator_batch --algorithm our
-  python -m atsn.relevancy_evaluator_batch --skip-existing
+  python -m viglat.relevancy_evaluator_batch
+  python -m viglat.relevancy_evaluator_batch --output output/relevancy_evaluations.json
+  python -m viglat.relevancy_evaluator_batch --algorithm our
+  python -m viglat.relevancy_evaluator_batch --skip-existing
 """
 
 from __future__ import annotations

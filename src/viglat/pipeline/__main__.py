@@ -1,4 +1,4 @@
-"""Entry point for ``python -m atsn.pipeline``."""
+"""Entry point for ``python -m viglat.pipeline``."""
 
 from .runner import main
 

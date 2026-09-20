@@ -9,8 +9,8 @@ Sources:
   relevancy — output/relevancy_evaluations.json
 
 Usage:
-  python -m atsn.combine_claims_relevancy
-  python -m atsn.combine_claims_relevancy --output output/claims_with_labels
+  python -m viglat.combine_claims_relevancy
+  python -m viglat.combine_claims_relevancy --output output/claims_with_labels
 """
 
 from __future__ import annotations

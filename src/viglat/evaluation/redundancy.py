@@ -6,9 +6,9 @@ Source: output/relevancy_evaluations.json (status ok)
 DOM:    data/products/{product_stem}.json via build_product_dom()
 
 Usage:
-  python -m atsn.redundancy_evaluator_batch
-  python -m atsn.redundancy_evaluator_batch --skip-existing
-  python -m atsn.redundancy_evaluator_batch --algorithm our
+  python -m viglat.redundancy_evaluator_batch
+  python -m viglat.redundancy_evaluator_batch --skip-existing
+  python -m viglat.redundancy_evaluator_batch --algorithm our
 """
 
 from __future__ import annotations

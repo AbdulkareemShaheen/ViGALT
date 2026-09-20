@@ -7,9 +7,9 @@ ALT text: final_alt_text (our) or asset24_alt_text (asset24)
 Image:    data/images/ with data/products/ fallback
 
 Usage:
-  python -m atsn.objectivity_evaluator_batch
-  python -m atsn.objectivity_evaluator_batch --skip-existing
-  python -m atsn.objectivity_evaluator_batch --algorithm asset24
+  python -m viglat.objectivity_evaluator_batch
+  python -m viglat.objectivity_evaluator_batch --skip-existing
+  python -m viglat.objectivity_evaluator_batch --algorithm asset24
 """
 
 from __future__ import annotations

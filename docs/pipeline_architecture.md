@@ -1,6 +1,6 @@
-# ATSN — Accessible Alt-Text Generation Pipeline
+# ViGALT — Visual Gap-Aware ALT Text Generation
 
-> **Runtime note:** This public repository runs all pipeline and evaluator stages via the **OpenAI API** ([`backend/openai.py`](../src/atsn/backend/openai.py)). Gemini model names referenced below are from the original research design; actual model IDs are configured in [`backend/config.py`](../src/atsn/backend/config.py).
+> **Runtime note:** This public repository runs all pipeline and evaluator stages via the **OpenAI API** ([`backend/openai.py`](../src/viglat/backend/openai.py)). Gemini model names referenced below are from the original research design; actual model IDs are configured in [`backend/config.py`](../src/viglat/backend/config.py).
 
 **Purpose:** Generate high-quality, accurate, screen-reader-friendly **ALT text** for e-commerce product images, serving Blind and Low-Vision (BLV) users. The system takes a product image plus its surrounding page text and produces a final, objective, hallucination-free ALT text through a multi-stage generate → deconstruct → validate → fuse pipeline.
 
