@@ -69,17 +69,27 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-Set your OpenAI API key in the environment (required for all LLM stages):
+Set your OpenAI API key (required for all LLM stages). Either copy `.env.example` to `.env` and fill in your key, or export it in the shell:
 
 ```powershell
-# PowerShell (Windows)
+# Option A: .env file (recommended)
+copy .env.example .env
+# Edit .env and set OPENAI_API_KEY=sk-...
+
+# Option B: PowerShell (Windows)
 $env:OPENAI_API_KEY = "sk-..."
 ```
 
 ```bash
-# macOS/Linux
+# Option A: .env file (recommended)
+cp .env.example .env
+# Edit .env and set OPENAI_API_KEY=sk-...
+
+# Option B: macOS/Linux
 export OPENAI_API_KEY=sk-...
 ```
+
+The `.env` file in the project root is loaded automatically when you run any `python -m atsn.*` command.
 
 Default model for all stages is **`gpt-5.6-luna`** (configured in [`src/atsn/backend/config.py`](src/atsn/backend/config.py)). Override with `--single-model` on any command.
 

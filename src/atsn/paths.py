@@ -8,6 +8,22 @@ PACKAGE_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = PACKAGE_DIR.parent.parent
 
 
+def load_env() -> None:
+    """Load ``.env`` from the project root into ``os.environ`` (if present)."""
+    env_path = PROJECT_ROOT / ".env"
+    if not env_path.exists():
+        return
+    try:
+        from dotenv import load_dotenv
+
+        load_dotenv(env_path, override=False)
+    except ImportError:
+        pass
+
+
+load_env()
+
+
 def project_root() -> Path:
     return PROJECT_ROOT
 
