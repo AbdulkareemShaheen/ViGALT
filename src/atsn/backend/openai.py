@@ -8,19 +8,19 @@ from pathlib import Path
 
 from openai import APIConnectionError, APITimeoutError, OpenAI, RateLimitError
 
-from .openai_config import (
-    build_sampling_params,
-    resolve_openai_model,
-    strip_sampling_params,
-)
-from .openai_schemas import schema_for_stage
-from .pipeline_types import StageConfig, StageResult
-from .pipeline_utils import (
+from ..pipeline.types import StageConfig, StageResult
+from ..pipeline.utils import (
     build_user_message,
     is_noise_response,
     load_prompt_template,
     split_prompt,
 )
+from .config import (
+    build_sampling_params,
+    resolve_openai_model,
+    strip_sampling_params,
+)
+from .schemas import schema_for_stage
 
 BACKEND_NAME = "openai_api"
 MAX_RETRIES = 3

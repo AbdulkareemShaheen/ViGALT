@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 import requests
 from bs4 import BeautifulSoup
 
-from .pipeline_utils import normalize_product_record, validate_product_record
+from ..pipeline.utils import normalize_product_record, validate_product_record
 
 AMAZON_HOST_PATTERN = re.compile(r"(^|\.)amazon\.(com|co\.uk|de|fr|it|es|ca|com\.au|in|nl|se|pl|com\.be|com\.mx|com\.br|co\.jp|ae|sa|sg|com\.tr)$")
 ASIN_PATTERN = re.compile(r"(?:/dp/|/gp/product/|/gp/aw/d/|/product/)([A-Z0-9]{10})", re.I)

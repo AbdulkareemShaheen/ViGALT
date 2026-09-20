@@ -24,15 +24,14 @@ from pathlib import Path
 
 from openai import OpenAI
 
-from .openai_backend import run_stage_openai
-from .openai_config import resolve_openai_model
-from .pipeline_types import StageConfig, StageResult
-from .pipeline_utils import (
+from ..backend.config import resolve_openai_model
+from ..backend.openai import run_stage_openai
+from ..paths import project_root, resolve_path
+from .types import StageConfig, StageResult
+from .utils import (
     ProductData,
     list_product_files,
     load_product,
-    project_root,
-    resolve_path,
 )
 
 OUTPUT_DIR = "output"
@@ -598,5 +597,9 @@ def run(args: argparse.Namespace) -> int:
     return run_openai_pipeline(args, product_files)
 
 
+def main() -> int:
+    return run(parse_args())
+
+
 if __name__ == "__main__":
-    sys.exit(run(parse_args()))
+    sys.exit(main())

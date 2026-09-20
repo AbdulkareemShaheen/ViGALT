@@ -10,6 +10,8 @@ from urllib.parse import urlparse
 
 import requests
 
+from ..paths import project_root, resolve_path
+
 DOWNLOADS_DIR = "downloads"
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
 
@@ -41,17 +43,6 @@ class ProductData:
     image_path: Path
     surrounding_text: str
     product_dom: str
-
-
-def project_root() -> Path:
-    return Path(__file__).resolve().parents[2]
-
-
-def resolve_path(path_arg: str | Path) -> Path:
-    path = Path(path_arg)
-    if not path.is_absolute():
-        path = project_root() / path
-    return path.resolve()
 
 
 def image_filename_from_url(image_url: str) -> str:

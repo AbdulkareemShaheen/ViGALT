@@ -2,7 +2,7 @@
 
 Research codebase for **ViGALT**, a multi-stage pipeline that generates high-quality, screen-reader-friendly alt text for e-commerce product images. The system takes a product image plus surrounding page text and produces objective, hallucination-filtered alt text through a 7-stage generate → deconstruct → validate → fuse pipeline.
 
-This repository is the public release accompanying our research paper. It includes the full source code, prompts, product metadata, and the consolidated evaluation dataset with published results for **ViGALT** vs. the **ASSETS24** baseline.
+This repository is the public release accompanying our research paper. It includes the full source code, prompts, and the consolidated evaluation dataset with published results for **ViGALT** vs. the **ASSETS24** baseline.
 
 ## Pipeline Overview
 
@@ -27,24 +27,37 @@ Every product is classified as **CLOTHING** or **FURNITURE**. Stages 4–6 run i
 .
 ├── src/atsn/              Python package (pipeline + evaluators)
 ├── prompts/               Stage prompts and evaluation rubrics
-├── data/products/         30 product JSON files (15 clothing, 15 furniture)
 ├── evaluation_dataset/    Published per-image results (30 folders + summary.json)
 ├── docs/                  Architecture documentation
+├── output/                Generated runs (created when you execute the pipeline)
 ├── pyproject.toml         Package metadata
 ├── requirements.txt       Pinned dependencies
 └── .env.example           API key template
 ```
 
-### `src/` structure
+### `src/atsn/` structure
 
-| Group | Modules |
+```
+src/atsn/
+├── paths.py                 Stable project-root resolution
+├── pipeline/                7-stage runner, utils, types
+├── backend/                 OpenAI client, config, JSON schemas
+├── extraction/              Amazon DOM scraper
+├── evaluation/              Relevancy, redundancy, objectivity, efficiency evaluators
+├── cli/                     extract_dom, run_from_url, build_dataset, combine_claims
+└── *.py shims               Backward-compatible entry points (e.g. pipeline via package)
+```
+
+| Group | Location |
 |---|---|
-| Pipeline core | `pipeline.py`, `pipeline_utils.py`, `pipeline_types.py` |
-| Backend | `openai_backend.py`, `openai_config.py`, `openai_schemas.py` |
-| DOM extraction | `extract_dom.py`, `amazon_extractor.py` |
-| Orchestration | `run_from_url.py` |
-| Evaluators | `*_evaluator_batch.py`, `combine_claims_relevancy.py`, `evaluator_batch_utils.py` |
-| Dataset tools | `build_dataset.py`, `alt_to_list_batch.py` |
+| Pipeline core | `pipeline/runner.py`, `pipeline/utils.py`, `pipeline/types.py` |
+| Backend | `backend/openai.py`, `backend/config.py`, `backend/schemas.py` |
+| DOM extraction | `cli/extract_dom.py`, `extraction/amazon.py` |
+| Orchestration | `cli/run_from_url.py` |
+| Evaluators | `evaluation/relevancy.py`, `redundancy.py`, `objectivity.py`, `efficiency.py`, `alt_to_list.py` |
+| Dataset tools | `cli/build_dataset.py`, `cli/combine_claims.py` |
+
+All documented `python -m atsn.*` commands still work via thin shims at the package root.
 
 ## Setup
 
@@ -56,11 +69,19 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-Copy `.env.example` to `.env` and set your API key:
+Set your OpenAI API key in the environment (required for all LLM stages):
 
+```powershell
+# PowerShell (Windows)
+$env:OPENAI_API_KEY = "sk-..."
 ```
-OPENAI_API_KEY=sk-...
+
+```bash
+# macOS/Linux
+export OPENAI_API_KEY=sk-...
 ```
+
+Default model for all stages is **`gpt-5.6-luna`** (configured in [`src/atsn/backend/config.py`](src/atsn/backend/config.py)). Override with `--single-model` on any command.
 
 ---
 
@@ -80,7 +101,7 @@ Options:
 python -m atsn.run_from_url --url "..." --work-dir output/runs/my_product
 python -m atsn.run_from_url --html saved_page.html --work-dir output/runs/B077XM3DV5
 python -m atsn.run_from_url --url "..." --skip-eval          # pipeline only
-python -m atsn.run_from_url --url "..." --single-model gpt-4o
+python -m atsn.run_from_url --url "..." --single-model gpt-5.6-luna
 ```
 
 ---
@@ -107,6 +128,8 @@ If Amazon blocks automated requests, save the page HTML in your browser and pars
 python -m atsn.extract_dom --html saved_page.html --output-dir output/runs/B077XM3DV5
 ```
 
+You can also use a product JSON from the paper dataset: `evaluation_dataset/1/dom.json` (each folder `1/` … `30/` contains metadata for one product).
+
 ### Step 2 — Generate alt text (7 pipeline stages)
 
 One command runs all generation stages via OpenAI:
@@ -125,7 +148,13 @@ One command runs all generation stages via OpenAI:
 python -m atsn.pipeline --product output/runs/B077XM3DV5/B077XM3DV5.json
 ```
 
-Output: `output/B077XM3DV5_pipeline.json` with `final_alt_text` and per-stage results.
+Or with a paper-dataset product:
+
+```bash
+python -m atsn.pipeline --product evaluation_dataset/1/dom.json
+```
+
+Output: `output/<stem>_pipeline.json` with `final_alt_text` and per-stage results.
 
 ### Step 3 — Extract claims (evaluation format)
 
@@ -192,44 +221,36 @@ python -m atsn.efficiency_evaluator_batch \
 
 ---
 
-## Batch reproduction (30 products)
+## Paper dataset (30 products)
 
-### What is already included
+### What is included
 
 The `evaluation_dataset/` folder contains everything needed to **verify** the paper numbers:
 
 | File per folder (`1/` … `30/`) | Contents |
 |---|---|
-| `<image>.jpg` | Product image |
-| `dom.json` | Product metadata (title, brand, features, …) |
+| `dom.json` | Product metadata (title, brand, features, `main_image` URL, …) |
 | `alt_text_and_claims.txt` | ViGALT and ASSETS24 alt text + plain claims |
 | `evaluation.json` | Relevancy, redundancy, objectivity, efficiency metrics |
 
 Top-level `evaluation_dataset/summary.json` holds averaged metrics across all 30 products.
 
-### Re-run pipeline on all products
+- **30 products:** folders `1/` … `30/` (15 clothing, 15 furniture)
+- Product JSONs live at `evaluation_dataset/N/dom.json` — not in a separate `data/` folder
+- Images are referenced by URL in `dom.json`; the pipeline downloads them on first run
+
+### Re-run pipeline on a paper product
 
 ```bash
-python -m atsn.pipeline --all
-python -m atsn.pipeline --single-model gpt-4o --product data/products/1_clothing.json
+python -m atsn.pipeline --product evaluation_dataset/1/dom.json
+python -m atsn.pipeline --product evaluation_dataset/1/dom.json --single-model gpt-5.6-luna
 ```
 
-### Re-run evaluators on all products
+To process all 30 products, run the pipeline once per folder (or use a shell loop over `evaluation_dataset/*/dom.json`).
 
-```bash
-python -m atsn.alt_to_list_batch --source pipeline --all
-python -m atsn.relevancy_evaluator_batch
-python -m atsn.redundancy_evaluator_batch
-python -m atsn.objectivity_evaluator_batch
-python -m atsn.efficiency_evaluator_batch
-python -m atsn.combine_claims_relevancy
-```
+### Verify published metrics
 
-### Rebuild evaluation dataset from raw `Dataset/` folders
-
-```bash
-python -m atsn.build_dataset --source Dataset --output evaluation_dataset
-```
+Compare your outputs to the pre-computed files in `evaluation_dataset/N/evaluation.json` and the averages in `evaluation_dataset/summary.json`. No re-run is required to check the paper numbers.
 
 ---
 
@@ -241,12 +262,6 @@ python -m atsn.build_dataset --source Dataset --output evaluation_dataset
 | Redundancy | Novel vs. avoidable repetition relative to product DOM |
 | Objectivity | Objective vs. subjective claim labels |
 | Efficiency | `(relevant_novel_claims / ALT word count) × 100` |
-
-## Dataset
-
-- **30 products:** 15 clothing (`1_clothing` … `15_clothing`) and 15 furniture (`16_furniture` … `30_furniture`)
-- Each product JSON in `data/products/` contains title, brand, description, feature bullets, and a `main_image` URL
-- Published evaluation results are in `evaluation_dataset/` with `summary.json` averages
 
 ## Notes
 
