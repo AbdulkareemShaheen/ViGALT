@@ -143,7 +143,11 @@ def _job_from_relevancy(result: dict, products_dir: Path) -> RedundancyJob:
         product_stem=product_stem,
         category=str(result.get("category") or ""),
         input_claims=claims_with_relevance_from_relevancy(result),
-        product_dom=load_product_dom(product_stem, products_dir),
+        product_dom=load_product_dom(
+            product_stem,
+            products_dir,
+            product_file=result.get("product_file"),
+        ),
         metadata={
             "relevancy_job_key": relevancy_job_key(result["algorithm"], product_stem),
             "claim_list_file": result.get("claim_list_file"),

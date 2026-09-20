@@ -137,6 +137,31 @@ def category_from_stem(stem: str) -> str:
     raise ValueError(f"Cannot infer category from product stem: {stem!r}")
 
 
+def resolve_category(product_stem: str, record: dict) -> str:
+    try:
+        return category_from_stem(product_stem)
+    except ValueError:
+        pass
+
+    category = record.get("classification_category")
+    if category in ("CLOTHING", "FURNITURE"):
+        return str(category)
+
+    source = record.get("source_pipeline") or record.get("source")
+    if source:
+        pipeline_path = Path(str(source))
+        if pipeline_path.exists():
+            pipeline_record = json.loads(pipeline_path.read_text(encoding="utf-8"))
+            category = pipeline_record.get("classification_category")
+            if category in ("CLOTHING", "FURNITURE"):
+                return str(category)
+
+    raise ValueError(
+        f"Cannot infer category for product stem {product_stem!r}. "
+        "Expected *_clothing/*_furniture stem or classification_category in claim/pipeline JSON."
+    )
+
+
 def category_from_type(value: str) -> str:
     normalized = value.strip().lower()
     if normalized == "clothing":
@@ -181,8 +206,16 @@ def discover_our_jobs(claims_dir: Path, products_dir: Path) -> list[RelevancyJob
     for claim_file in sorted(claims_dir.glob("*_claims.json")):
         record = json.loads(claim_file.read_text(encoding="utf-8"))
         product_stem = str(record.get("product_stem") or claim_file.stem.removesuffix("_claims"))
-        category = category_from_stem(product_stem)
+        category = resolve_category(product_stem, record)
         claims = load_claims_from_file(claim_file)
+        metadata = {
+            "source_pipeline": record.get("source_pipeline"),
+            "final_alt_text": record.get("final_alt_text"),
+        }
+        if record.get("product_file"):
+            metadata["product_file"] = record.get("product_file")
+        if record.get("classification_category"):
+            metadata["classification_category"] = record.get("classification_category")
         jobs.append(
             RelevancyJob(
                 algorithm="our",
@@ -190,10 +223,7 @@ def discover_our_jobs(claims_dir: Path, products_dir: Path) -> list[RelevancyJob
                 product_stem=product_stem,
                 category=category,
                 claims=claims,
-                metadata={
-                    "source_pipeline": record.get("source_pipeline"),
-                    "final_alt_text": record.get("final_alt_text"),
-                },
+                metadata=metadata,
             )
         )
 

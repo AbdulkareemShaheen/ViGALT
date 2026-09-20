@@ -99,15 +99,29 @@ def resolve_image_reference(
     return remote_url, remote_url
 
 
-def load_product_dom(product_stem: str, products_dir: Path) -> str:
-    product_file = products_dir / f"{product_stem}.json"
-    if not product_file.exists():
-        raise FileNotFoundError(f"Product JSON not found: {product_file}")
+def load_product_dom(
+    product_stem: str,
+    products_dir: Path,
+    *,
+    product_file: str | Path | None = None,
+) -> str:
+    candidates: list[Path] = []
+    if product_file:
+        candidates.append(Path(product_file))
+    candidates.append(products_dir / f"{product_stem}.json")
 
-    data = json.loads(product_file.read_text(encoding="utf-8"))
-    if not isinstance(data, dict):
-        raise ValueError(f"{product_file} must contain a JSON object.")
-    return build_product_dom(data)
+    for path in candidates:
+        if not path.exists():
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(data, dict):
+            raise ValueError(f"{path} must contain a JSON object.")
+        return build_product_dom(data)
+
+    searched = ", ".join(str(path) for path in candidates)
+    raise FileNotFoundError(
+        f"Product JSON not found for stem {product_stem!r}. Checked: {searched}"
+    )
 
 
 def relevancy_job_key(algorithm: str, product_stem: str) -> str:

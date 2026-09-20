@@ -30,7 +30,6 @@ Every product is classified as **CLOTHING** or **FURNITURE**. Stages 4–6 run i
 ├── data/products/         30 product JSON files (15 clothing, 15 furniture)
 ├── evaluation_dataset/    Published per-image results (30 folders + summary.json)
 ├── docs/                  Architecture documentation
-├── scripts/               Batch run helpers (PowerShell)
 ├── pyproject.toml         Package metadata
 ├── requirements.txt       Pinned dependencies
 └── .env.example           API key template
@@ -38,16 +37,14 @@ Every product is classified as **CLOTHING** or **FURNITURE**. Stages 4–6 run i
 
 ### `src/` structure
 
-`src/` contains a single Python package, `atsn/`:
-
 | Group | Modules |
 |---|---|
 | Pipeline core | `pipeline.py`, `pipeline_utils.py`, `pipeline_types.py` |
 | Backend | `openai_backend.py`, `openai_config.py`, `openai_schemas.py` |
+| DOM extraction | `extract_dom.py`, `amazon_extractor.py` |
+| Orchestration | `run_from_url.py` |
 | Evaluators | `*_evaluator_batch.py`, `combine_claims_relevancy.py`, `evaluator_batch_utils.py` |
 | Dataset tools | `build_dataset.py`, `alt_to_list_batch.py` |
-
-> **Note:** If you see `atsn.egg-info/` under `src/` after running `pip install -e .`, that is a local build artifact (already gitignored). Only `src/atsn/` is source code.
 
 ## Setup
 
@@ -65,7 +62,137 @@ Copy `.env.example` to `.env` and set your API key:
 OPENAI_API_KEY=sk-...
 ```
 
-## Reproducing Results
+---
+
+## Quick start: one Amazon URL → full run
+
+Runs DOM extraction, alt-text generation, claim extraction, and all four evaluation metrics:
+
+```bash
+python -m atsn.run_from_url --url "https://www.amazon.fr/dp/B077XM3DV5"
+```
+
+Outputs go to `output/runs/B077XM3DV5/` (DOM JSON, image, evaluation JSONs). Pipeline output is saved to `output/B077XM3DV5_pipeline.json`.
+
+Options:
+
+```bash
+python -m atsn.run_from_url --url "..." --work-dir output/runs/my_product
+python -m atsn.run_from_url --html saved_page.html --work-dir output/runs/B077XM3DV5
+python -m atsn.run_from_url --url "..." --skip-eval          # pipeline only
+python -m atsn.run_from_url --url "..." --single-model gpt-4o
+```
+
+---
+
+## Step-by-step guide
+
+### Step 1 — Extract product DOM + image
+
+Build a product JSON from an Amazon URL. Downloads the main product image into the same folder.
+
+```bash
+python -m atsn.extract_dom \
+  --url "https://www.amazon.fr/dp/B077XM3DV5" \
+  --output-dir output/runs/B077XM3DV5
+```
+
+Creates:
+- `output/runs/B077XM3DV5/B077XM3DV5.json` — title, brand, description, feature bullets, product details, `main_image`
+- `output/runs/B077XM3DV5/B077XM3DV5.jpg` — downloaded product image
+
+If Amazon blocks automated requests, save the page HTML in your browser and parse locally:
+
+```bash
+python -m atsn.extract_dom --html saved_page.html --output-dir output/runs/B077XM3DV5
+```
+
+### Step 2 — Generate alt text (7 pipeline stages)
+
+One command runs all generation stages via OpenAI:
+
+| Order | Stage | Prompt | Input |
+|---|---|---|---|
+| 1 | Classifier | `prompts/classifier.txt` | image + surrounding text |
+| 2 | Generator | `prompts/clothing_generator.txt` or `furniture_generator.txt` | image + surrounding text |
+| 3 | Claim extraction | `prompts/alt_to_list.txt` | generated alt text |
+| 4 | Accuracy validator | `prompts/accuracy_validator.txt` | image + claims |
+| 5 | Completeness validator | `prompts/completeness_validator.txt` | image + claims |
+| 6 | Redundancy validator | `prompts/redundancy_validator.txt` | image + claims |
+| 7 | Fuser | `prompts/fuser.txt` | validator outputs |
+
+```bash
+python -m atsn.pipeline --product output/runs/B077XM3DV5/B077XM3DV5.json
+```
+
+Output: `output/B077XM3DV5_pipeline.json` with `final_alt_text` and per-stage results.
+
+### Step 3 — Extract claims (evaluation format)
+
+The pipeline already runs claim extraction inline (stage 3). This step re-extracts claims into the batch format used by evaluators:
+
+```bash
+python -m atsn.alt_to_list_batch \
+  --source pipeline \
+  --pipeline output/B077XM3DV5_pipeline.json \
+  --output-dir output/runs/B077XM3DV5/final_alt_claim_lists
+```
+
+Output: `output/runs/B077XM3DV5/final_alt_claim_lists/B077XM3DV5_claims.json`
+
+### Step 4 — Relevancy evaluation
+
+```bash
+python -m atsn.relevancy_evaluator_batch \
+  --algorithm our \
+  --our-claims-dir output/runs/B077XM3DV5/final_alt_claim_lists \
+  --products-dir output/runs/B077XM3DV5 \
+  --images-dir output/runs/B077XM3DV5 \
+  --output output/runs/B077XM3DV5/relevancy_evaluations.json
+```
+
+Prompt: `prompts/evaluators/relevancy.txt`
+
+### Step 5 — Redundancy evaluation
+
+```bash
+python -m atsn.redundancy_evaluator_batch \
+  --algorithm our \
+  --relevancy-input output/runs/B077XM3DV5/relevancy_evaluations.json \
+  --products-dir output/runs/B077XM3DV5 \
+  --output output/runs/B077XM3DV5/redundancy_evaluations.json
+```
+
+Prompt: `prompts/evaluators/redundancy.txt`
+
+### Step 6 — Objectivity evaluation
+
+```bash
+python -m atsn.objectivity_evaluator_batch \
+  --algorithm our \
+  --relevancy-input output/runs/B077XM3DV5/relevancy_evaluations.json \
+  --products-dir output/runs/B077XM3DV5 \
+  --images-dir output/runs/B077XM3DV5 \
+  --output output/runs/B077XM3DV5/objectivity_evaluations.json
+```
+
+Prompt: `prompts/evaluators/objectivity.txt`
+
+### Step 7 — Efficiency evaluation
+
+Deterministic metric (no LLM): `(relevant_novel_claims / ALT word count) × 100`
+
+```bash
+python -m atsn.efficiency_evaluator_batch \
+  --algorithm our \
+  --redundancy-input output/runs/B077XM3DV5/redundancy_evaluations.json \
+  --relevancy-input output/runs/B077XM3DV5/relevancy_evaluations.json \
+  --output output/runs/B077XM3DV5/efficiency_evaluations.json
+```
+
+---
+
+## Batch reproduction (30 products)
 
 ### What is already included
 
@@ -80,24 +207,14 @@ The `evaluation_dataset/` folder contains everything needed to **verify** the pa
 
 Top-level `evaluation_dataset/summary.json` holds averaged metrics across all 30 products.
 
-### Re-running the pipeline (generates new alt text)
-
-Requires an OpenAI API key (`OPENAI_API_KEY` in `.env`):
+### Re-run pipeline on all products
 
 ```bash
-# Single product
-python -m atsn.pipeline --product data/products/1_clothing.json
-
-# All 30 products
 python -m atsn.pipeline --all
-
-# Override model for all stages
 python -m atsn.pipeline --single-model gpt-4o --product data/products/1_clothing.json
 ```
 
-### Re-running evaluators
-
-Evaluators use OpenAI API and expect pipeline outputs under `output/`:
+### Re-run evaluators on all products
 
 ```bash
 python -m atsn.alt_to_list_batch --source pipeline --all
@@ -108,12 +225,13 @@ python -m atsn.efficiency_evaluator_batch
 python -m atsn.combine_claims_relevancy
 ```
 
-### Batch scripts
+### Rebuild evaluation dataset from raw `Dataset/` folders
 
-```powershell
-.\scripts\run_clothing_6_15.ps1
-.\scripts\run_furniture_16_30.ps1
+```bash
+python -m atsn.build_dataset --source Dataset --output evaluation_dataset
 ```
+
+---
 
 ## Evaluation Metrics
 
@@ -128,8 +246,13 @@ python -m atsn.combine_claims_relevancy
 
 - **30 products:** 15 clothing (`1_clothing` … `15_clothing`) and 15 furniture (`16_furniture` … `30_furniture`)
 - Each product JSON in `data/products/` contains title, brand, description, feature bullets, and a `main_image` URL
-- Product images are included in `evaluation_dataset/<N>/`
 - Published evaluation results are in `evaluation_dataset/` with `summary.json` averages
+
+## Notes
+
+- Amazon DOM extraction may be blocked by bot detection; use `--html` with a saved page when needed. Scraping is your responsibility under Amazon's terms of service.
+- Re-running the pipeline produces new alt texts; LLM outputs vary. Use `evaluation_dataset/` to verify published paper numbers.
+- If you see `atsn.egg-info/` under `src/` after `pip install -e .`, that is a local build artifact (gitignored).
 
 ## Citation
 

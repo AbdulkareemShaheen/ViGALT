@@ -234,21 +234,40 @@ def load_asset24_jobs(excel_file: Path) -> list[AltJob]:
     return jobs
 
 
+def load_pipeline_metadata(pipeline_file: Path) -> dict:
+    record = json.loads(pipeline_file.read_text(encoding="utf-8"))
+    stem = stem_from_pipeline(pipeline_file)
+    metadata = {
+        "product_stem": stem,
+        "source_pipeline": str(pipeline_file.resolve()),
+    }
+    classification_category = record.get("classification_category")
+    if classification_category:
+        metadata["classification_category"] = classification_category
+    product_file = record.get("product_file")
+    if product_file:
+        metadata["product_file"] = str(product_file)
+    return metadata
+
+
 def resolve_pipeline_jobs(args: argparse.Namespace) -> list[AltJob]:
     if args.pipeline:
         pipeline_files = [resolve_path(args.pipeline)]
     else:
         pipeline_files = discover_pipeline_files(resolve_path(args.pipeline_dir))
 
-    return [
-        AltJob(
-            stem=stem_from_pipeline(pipeline_file),
-            alt_text="",
-            source=str(pipeline_file),
-            metadata={"product_stem": stem_from_pipeline(pipeline_file)},
+    jobs: list[AltJob] = []
+    for pipeline_file in pipeline_files:
+        metadata = load_pipeline_metadata(pipeline_file)
+        jobs.append(
+            AltJob(
+                stem=metadata["product_stem"],
+                alt_text="",
+                source=str(pipeline_file.resolve()),
+                metadata=metadata,
+            )
         )
-        for pipeline_file in pipeline_files
-    ]
+    return jobs
 
 
 def resolve_jobs(args: argparse.Namespace) -> list[AltJob]:

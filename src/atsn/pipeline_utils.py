@@ -13,6 +13,26 @@ import requests
 DOWNLOADS_DIR = "downloads"
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
 
+PRODUCT_JSON_KEYS = (
+    "title",
+    "brand",
+    "description",
+    "feature_bullets",
+    "product_details",
+    "main_image",
+    "main_image_alt",
+)
+
+EXCLUDED_PRODUCT_DETAIL_KEYS = frozenset(
+    {
+        "date first available",
+        "manufacturer",
+        "asin",
+        "item model number",
+        "department",
+    }
+)
+
 
 @dataclass
 class ProductData:
@@ -95,6 +115,85 @@ def build_surrounding_text(data: dict) -> str:
 def build_product_dom(data: dict) -> str:
     dom = {k: v for k, v in data.items() if k != "main_image"}
     return json.dumps(dom, indent=2, ensure_ascii=False)
+
+
+def _clean_text(value: object) -> str | None:
+    if value is None:
+        return None
+    text = str(value).strip()
+    text = re.sub(r"[\u200e\u200f\u202a-\u202e]", "", text).strip()
+    return text or None
+
+
+def _normalize_detail_key(key: str) -> str:
+    return re.sub(r"[\u200e\u200f\u202a-\u202e]", "", key).strip()
+
+
+def _normalize_brand(value: object) -> str | None:
+    brand = _clean_text(value)
+    if brand is None:
+        return None
+    if brand.lower().startswith("brand:"):
+        brand = brand.split(":", 1)[1].strip()
+    return brand or None
+
+
+def normalize_product_record(data: dict) -> dict:
+    """Normalize a raw product dict into the canonical dom.json schema."""
+    if not isinstance(data, dict):
+        raise ValueError("Product record must be a JSON object.")
+
+    bullets_raw = data.get("feature_bullets")
+    feature_bullets: list[str] = []
+    if isinstance(bullets_raw, list):
+        seen: set[str] = set()
+        for item in bullets_raw:
+            bullet = _clean_text(item)
+            if bullet and bullet not in seen:
+                seen.add(bullet)
+                feature_bullets.append(bullet)
+
+    details_raw = data.get("product_details")
+    product_details: dict[str, str] = {}
+    if isinstance(details_raw, dict):
+        for key, value in details_raw.items():
+            label = _clean_text(_normalize_detail_key(str(key)))
+            detail_value = _clean_text(value)
+            if not label or not detail_value:
+                continue
+            if label.casefold() in EXCLUDED_PRODUCT_DETAIL_KEYS:
+                continue
+            product_details[label] = detail_value
+
+    description = _clean_text(data.get("description"))
+    main_image = _clean_text(data.get("main_image"))
+    if main_image and main_image.startswith("//"):
+        main_image = f"https:{main_image}"
+
+    title = _clean_text(data.get("title"))
+    main_image_alt = _clean_text(data.get("main_image_alt")) or title
+
+    return {
+        "title": title,
+        "brand": _normalize_brand(data.get("brand")),
+        "description": description,
+        "feature_bullets": feature_bullets,
+        "product_details": product_details,
+        "main_image": main_image,
+        "main_image_alt": main_image_alt,
+    }
+
+
+def validate_product_record(data: dict) -> None:
+    """Raise ValueError if required product fields are missing or invalid."""
+    normalized = normalize_product_record(data)
+    if not normalized.get("title"):
+        raise ValueError("Product record is missing a non-empty 'title'.")
+    main_image = normalized.get("main_image")
+    if not main_image:
+        raise ValueError("Product record is missing a non-empty 'main_image'.")
+    if not str(main_image).startswith(("http://", "https://")):
+        raise ValueError(f"Invalid main_image URL: {main_image!r}")
 
 
 def load_product(product_file: Path, downloads_dir: Path | None = None) -> ProductData:
