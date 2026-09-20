@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 DEFAULT_OPENAI_MODEL = "gpt-5.6-luna"
+DEFAULT_EVALUATION_MODEL = "gpt-5.6-terra"
 
 OPENAI_MODEL_MAP: dict[str, str] = {
     "classification": DEFAULT_OPENAI_MODEL,
@@ -12,9 +13,9 @@ OPENAI_MODEL_MAP: dict[str, str] = {
     "completeness_validation": DEFAULT_OPENAI_MODEL,
     "redundancy_validation": DEFAULT_OPENAI_MODEL,
     "fusion": DEFAULT_OPENAI_MODEL,
-    "relevancy_evaluation": DEFAULT_OPENAI_MODEL,
-    "redundancy_evaluation": DEFAULT_OPENAI_MODEL,
-    "objectivity_evaluation": DEFAULT_OPENAI_MODEL,
+    "relevancy_evaluation": DEFAULT_EVALUATION_MODEL,
+    "redundancy_evaluation": DEFAULT_EVALUATION_MODEL,
+    "objectivity_evaluation": DEFAULT_EVALUATION_MODEL,
 }
 
 TEMPERATURE_MAP: dict[str, float] = {

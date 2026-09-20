@@ -35,7 +35,7 @@ from .utils import (
     summarize_results,
     utc_now_iso,
 )
-from ..backend.config import DEFAULT_OPENAI_MODEL
+from ..backend.config import DEFAULT_EVALUATION_MODEL
 from ..backend.openai import run_stage_openai
 from ..paths import project_root, resolve_path
 from ..pipeline.types import StageConfig, StageResult
@@ -50,7 +50,7 @@ PROMPT_FILE = "evaluators/objectivity.txt"
 OBJECTIVITY_STAGE = StageConfig(
     name="objectivity_evaluation",
     prompt_file=PROMPT_FILE,
-    model=DEFAULT_OPENAI_MODEL,
+    model=DEFAULT_EVALUATION_MODEL,
     uses_image=True,
     output_type="json",
     expected_stage=None,
@@ -98,8 +98,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--model",
-        default=DEFAULT_OPENAI_MODEL,
-        help=f"OpenAI model (default: {DEFAULT_OPENAI_MODEL}).",
+        default=DEFAULT_EVALUATION_MODEL,
+        help=f"OpenAI model (default: {DEFAULT_EVALUATION_MODEL}).",
     )
     parser.add_argument(
         "--delay",

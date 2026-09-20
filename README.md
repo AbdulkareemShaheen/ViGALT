@@ -91,7 +91,7 @@ export OPENAI_API_KEY=sk-...
 
 The `.env` file in the project root is loaded automatically when you run any `python -m atsn.*` command.
 
-Default model for all stages is **`gpt-5.6-luna`** (configured in [`src/atsn/backend/config.py`](src/atsn/backend/config.py)). Override with `--single-model` on any command.
+Default pipeline model is **`gpt-5.6-luna`**; evaluation stages (relevancy, redundancy, objectivity) use **`gpt-5.6-terra`** (configured in [`src/atsn/backend/config.py`](src/atsn/backend/config.py)). Override with `--single-model` or `--model` on any command.
 
 ---
 
