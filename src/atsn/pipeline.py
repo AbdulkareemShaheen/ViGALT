@@ -3,14 +3,13 @@
 Multi-stage ALT-text pipeline.
 
 Runs 7 stages (classifier → generator → claim extraction → 3 validators → fuser)
-via either the Gemini web UI (Playwright) or the OpenAI Chat Completions API.
+via the OpenAI Chat Completions API.
 
 Usage:
   python -m atsn.pipeline                          # first product only (validation)
   python -m atsn.pipeline --product data/products/1_clothing.json
   python -m atsn.pipeline --all
-  python -m atsn.pipeline --backend openai_api --product data/products/1_clothing.json
-  python -m atsn.pipeline --keep-open
+  python -m atsn.pipeline --single-model gpt-4o
 """
 
 from __future__ import annotations
@@ -22,13 +21,9 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Literal
 
 from openai import OpenAI
-from playwright.sync_api import Page, sync_playwright
 
-from .gemini_backend import run_stage_gemini
-from .gemini_browser import GEMINI_URL, launch_context, pause_for_login, save_screenshot
 from .openai_backend import run_stage_openai
 from .openai_config import resolve_openai_model
 from .pipeline_types import StageConfig, StageResult
@@ -40,13 +35,10 @@ from .pipeline_utils import (
     resolve_path,
 )
 
-PROFILE_DIR = ".browser_profile"
 OUTPUT_DIR = "output"
 PROMPTS_DIR = "prompts"
 PRODUCTS_DIR = "data/products"
 DOWNLOADS_DIR = "downloads"
-
-BackendName = Literal["gemini_ui", "openai_api"]
 
 GENERATOR_PROMPTS = {
     "CLOTHING": "clothing_generator.txt",
@@ -141,7 +133,7 @@ class PipelineState:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Run the 7-stage ALT-text pipeline via Gemini web UI or OpenAI API."
+        description="Run the 7-stage ALT-text pipeline via OpenAI API."
     )
     parser.add_argument(
         "--product",
@@ -154,21 +146,10 @@ def parse_args() -> argparse.Namespace:
         help="Process all product JSON files in data/products/.",
     )
     parser.add_argument(
-        "--backend",
-        choices=["gemini_ui", "openai_api"],
-        default="gemini_ui",
-        help="Pipeline backend (default: gemini_ui).",
-    )
-    parser.add_argument(
         "--single-model",
         default=None,
         metavar="MODEL",
-        help="Override all OpenAI stage models with a single model (openai_api only).",
-    )
-    parser.add_argument(
-        "--keep-open",
-        action="store_true",
-        help="Keep the browser open after completion until you press Enter (gemini_ui only).",
+        help="Override all OpenAI stage models with a single model.",
     )
     parser.add_argument(
         "--timeout",
@@ -404,41 +385,20 @@ def apply_stage_output(state: PipelineState, stage: StageConfig, parsed: dict | 
         state.final_alt_text = final.strip()
 
 
-def display_model(stage: StageConfig, backend: BackendName, single_model: str | None) -> str:
-    if backend == "openai_api":
-        return resolve_openai_model(stage.name, single_model)
-    return stage.model
+def display_model(stage: StageConfig, single_model: str | None) -> str:
+    return resolve_openai_model(stage.name, single_model)
 
 
 def execute_stage(
-    backend: BackendName,
+    client: OpenAI,
     *,
-    page: Page | None,
-    client: OpenAI | None,
     stage: StageConfig,
     tokens: dict,
     prompts_dir: Path,
     product: ProductData,
     timeout_s: float,
-    output_dir: Path,
-    product_stem: str,
     single_model: str | None = None,
 ) -> StageResult:
-    if backend == "gemini_ui":
-        if page is None:
-            raise RuntimeError("Gemini backend requires a Playwright page.")
-        return run_stage_gemini(
-            page,
-            stage=stage,
-            tokens=tokens,
-            prompts_dir=prompts_dir,
-            image_path=product.image_path if stage.uses_image else None,
-            timeout_ms=int(timeout_s * 1000),
-            output_dir=output_dir,
-            product_stem=product_stem,
-        )
-    if client is None:
-        raise RuntimeError("OpenAI backend requires an OpenAI client.")
     return run_stage_openai(
         client,
         stage=stage,
@@ -458,11 +418,8 @@ def should_stop_pipeline(stage_name: str, result: StageResult) -> bool:
     return True
 
 
-def stage_delay(backend: BackendName, page: Page | None, delay_s: float) -> None:
-    if backend == "gemini_ui" and page is not None:
-        page.wait_for_timeout(int(delay_s * 1000))
-    else:
-        time.sleep(delay_s)
+def stage_delay(delay_s: float) -> None:
+    time.sleep(delay_s)
 
 
 def generation_stage_for(category: str) -> StageConfig:
@@ -478,12 +435,9 @@ def generation_stage_for(category: str) -> StageConfig:
 
 def run_pipeline_for_product(
     *,
-    page: Page | None,
-    client: OpenAI | None,
-    backend: BackendName,
+    client: OpenAI,
     product_file: Path,
     prompts_dir: Path,
-    output_dir: Path,
     timeout_s: float,
     delay_s: float,
     from_stage: str | None = None,
@@ -527,7 +481,6 @@ def run_pipeline_for_product(
 
     print("\n" + "=" * 60)
     print(f"Pipeline: {product_file.name}")
-    print(f"Backend:  {backend}")
     print(f"Image:    {product.image_path.name}")
     if from_stage:
         print(f"Resume:   from {from_stage}")
@@ -540,20 +493,16 @@ def run_pipeline_for_product(
         if pipeline_stopped:
             return
 
-        model_label = display_model(stage, backend, single_model)
+        model_label = display_model(stage, single_model)
         print(f"\n--- Stage: {stage.name} ({model_label}) ---")
         tokens = build_tokens(state, stage.name)
         result = execute_stage(
-            backend,
-            page=page,
-            client=client,
+            client,
             stage=stage,
             tokens=tokens,
             prompts_dir=prompts_dir,
             product=product,
             timeout_s=timeout_s,
-            output_dir=output_dir,
-            product_stem=product_file.stem,
             single_model=single_model,
         )
         stages_out[stage.name] = stage_result_to_dict(result)
@@ -575,7 +524,7 @@ def run_pipeline_for_product(
             record["final_alt_text"] = state.final_alt_text
 
         save_pipeline_output(out_path, record)
-        stage_delay(backend, page, delay_s)
+        stage_delay(delay_s)
 
     if from_stage:
         for stage in stages_from(from_stage):
@@ -598,11 +547,10 @@ def run_pipeline_for_product(
 def run_openai_pipeline(args: argparse.Namespace, product_files: list[Path]) -> int:
     api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:
-        print("Error: OPENAI_API_KEY environment variable is required for openai_api backend.", file=sys.stderr)
+        print("Error: OPENAI_API_KEY environment variable is required.", file=sys.stderr)
         return 1
 
     root = project_root()
-    output_dir = root / OUTPUT_DIR
     prompts_dir = root / PROMPTS_DIR
     client = OpenAI(api_key=api_key)
 
@@ -620,12 +568,9 @@ def run_openai_pipeline(args: argparse.Namespace, product_files: list[Path]) -> 
     try:
         for product_file in product_files:
             record = run_pipeline_for_product(
-                page=None,
                 client=client,
-                backend="openai_api",
                 product_file=product_file,
                 prompts_dir=prompts_dir,
-                output_dir=output_dir,
                 timeout_s=float(args.timeout),
                 delay_s=args.delay,
                 from_stage=args.from_stage,
@@ -647,91 +592,10 @@ def run_openai_pipeline(args: argparse.Namespace, product_files: list[Path]) -> 
         return 1
 
 
-def run_gemini_pipeline(args: argparse.Namespace, product_files: list[Path]) -> int:
-    root = project_root()
-    profile_dir = root / PROFILE_DIR
-    output_dir = root / OUTPUT_DIR
-    prompts_dir = root / PROMPTS_DIR
-
-    print("=" * 60)
-    print("Multi-Stage Gemini Pipeline")
-    print("=" * 60)
-    print(f"Products: {len(product_files)}")
-    print(f"Profile:  {profile_dir}")
-    for path in product_files:
-        print(f"  - {path.name}")
-    print()
-
-    with sync_playwright() as playwright:
-        context = launch_context(playwright, profile_dir)
-        page = context.pages[0] if context.pages else context.new_page()
-
-        try:
-            print(f"Opening {GEMINI_URL} ...")
-            page.goto(GEMINI_URL, wait_until="domcontentloaded")
-            page.wait_for_timeout(2000)
-            pause_for_login(page)
-
-            results: list[dict] = []
-            for i, product_file in enumerate(product_files):
-                record = run_pipeline_for_product(
-                    page=page,
-                    client=None,
-                    backend="gemini_ui",
-                    product_file=product_file,
-                    prompts_dir=prompts_dir,
-                    output_dir=output_dir,
-                    timeout_s=float(args.timeout),
-                    delay_s=args.delay,
-                    from_stage=args.from_stage,
-                )
-                results.append(record)
-                if i < len(product_files) - 1:
-                    page.wait_for_timeout(int(args.delay * 1000))
-
-            print("\n" + "=" * 60)
-            print("PIPELINE COMPLETE")
-            print("=" * 60)
-            for record in results:
-                out = output_path_for(Path(record["product_file"]))
-                final = record.get("final_alt_text") or "(none)"
-                print(f"  {out}")
-                print(f"    final_alt_text: {final[:80]}...")
-
-            if args.keep_open:
-                from .gemini_browser import safe_input
-
-                safe_input("\nPress Enter to close the browser...")
-            else:
-                print("\nBrowser will close in 5 seconds (use --keep-open to keep it)...")
-                page.wait_for_timeout(5000)
-
-            return 0
-
-        except Exception as exc:
-            print(f"\nError: {exc}", file=sys.stderr)
-            try:
-                err_shot = save_screenshot(page, output_dir, "pipeline_error.png")
-                print(f"Error screenshot saved: {err_shot}", file=sys.stderr)
-            except Exception:
-                pass
-            if args.keep_open:
-                from .gemini_browser import safe_input
-
-                safe_input("\nPress Enter to close the browser...")
-            return 1
-
-        finally:
-            context.close()
-
-
 def run(args: argparse.Namespace) -> int:
     configure_stdout()
     product_files = resolve_products(args)
-
-    if args.backend == "openai_api":
-        return run_openai_pipeline(args, product_files)
-    return run_gemini_pipeline(args, product_files)
+    return run_openai_pipeline(args, product_files)
 
 
 if __name__ == "__main__":

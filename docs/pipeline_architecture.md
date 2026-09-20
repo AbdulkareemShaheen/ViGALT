@@ -1,8 +1,10 @@
 # ATSN — Accessible Alt-Text Generation Pipeline
 
+> **Runtime note:** This public repository runs all pipeline and evaluator stages via the **OpenAI API** (`openai_backend.py`). Gemini model names referenced below are from the original research design; actual model IDs are configured in [`openai_config.py`](../src/atsn/openai_config.py).
+
 **Purpose:** Generate high-quality, accurate, screen-reader-friendly **ALT text** for e-commerce product images, serving Blind and Low-Vision (BLV) users. The system takes a product image plus its surrounding page text and produces a final, objective, hallucination-free ALT text through a multi-stage generate → deconstruct → validate → fuse pipeline.
 
-This document is the single source of truth for the pipeline: its architecture, the role of every stage, the standardized data contract that connects them, and the recommended Gemini model + settings for each stage.
+This document is the single source of truth for the pipeline: its architecture, the role of every stage, the standardized data contract that connects them, and the recommended model tier for each stage.
 
 ---
 

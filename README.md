@@ -43,7 +43,7 @@ Every product is classified as **CLOTHING** or **FURNITURE**. Stages 4–6 run i
 | Group | Modules |
 |---|---|
 | Pipeline core | `pipeline.py`, `pipeline_utils.py`, `pipeline_types.py` |
-| Backends | `gemini_backend.py`, `gemini_browser.py`, `gemini_send.py`, `openai_*.py` |
+| Backend | `openai_backend.py`, `openai_config.py`, `openai_schemas.py` |
 | Evaluators | `*_evaluator_batch.py`, `combine_claims_relevancy.py`, `evaluator_batch_utils.py` |
 | Dataset tools | `build_dataset.py`, `alt_to_list_batch.py` |
 
@@ -57,7 +57,6 @@ python -m venv .venv
 # source .venv/bin/activate     # macOS/Linux
 pip install -r requirements.txt
 pip install -e .
-playwright install chromium
 ```
 
 Copy `.env.example` to `.env` and set your API key:
@@ -83,14 +82,17 @@ Top-level `evaluation_dataset/summary.json` holds averaged metrics across all 30
 
 ### Re-running the pipeline (generates new alt text)
 
-Requires a Google account (Gemini web UI) or OpenAI API key:
+Requires an OpenAI API key (`OPENAI_API_KEY` in `.env`):
 
 ```bash
-# Single product via OpenAI API
-python -m atsn.pipeline --backend openai_api --product data/products/1_clothing.json
+# Single product
+python -m atsn.pipeline --product data/products/1_clothing.json
 
-# All 30 products via Gemini web UI (manual login on first run)
-python -m atsn.pipeline --all --keep-open
+# All 30 products
+python -m atsn.pipeline --all
+
+# Override model for all stages
+python -m atsn.pipeline --single-model gpt-4o --product data/products/1_clothing.json
 ```
 
 ### Re-running evaluators

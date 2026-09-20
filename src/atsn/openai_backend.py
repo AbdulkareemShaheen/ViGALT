@@ -8,7 +8,6 @@ from pathlib import Path
 
 from openai import APIConnectionError, APITimeoutError, OpenAI, RateLimitError
 
-from .gemini_browser import is_noise_response
 from .openai_config import (
     build_sampling_params,
     resolve_openai_model,
@@ -18,6 +17,7 @@ from .openai_schemas import schema_for_stage
 from .pipeline_types import StageConfig, StageResult
 from .pipeline_utils import (
     build_user_message,
+    is_noise_response,
     load_prompt_template,
     split_prompt,
 )

@@ -180,6 +180,23 @@ def _extract_json_object(text: str) -> str:
     return text
 
 
+RESPONSE_NOISE_PATTERNS = [
+    re.compile(r"^opens in a new window\.?$", re.I),
+    re.compile(r"^(copy|share|more|edit|retry)$", re.I),
+    re.compile(r"^gemini$", re.I),
+]
+
+
+def is_noise_response(text: str, *, min_length: int = 15) -> bool:
+    cleaned = text.strip()
+    if len(cleaned) < min_length:
+        return True
+    for pattern in RESPONSE_NOISE_PATTERNS:
+        if pattern.search(cleaned):
+            return True
+    return False
+
+
 def _strip_gemini_prefix(text: str) -> str:
     return re.sub(r"^Gemini said\s*\n+", "", text.strip(), flags=re.I).strip()
 
