@@ -2,12 +2,13 @@
 """
 Run the full ViGALT workflow from an Amazon product URL.
 
-Steps: extract DOM + image → 7-stage pipeline → claim extraction → evaluation.
+Steps: extract DOM + image → 7-stage pipeline → export claims → evaluation.
 
 Usage:
   python -m atsn.run_from_url --url "https://www.amazon.fr/dp/B077XM3DV5"
-  python -m atsn.run_from_url --url "..." --work-dir output/runs/B077XM3DV5
-  python -m atsn.run_from_url --html saved_page.html --work-dir output/runs/B077XM3DV5
+  python -m atsn.run_from_url --url "..." --run-id 5
+  python -m atsn.run_from_url --url "..." --work-dir output/runs/3
+  python -m atsn.run_from_url --html saved_page.html --work-dir output/runs/3
   python -m atsn.run_from_url --url "..." --skip-eval
 """
 
@@ -20,8 +21,9 @@ import subprocess
 import sys
 from pathlib import Path
 
-from ..extraction.amazon import extract_asin
+from ..evaluation.utils import export_claims_from_pipeline
 from ..paths import project_root, resolve_path
+from ..run_layout import RunPaths, allocate_run_dir
 
 
 def configure_stdout() -> None:
@@ -42,12 +44,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--work-dir",
         default=None,
-        help="Working directory for DOM, image, and evaluation outputs.",
+        help="Working directory for all run outputs (overrides --run-id).",
+    )
+    parser.add_argument(
+        "--run-id",
+        type=int,
+        default=None,
+        help="Use output/runs/N as the run folder (default: next free number).",
     )
     parser.add_argument(
         "--skip-eval",
         action="store_true",
-        help="Stop after pipeline + claim extraction (skip evaluation metrics).",
+        help="Stop after pipeline + claim export (skip evaluation metrics).",
     )
     parser.add_argument(
         "--single-model",
@@ -76,17 +84,10 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def resolve_work_dir(args: argparse.Namespace) -> tuple[Path, str]:
+def resolve_run_paths(args: argparse.Namespace) -> RunPaths:
     if args.work_dir:
-        work_dir = resolve_path(args.work_dir)
-        asin = work_dir.name
-    elif args.url:
-        asin = extract_asin(args.url) or "product"
-        work_dir = project_root() / "output" / "runs" / asin
-    else:
-        asin = "product"
-        work_dir = project_root() / "output" / "runs" / asin
-    return work_dir.resolve(), asin
+        return allocate_run_dir(work_dir=resolve_path(args.work_dir))
+    return allocate_run_dir(run_id=args.run_id)
 
 
 def run_command(label: str, cmd: list[str]) -> int:
@@ -98,6 +99,22 @@ def run_command(label: str, cmd: list[str]) -> int:
     if result.returncode != 0:
         print(f"Error: step failed ({label})", file=sys.stderr)
     return result.returncode
+
+
+def export_claims_step(paths: RunPaths) -> int:
+    print("\n" + "=" * 60)
+    print("Step 3/7 — Export claims for evaluation")
+    print("=" * 60)
+    try:
+        export_claims_from_pipeline(
+            paths.pipeline_json,
+            paths.claims_json,
+            product_stem=paths.run_id,
+        )
+    except (OSError, ValueError) as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 1
+    return 0
 
 
 def metric_from_results(path: Path, *keys: str) -> object | None:
@@ -115,32 +132,41 @@ def metric_from_results(path: Path, *keys: str) -> object | None:
     return None
 
 
-def print_summary(
-    *,
-    pipeline_path: Path,
-    relevancy_path: Path,
-    redundancy_path: Path,
-    objectivity_path: Path,
-    efficiency_path: Path,
-) -> None:
+def print_summary(paths: RunPaths) -> None:
     print("\n" + "=" * 60)
     print("RUN COMPLETE")
     print("=" * 60)
+    print(f"Run folder:     {paths.work_dir}")
 
-    if pipeline_path.exists():
-        pipeline = json.loads(pipeline_path.read_text(encoding="utf-8"))
+    if paths.pipeline_json.exists():
+        pipeline = json.loads(paths.pipeline_json.read_text(encoding="utf-8"))
         final_alt = pipeline.get("final_alt_text") or "(none)"
         print(f"Final alt text: {final_alt}")
-        print(f"Pipeline JSON:  {pipeline_path}")
+        print(f"Pipeline JSON:  {paths.pipeline_json}")
 
-    if relevancy_path.exists():
-        print(f"Relevancy:      {metric_from_results(relevancy_path, 'relevancy_score')}")
-    if objectivity_path.exists():
-        print(f"Objectivity:    {metric_from_results(objectivity_path, 'objectivity_score')}")
-    if redundancy_path.exists():
-        print(f"Novelty rate:   {metric_from_results(redundancy_path, 'novelty_rate')}")
-    if efficiency_path.exists():
-        print(f"Efficiency:     {metric_from_results(efficiency_path, 'efficiency_per_100_words')}")
+    image_path = paths.resolve_image_path()
+    artifacts = [
+        ("DOM", paths.dom_json),
+        *([("Image", image_path)] if image_path else []),
+        ("Meta", paths.meta_json),
+        ("Claims", paths.claims_json),
+        ("Relevancy", paths.relevancy_json),
+        ("Redundancy", paths.redundancy_json),
+        ("Objectivity", paths.objectivity_json),
+        ("Efficiency", paths.efficiency_json),
+    ]
+    for label, path in artifacts:
+        if path.exists():
+            print(f"{label + ':':14} {path}")
+
+    if paths.relevancy_json.exists():
+        print(f"Relevancy:      {metric_from_results(paths.relevancy_json, 'relevancy_score')}")
+    if paths.objectivity_json.exists():
+        print(f"Objectivity:    {metric_from_results(paths.objectivity_json, 'objectivity_score')}")
+    if paths.redundancy_json.exists():
+        print(f"Novelty rate:   {metric_from_results(paths.redundancy_json, 'novelty_rate')}")
+    if paths.efficiency_json.exists():
+        print(f"Efficiency:     {metric_from_results(paths.efficiency_json, 'efficiency_per_100_words')}")
 
 
 def run(args: argparse.Namespace) -> int:
@@ -150,23 +176,17 @@ def run(args: argparse.Namespace) -> int:
         print("Error: OPENAI_API_KEY is required unless --skip-eval is set.", file=sys.stderr)
         return 1
 
-    work_dir, asin = resolve_work_dir(args)
-    work_dir.mkdir(parents=True, exist_ok=True)
-
-    product_json = work_dir / f"{asin}.json"
-    pipeline_path = project_root() / "output" / f"{asin}_pipeline.json"
-    claims_dir = work_dir / "final_alt_claim_lists"
-    relevancy_path = work_dir / "relevancy_evaluations.json"
-    redundancy_path = work_dir / "redundancy_evaluations.json"
-    objectivity_path = work_dir / "objectivity_evaluations.json"
-    efficiency_path = work_dir / "efficiency_evaluations.json"
+    paths = resolve_run_paths(args)
+    paths.work_dir.mkdir(parents=True, exist_ok=True)
 
     extract_cmd = [
         sys.executable,
         "-m",
         "atsn.cli.extract_dom",
         "--output-dir",
-        str(work_dir),
+        str(paths.work_dir),
+        "--run-id",
+        paths.run_id,
         "--timeout",
         str(args.extract_timeout),
     ]
@@ -177,8 +197,8 @@ def run(args: argparse.Namespace) -> int:
 
     if run_command("Step 1/7 — Extract DOM + image", extract_cmd) != 0:
         return 1
-    if not product_json.exists():
-        print(f"Error: expected product JSON at {product_json}", file=sys.stderr)
+    if not paths.dom_json.exists():
+        print(f"Error: expected product DOM at {paths.dom_json}", file=sys.stderr)
         return 1
 
     pipeline_cmd = [
@@ -186,7 +206,9 @@ def run(args: argparse.Namespace) -> int:
         "-m",
         "atsn.pipeline",
         "--product",
-        str(product_json),
+        str(paths.dom_json),
+        "--output",
+        str(paths.pipeline_json),
         "--timeout",
         str(args.timeout),
         "--delay",
@@ -198,42 +220,18 @@ def run(args: argparse.Namespace) -> int:
     if run_command("Step 2/7 — Generate alt text (7-stage pipeline)", pipeline_cmd) != 0:
         return 1
 
-    claims_cmd = [
-        sys.executable,
-        "-m",
-        "atsn.evaluation.alt_to_list",
-        "--source",
-        "pipeline",
-        "--pipeline",
-        str(pipeline_path),
-        "--output-dir",
-        str(claims_dir),
-        "--timeout",
-        str(args.timeout),
-        "--delay",
-        str(args.delay),
-    ]
-    if args.single_model:
-        claims_cmd.extend(["--model", args.single_model])
-
-    if run_command("Step 3/7 — Extract claims for evaluation", claims_cmd) != 0:
+    if export_claims_step(paths) != 0:
         return 1
 
     if args.skip_eval:
-        print_summary(
-            pipeline_path=pipeline_path,
-            relevancy_path=relevancy_path,
-            redundancy_path=redundancy_path,
-            objectivity_path=objectivity_path,
-            efficiency_path=efficiency_path,
-        )
+        print_summary(paths)
         return 0
 
     eval_base = [
         "--algorithm",
         "our",
         "--products-dir",
-        str(work_dir),
+        str(paths.work_dir),
         "--timeout",
         str(args.timeout),
         "--delay",
@@ -245,7 +243,7 @@ def run(args: argparse.Namespace) -> int:
     eval_with_image = [
         *eval_base,
         "--images-dir",
-        str(work_dir),
+        str(paths.work_dir),
     ]
 
     relevancy_cmd = [
@@ -254,9 +252,9 @@ def run(args: argparse.Namespace) -> int:
         "atsn.evaluation.relevancy",
         *eval_with_image,
         "--our-claims-dir",
-        str(claims_dir),
+        str(paths.work_dir),
         "--output",
-        str(relevancy_path),
+        str(paths.relevancy_json),
     ]
     if run_command("Step 4/7 — Relevancy evaluation", relevancy_cmd) != 0:
         return 1
@@ -267,9 +265,9 @@ def run(args: argparse.Namespace) -> int:
         "atsn.evaluation.redundancy",
         *eval_base,
         "--relevancy-input",
-        str(relevancy_path),
+        str(paths.relevancy_json),
         "--output",
-        str(redundancy_path),
+        str(paths.redundancy_json),
     ]
     if run_command("Step 5/7 — Redundancy evaluation", redundancy_cmd) != 0:
         return 1
@@ -280,9 +278,9 @@ def run(args: argparse.Namespace) -> int:
         "atsn.evaluation.objectivity",
         *eval_with_image,
         "--relevancy-input",
-        str(relevancy_path),
+        str(paths.relevancy_json),
         "--output",
-        str(objectivity_path),
+        str(paths.objectivity_json),
     ]
     if run_command("Step 6/7 — Objectivity evaluation", objectivity_cmd) != 0:
         return 1
@@ -294,22 +292,16 @@ def run(args: argparse.Namespace) -> int:
         "--algorithm",
         "our",
         "--redundancy-input",
-        str(redundancy_path),
+        str(paths.redundancy_json),
         "--relevancy-input",
-        str(relevancy_path),
+        str(paths.relevancy_json),
         "--output",
-        str(efficiency_path),
+        str(paths.efficiency_json),
     ]
     if run_command("Step 7/7 — Efficiency evaluation", efficiency_cmd) != 0:
         return 1
 
-    print_summary(
-        pipeline_path=pipeline_path,
-        relevancy_path=relevancy_path,
-        redundancy_path=redundancy_path,
-        objectivity_path=objectivity_path,
-        efficiency_path=efficiency_path,
-    )
+    print_summary(paths)
     return 0
 
 

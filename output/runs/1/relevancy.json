@@ -1,0 +1,107 @@
+{
+  "stage": "relevancy_evaluation_batch",
+  "processed_at": "2026-09-20T09:12:54.882668+00:00",
+  "model": "gpt-5.6-luna",
+  "prompt_file": "evaluators/relevancy.txt",
+  "total_requests": 1,
+  "summary": {
+    "our": {
+      "ok": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "algorithm": "our",
+      "claim_list_file": "C:\\Users\\modme\\Desktop\\All\\Projects\\ATSN-2026\\gemini automater\\ViGLAT\\output\\runs\\1\\claims.json",
+      "product_stem": "1",
+      "category": "CLOTHING",
+      "image_reference": "C:\\Users\\modme\\Desktop\\All\\Projects\\ATSN-2026\\gemini automater\\ViGLAT\\output\\runs\\1\\image.jpg",
+      "input_claims": [
+        {
+          "claim_id": "c1",
+          "claim": "White shirt"
+        },
+        {
+          "claim_id": "c2",
+          "claim": "Gray Under Armour logo on the wearer’s left chest"
+        },
+        {
+          "claim_id": "c3",
+          "claim": "Shoulder seams run diagonally from the crew neckline toward the short sleeves"
+        },
+        {
+          "claim_id": "c4",
+          "claim": "Crew neckline"
+        },
+        {
+          "claim_id": "c5",
+          "claim": "Short sleeves"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "prompt_file": "evaluators/relevancy.txt",
+      "processed_at": "2026-09-20T09:12:54.882611+00:00",
+      "source_pipeline": "C:\\Users\\modme\\Desktop\\All\\Projects\\ATSN-2026\\gemini automater\\ViGLAT\\output\\runs\\1\\pipeline.json",
+      "final_alt_text": "White shirt with a gray Under Armour logo on the wearer’s left chest. Shoulder seams run diagonally from the crew neckline toward the short sleeves.",
+      "product_file": "C:\\Users\\modme\\Desktop\\All\\Projects\\ATSN-2026\\gemini automater\\ViGLAT\\output\\runs\\1\\dom.json",
+      "classification_category": "CLOTHING",
+      "status": "ok",
+      "duration_ms": 4739,
+      "raw_response": "{\"stage\":\"relevancy_evaluation\",\"category\":\"CLOTHING\",\"claims\":[{\"claim_id\":\"c1\",\"claim\":\"White shirt\",\"label\":\"R\",\"reason\":\"Identifies the product and describes its visible white color.\"},{\"claim_id\":\"c2\",\"claim\":\"Gray Under Armour logo on the wearer’s left chest\",\"label\":\"R\",\"reason\":\"Describes the gray logo integrated on the shirt's left chest area.\"},{\"claim_id\":\"c3\",\"claim\":\"Shoulder seams run diagonally from the crew neckline toward the short sleeves\",\"label\":\"R\",\"reason\":\"Describes the shirt's visible shoulder seam construction.\"},{\"claim_id\":\"c4\",\"claim\":\"Crew neckline\",\"label\":\"R\",\"reason\":\"Describes the shirt's visible neckline configuration.\"},{\"claim_id\":\"c5\",\"claim\":\"Short sleeves\",\"label\":\"R\",\"reason\":\"Describes the shirt's visible sleeve length and configuration.\"}],\"summary\":{\"total_claims\":5,\"relevant_claims\":5,\"staging_claims\":0,\"violation_claims\":0,\"w\":0.5,\"lambda\":2,\"relevancy_score\":100.0,\"note\":null}}",
+      "evaluation": {
+        "stage": "relevancy_evaluation",
+        "category": "CLOTHING",
+        "claims": [
+          {
+            "claim_id": "c1",
+            "claim": "White shirt",
+            "label": "R",
+            "reason": "Identifies the product and describes its visible white color."
+          },
+          {
+            "claim_id": "c2",
+            "claim": "Gray Under Armour logo on the wearer’s left chest",
+            "label": "R",
+            "reason": "Describes the gray logo integrated on the shirt's left chest area."
+          },
+          {
+            "claim_id": "c3",
+            "claim": "Shoulder seams run diagonally from the crew neckline toward the short sleeves",
+            "label": "R",
+            "reason": "Describes the shirt's visible shoulder seam construction."
+          },
+          {
+            "claim_id": "c4",
+            "claim": "Crew neckline",
+            "label": "R",
+            "reason": "Describes the shirt's visible neckline configuration."
+          },
+          {
+            "claim_id": "c5",
+            "claim": "Short sleeves",
+            "label": "R",
+            "reason": "Describes the shirt's visible sleeve length and configuration."
+          }
+        ],
+        "summary": {
+          "total_claims": 5,
+          "relevant_claims": 5,
+          "staging_claims": 0,
+          "violation_claims": 0,
+          "w": 0.5,
+          "lambda": 2,
+          "relevancy_score": 100.0,
+          "note": null
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 4870,
+        "completion_tokens": 346,
+        "total_tokens": 5216
+      },
+      "job_key": "our:claims.json"
+    }
+  ]
+}

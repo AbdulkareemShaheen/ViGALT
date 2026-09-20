@@ -128,6 +128,7 @@ class PipelineState:
         self.completeness_output: dict | None = None
         self.redundancy_output: dict | None = None
         self.final_alt_text: str | None = None
+        self.final_claims: list | None = None
 
 
 def parse_args() -> argparse.Namespace:
@@ -168,6 +169,11 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Resume from this stage, reusing prior stage outputs from the saved pipeline JSON.",
     )
+    parser.add_argument(
+        "--output",
+        default=None,
+        help="Write pipeline JSON to this path (default: output/{product_stem}_pipeline.json).",
+    )
     return parser.parse_args()
 
 
@@ -203,9 +209,10 @@ def build_pipeline_record(
     completed_at: str | None = None,
     classification_category: str | None = None,
     final_alt_text: str | None = None,
+    final_claims: dict | None = None,
     stages: dict[str, dict] | None = None,
 ) -> dict:
-    return {
+    record = {
         "product_file": str(product.product_file),
         "image_url": product.image_url,
         "started_at": started_at,
@@ -214,6 +221,9 @@ def build_pipeline_record(
         "final_alt_text": final_alt_text,
         "stages": stages or {},
     }
+    if final_claims is not None:
+        record["final_claims"] = final_claims
+    return record
 
 
 def save_pipeline_output(path: Path, record: dict) -> None:
@@ -327,6 +337,12 @@ def hydrate_state_from_record(state: PipelineState, record: dict) -> None:
         if isinstance(final, str) and final.strip():
             state.final_alt_text = final.strip()
 
+    final_claims = record.get("final_claims")
+    if isinstance(final_claims, dict):
+        claims = final_claims.get("claims")
+        if isinstance(claims, list) and claims:
+            state.final_claims = claims
+
 
 def stage_config_for(name: str) -> StageConfig:
     if name == "generation":
@@ -421,6 +437,58 @@ def stage_delay(delay_s: float) -> None:
     time.sleep(delay_s)
 
 
+def resolve_final_claims(
+    *,
+    client: OpenAI,
+    state: PipelineState,
+    prompts_dir: Path,
+    timeout_s: float,
+    delay_s: float,
+    single_model: str | None,
+) -> dict:
+    if not state.final_alt_text:
+        raise RuntimeError("Final alt text missing for final claim resolution.")
+    if not state.atomic_claims:
+        raise RuntimeError("Atomic claims missing for final claim resolution.")
+
+    generated = (state.alt_text or "").strip()
+    final = state.final_alt_text.strip()
+    if generated == final:
+        print("\n--- Final claims: reusing pipeline claim extraction (alt text unchanged) ---")
+        return {
+            "claims": state.atomic_claims,
+            "source": "reused",
+            "total_claims": len(state.atomic_claims),
+        }
+
+    print("\n--- Final claims: extracting from fused alt text ---")
+    claim_stage = stage_config_for("claim_extraction")
+    result = execute_stage(
+        client,
+        stage=claim_stage,
+        tokens={"ALT_TEXT": final},
+        prompts_dir=prompts_dir,
+        product=state.product,
+        timeout_s=timeout_s,
+        single_model=single_model,
+    )
+    stage_delay(delay_s)
+    if result.status != "ok" or not isinstance(result.parsed, dict):
+        raise RuntimeError(
+            f"Final claim extraction failed ({result.status}): {result.error}"
+        )
+    claims = result.parsed.get("claims")
+    if not isinstance(claims, list) or not claims:
+        raise ValueError("Final claim extraction returned no claims.")
+    state.final_claims = claims
+    return {
+        "claims": claims,
+        "source": "extracted",
+        "total_claims": len(claims),
+        "stage_result": stage_result_to_dict(result),
+    }
+
+
 def generation_stage_for(category: str) -> StageConfig:
     prompt_file = GENERATOR_PROMPTS[category]
     return StageConfig(
@@ -441,10 +509,11 @@ def run_pipeline_for_product(
     delay_s: float,
     from_stage: str | None = None,
     single_model: str | None = None,
+    output_path: Path | None = None,
 ) -> dict:
     product = load_product(product_file, project_root() / DOWNLOADS_DIR)
     state = PipelineState(product)
-    out_path = output_path_for(product_file)
+    out_path = output_path or output_path_for(product_file)
 
     if from_stage:
         prior = load_pipeline_record(out_path)
@@ -537,6 +606,16 @@ def run_pipeline_for_product(
         for stage in STAGES[1:]:
             run_one_stage(stage)
 
+    if state.final_alt_text and not pipeline_stopped and not record.get("final_claims"):
+        record["final_claims"] = resolve_final_claims(
+            client=client,
+            state=state,
+            prompts_dir=prompts_dir,
+            timeout_s=timeout_s,
+            delay_s=delay_s,
+            single_model=single_model,
+        )
+
     record["completed_at"] = utc_now_iso()
     record["final_alt_text"] = state.final_alt_text
     save_pipeline_output(out_path, record)
@@ -563,9 +642,14 @@ def run_openai_pipeline(args: argparse.Namespace, product_files: list[Path]) -> 
         print(f"  - {path.name}")
     print()
 
-    results: list[dict] = []
+    results: list[tuple[Path, dict]] = []
     try:
         for product_file in product_files:
+            out_path = (
+                resolve_path(args.output)
+                if args.output and len(product_files) == 1
+                else output_path_for(product_file)
+            )
             record = run_pipeline_for_product(
                 client=client,
                 product_file=product_file,
@@ -574,14 +658,14 @@ def run_openai_pipeline(args: argparse.Namespace, product_files: list[Path]) -> 
                 delay_s=args.delay,
                 from_stage=args.from_stage,
                 single_model=args.single_model,
+                output_path=out_path,
             )
-            results.append(record)
+            results.append((out_path, record))
 
         print("\n" + "=" * 60)
         print("PIPELINE COMPLETE")
         print("=" * 60)
-        for record in results:
-            out = output_path_for(Path(record["product_file"]))
+        for out, record in results:
             final = record.get("final_alt_text") or "(none)"
             print(f"  {out}")
             print(f"    final_alt_text: {final[:80]}...")

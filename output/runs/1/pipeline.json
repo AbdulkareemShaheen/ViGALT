@@ -1,0 +1,369 @@
+{
+  "product_file": "C:\\Users\\modme\\Desktop\\All\\Projects\\ATSN-2026\\gemini automater\\ViGLAT\\output\\runs\\1\\dom.json",
+  "image_url": "https://m.media-amazon.com/images/I/513U83g30sL.jpg",
+  "started_at": "2026-09-20T09:11:58.902598+00:00",
+  "completed_at": "2026-09-20T09:12:33.292639+00:00",
+  "classification_category": "CLOTHING",
+  "final_alt_text": "White shirt with a gray Under Armour logo on the wearer’s left chest. Shoulder seams run diagonally from the crew neckline toward the short sleeves.",
+  "stages": {
+    "classification": {
+      "model": "gpt-5.6-luna",
+      "prompt_file": "classifier.txt",
+      "raw_response": "{\"stage\":\"classification\",\"category\":\"CLOTHING\",\"confidence\":1.0,\"primary_signal\":\"BOTH\",\"text_image_agreement\":true,\"alternative_category\":null,\"needs_review\":false,\"evidence\":\"The title and specifications identify a short-sleeve T-shirt, and the image shows a white short-sleeve shirt.\"}",
+      "parsed": {
+        "stage": "classification",
+        "category": "CLOTHING",
+        "confidence": 1.0,
+        "primary_signal": "BOTH",
+        "text_image_agreement": true,
+        "alternative_category": null,
+        "needs_review": false,
+        "evidence": "The title and specifications identify a short-sleeve T-shirt, and the image shows a white short-sleeve shirt."
+      },
+      "duration_ms": 3056,
+      "status": "ok",
+      "backend": "openai_api",
+      "token_usage": {
+        "prompt_tokens": 4770,
+        "completion_tokens": 75,
+        "total_tokens": 4845
+      }
+    },
+    "generation": {
+      "model": "gpt-5.6-luna",
+      "prompt_file": "clothing_generator.txt",
+      "raw_response": "A T-shirt shown from the front, with a gray Under Armour logo on the wearer’s left chest. The shoulder seams run diagonally from the crew neckline toward the short sleeves.",
+      "parsed": "A T-shirt shown from the front, with a gray Under Armour logo on the wearer’s left chest. The shoulder seams run diagonally from the crew neckline toward the short sleeves.",
+      "duration_ms": 3429,
+      "status": "ok",
+      "backend": "openai_api",
+      "token_usage": {
+        "prompt_tokens": 6448,
+        "completion_tokens": 264,
+        "total_tokens": 6712
+      }
+    },
+    "claim_extraction": {
+      "model": "gpt-5.6-luna",
+      "prompt_file": "alt_to_list.txt",
+      "raw_response": "{\"stage\":\"claim_extraction\",\"claims\":[{\"claim_id\":\"c1\",\"claim\":\"Gray Under Armour logo on the wearer’s left chest\"},{\"claim_id\":\"c2\",\"claim\":\"Shoulder seams run diagonally from the crew neckline toward the short sleeves\"},{\"claim_id\":\"c3\",\"claim\":\"Crew neckline\"},{\"claim_id\":\"c4\",\"claim\":\"Short sleeves\"}],\"total_claims\":4}",
+      "parsed": {
+        "stage": "claim_extraction",
+        "claims": [
+          {
+            "claim_id": "c1",
+            "claim": "Gray Under Armour logo on the wearer’s left chest"
+          },
+          {
+            "claim_id": "c2",
+            "claim": "Shoulder seams run diagonally from the crew neckline toward the short sleeves"
+          },
+          {
+            "claim_id": "c3",
+            "claim": "Crew neckline"
+          },
+          {
+            "claim_id": "c4",
+            "claim": "Short sleeves"
+          }
+        ],
+        "total_claims": 4
+      },
+      "duration_ms": 5553,
+      "status": "ok",
+      "backend": "openai_api",
+      "token_usage": {
+        "prompt_tokens": 1000,
+        "completion_tokens": 515,
+        "total_tokens": 1515
+      }
+    },
+    "accuracy_validation": {
+      "model": "gpt-5.6-luna",
+      "prompt_file": "accuracy_validator.txt",
+      "raw_response": "{\"stage\":\"accuracy_validation\",\"claims\":[{\"claim_id\":\"c1\",\"original_claim\":\"Gray Under Armour logo on the wearer’s left chest\",\"claim\":\"Gray Under Armour logo on the wearer’s left chest\",\"label\":\"ACCURATE\",\"error_category\":null,\"reason\":\"The image visibly shows a gray Under Armour logo on the wearer's left chest.\"},{\"claim_id\":\"c2\",\"original_claim\":\"Shoulder seams run diagonally from the crew neckline toward the short sleeves\",\"claim\":\"Shoulder seams run diagonally from the crew neckline toward the short sleeves\",\"label\":\"ACCURATE\",\"error_category\":null,\"reason\":\"Diagonal seam lines are visibly present, extending from the neckline toward the sleeves.\"},{\"claim_id\":\"c3\",\"original_claim\":\"Crew neckline\",\"claim\":\"Crew neckline\",\"label\":\"ACCURATE\",\"error_category\":null,\"reason\":\"The shirt visibly has a rounded crew neckline.\"},{\"claim_id\":\"c4\",\"original_claim\":\"Short sleeves\",\"claim\":\"Short sleeves\",\"label\":\"ACCURATE\",\"error_category\":null,\"reason\":\"The image visibly shows short sleeves.\"}],\"summary\":{\"total_claims\":4,\"accurate_claims\":4,\"corrected_claims\":0,\"deleted_claims\":0,\"error_rate\":0.0}}",
+      "parsed": {
+        "stage": "accuracy_validation",
+        "claims": [
+          {
+            "claim_id": "c1",
+            "original_claim": "Gray Under Armour logo on the wearer’s left chest",
+            "claim": "Gray Under Armour logo on the wearer’s left chest",
+            "label": "ACCURATE",
+            "error_category": null,
+            "reason": "The image visibly shows a gray Under Armour logo on the wearer's left chest."
+          },
+          {
+            "claim_id": "c2",
+            "original_claim": "Shoulder seams run diagonally from the crew neckline toward the short sleeves",
+            "claim": "Shoulder seams run diagonally from the crew neckline toward the short sleeves",
+            "label": "ACCURATE",
+            "error_category": null,
+            "reason": "Diagonal seam lines are visibly present, extending from the neckline toward the sleeves."
+          },
+          {
+            "claim_id": "c3",
+            "original_claim": "Crew neckline",
+            "claim": "Crew neckline",
+            "label": "ACCURATE",
+            "error_category": null,
+            "reason": "The shirt visibly has a rounded crew neckline."
+          },
+          {
+            "claim_id": "c4",
+            "original_claim": "Short sleeves",
+            "claim": "Short sleeves",
+            "label": "ACCURATE",
+            "error_category": null,
+            "reason": "The image visibly shows short sleeves."
+          }
+        ],
+        "summary": {
+          "total_claims": 4,
+          "accurate_claims": 4,
+          "corrected_claims": 0,
+          "deleted_claims": 0,
+          "error_rate": 0.0
+        }
+      },
+      "duration_ms": 4324,
+      "status": "ok",
+      "backend": "openai_api",
+      "token_usage": {
+        "prompt_tokens": 4532,
+        "completion_tokens": 361,
+        "total_tokens": 4893
+      }
+    },
+    "completeness_validation": {
+      "model": "gpt-5.6-luna",
+      "prompt_file": "completeness_validator.txt",
+      "raw_response": "{\"stage\":\"completeness_validation\",\"claims\":[{\"claim_id\":\"c1\",\"claim\":\"Gray Under Armour logo on the wearer’s left chest\",\"label\":\"RETAINED\",\"addition_type\":null,\"reason\":\"\"},{\"claim_id\":\"c2\",\"claim\":\"Shoulder seams run diagonally from the crew neckline toward the short sleeves\",\"label\":\"RETAINED\",\"addition_type\":null,\"reason\":\"\"},{\"claim_id\":\"c3\",\"claim\":\"Crew neckline\",\"label\":\"RETAINED\",\"addition_type\":null,\"reason\":\"\"},{\"claim_id\":\"c4\",\"claim\":\"Short sleeves\",\"label\":\"RETAINED\",\"addition_type\":null,\"reason\":\"\"},{\"claim_id\":\"n1\",\"claim\":\"White shirt\",\"label\":\"ADDED\",\"addition_type\":\"VISUAL_GAP\",\"reason\":\"The shirt is visibly white, and its color is not expressed in the existing claims.\"}],\"summary\":{\"input_claims\":4,\"retained_claims\":4,\"added_claims\":1,\"added_visual_gap\":1,\"added_non_english_text\":0,\"added_known_entity\":0,\"omission_score\":0.2}}",
+      "parsed": {
+        "stage": "completeness_validation",
+        "claims": [
+          {
+            "claim_id": "c1",
+            "claim": "Gray Under Armour logo on the wearer’s left chest",
+            "label": "RETAINED",
+            "addition_type": null,
+            "reason": ""
+          },
+          {
+            "claim_id": "c2",
+            "claim": "Shoulder seams run diagonally from the crew neckline toward the short sleeves",
+            "label": "RETAINED",
+            "addition_type": null,
+            "reason": ""
+          },
+          {
+            "claim_id": "c3",
+            "claim": "Crew neckline",
+            "label": "RETAINED",
+            "addition_type": null,
+            "reason": ""
+          },
+          {
+            "claim_id": "c4",
+            "claim": "Short sleeves",
+            "label": "RETAINED",
+            "addition_type": null,
+            "reason": ""
+          },
+          {
+            "claim_id": "n1",
+            "claim": "White shirt",
+            "label": "ADDED",
+            "addition_type": "VISUAL_GAP",
+            "reason": "The shirt is visibly white, and its color is not expressed in the existing claims."
+          }
+        ],
+        "summary": {
+          "input_claims": 4,
+          "retained_claims": 4,
+          "added_claims": 1,
+          "added_visual_gap": 1,
+          "added_non_english_text": 0,
+          "added_known_entity": 0,
+          "omission_score": 0.2
+        }
+      },
+      "duration_ms": 3479,
+      "status": "ok",
+      "backend": "openai_api",
+      "token_usage": {
+        "prompt_tokens": 4336,
+        "completion_tokens": 341,
+        "total_tokens": 4677
+      }
+    },
+    "redundancy_validation": {
+      "model": "gpt-5.6-luna",
+      "prompt_file": "redundancy_validator.txt",
+      "raw_response": "{\"stage\":\"redundancy_validation\",\"claims\":[{\"claim_id\":\"c1\",\"claim\":\"Gray Under Armour logo on the wearer’s left chest\",\"label\":\"NOVEL\",\"reason\":\"The DOM identifies the Under Armour brand but does not state that a logo is visibly present, gray, or positioned on the wearer’s left chest. These visual details add new semantic information.\"},{\"claim_id\":\"c2\",\"claim\":\"Shoulder seams run diagonally from the crew neckline toward the short sleeves\",\"label\":\"UNAVOIDABLE_REPETITION\",\"reason\":\"The DOM already states that the shirt has a crew neckline and short sleeves, but those terms anchor the novel spatial relationship describing the diagonal shoulder seams. Removing them would make the seam direction and endpoints less clear.\"},{\"claim_id\":\"c3\",\"claim\":\"Crew neckline\",\"label\":\"AVOIDABLE_REDUNDANCY\",\"reason\":\"The DOM explicitly lists the neck style as crew neck. Repeating this information adds no new visual grounding or disambiguation.\"},{\"claim_id\":\"c4\",\"claim\":\"Short sleeves\",\"label\":\"AVOIDABLE_REDUNDANCY\",\"reason\":\"The DOM explicitly lists the sleeve type and sleeve length as short sleeve. Repeating this information adds no new visual grounding or disambiguation.\"}],\"summary\":{\"total_claims\":4,\"novel_claims\":1,\"unavoidable_repetition_claims\":1,\"avoidable_redundancy_claims\":2,\"redundancy_score\":0.5}}",
+      "parsed": {
+        "stage": "redundancy_validation",
+        "claims": [
+          {
+            "claim_id": "c1",
+            "claim": "Gray Under Armour logo on the wearer’s left chest",
+            "label": "NOVEL",
+            "reason": "The DOM identifies the Under Armour brand but does not state that a logo is visibly present, gray, or positioned on the wearer’s left chest. These visual details add new semantic information."
+          },
+          {
+            "claim_id": "c2",
+            "claim": "Shoulder seams run diagonally from the crew neckline toward the short sleeves",
+            "label": "UNAVOIDABLE_REPETITION",
+            "reason": "The DOM already states that the shirt has a crew neckline and short sleeves, but those terms anchor the novel spatial relationship describing the diagonal shoulder seams. Removing them would make the seam direction and endpoints less clear."
+          },
+          {
+            "claim_id": "c3",
+            "claim": "Crew neckline",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "reason": "The DOM explicitly lists the neck style as crew neck. Repeating this information adds no new visual grounding or disambiguation."
+          },
+          {
+            "claim_id": "c4",
+            "claim": "Short sleeves",
+            "label": "AVOIDABLE_REDUNDANCY",
+            "reason": "The DOM explicitly lists the sleeve type and sleeve length as short sleeve. Repeating this information adds no new visual grounding or disambiguation."
+          }
+        ],
+        "summary": {
+          "total_claims": 4,
+          "novel_claims": 1,
+          "unavoidable_repetition_claims": 1,
+          "avoidable_redundancy_claims": 2,
+          "redundancy_score": 0.5
+        }
+      },
+      "duration_ms": 6168,
+      "status": "ok",
+      "backend": "openai_api",
+      "token_usage": {
+        "prompt_tokens": 5382,
+        "completion_tokens": 734,
+        "total_tokens": 6116
+      }
+    },
+    "fusion": {
+      "model": "gpt-5.6-luna",
+      "prompt_file": "fuser.txt",
+      "raw_response": "{\"stage\":\"fusion\",\"master_claims\":[{\"claim_id\":\"c1\",\"text\":\"Gray Under Armour logo on the wearer’s left chest\",\"source\":\"ORIGINAL\",\"action\":\"RETAINED\"},{\"claim_id\":\"c2\",\"text\":\"Shoulder seams run diagonally from the crew neckline toward the short sleeves\",\"source\":\"ORIGINAL\",\"action\":\"RETAINED\"},{\"claim_id\":\"c3\",\"text\":\"\",\"source\":\"ORIGINAL\",\"action\":\"DROPPED_REDUNDANT\"},{\"claim_id\":\"c4\",\"text\":\"\",\"source\":\"ORIGINAL\",\"action\":\"DROPPED_REDUNDANT\"},{\"claim_id\":\"n1\",\"text\":\"White shirt\",\"source\":\"ADDED\",\"action\":\"ADDED\"}],\"edit_log\":[\"Added white shirt color and category per Completeness (n1)\",\"Dropped crew neckline as redundant per Redundancy (c3)\",\"Dropped short sleeves as redundant per Redundancy (c4)\"],\"final_alt_text\":\"White shirt with a gray Under Armour logo on the wearer’s left chest. Shoulder seams run diagonally from the crew neckline toward the short sleeves.\"}",
+      "parsed": {
+        "stage": "fusion",
+        "master_claims": [
+          {
+            "claim_id": "c1",
+            "text": "Gray Under Armour logo on the wearer’s left chest",
+            "source": "ORIGINAL",
+            "action": "RETAINED"
+          },
+          {
+            "claim_id": "c2",
+            "text": "Shoulder seams run diagonally from the crew neckline toward the short sleeves",
+            "source": "ORIGINAL",
+            "action": "RETAINED"
+          },
+          {
+            "claim_id": "c3",
+            "text": "",
+            "source": "ORIGINAL",
+            "action": "DROPPED_REDUNDANT"
+          },
+          {
+            "claim_id": "c4",
+            "text": "",
+            "source": "ORIGINAL",
+            "action": "DROPPED_REDUNDANT"
+          },
+          {
+            "claim_id": "n1",
+            "text": "White shirt",
+            "source": "ADDED",
+            "action": "ADDED"
+          }
+        ],
+        "edit_log": [
+          "Added white shirt color and category per Completeness (n1)",
+          "Dropped crew neckline as redundant per Redundancy (c3)",
+          "Dropped short sleeves as redundant per Redundancy (c4)"
+        ],
+        "final_alt_text": "White shirt with a gray Under Armour logo on the wearer’s left chest. Shoulder seams run diagonally from the crew neckline toward the short sleeves."
+      },
+      "duration_ms": 3776,
+      "status": "ok",
+      "backend": "openai_api",
+      "token_usage": {
+        "prompt_tokens": 2766,
+        "completion_tokens": 446,
+        "total_tokens": 3212
+      }
+    }
+  },
+  "final_claims": {
+    "claims": [
+      {
+        "claim_id": "c1",
+        "claim": "White shirt"
+      },
+      {
+        "claim_id": "c2",
+        "claim": "Gray Under Armour logo on the wearer’s left chest"
+      },
+      {
+        "claim_id": "c3",
+        "claim": "Shoulder seams run diagonally from the crew neckline toward the short sleeves"
+      },
+      {
+        "claim_id": "c4",
+        "claim": "Crew neckline"
+      },
+      {
+        "claim_id": "c5",
+        "claim": "Short sleeves"
+      }
+    ],
+    "source": "extracted",
+    "total_claims": 5,
+    "stage_result": {
+      "model": "gpt-5.6-luna",
+      "prompt_file": "alt_to_list.txt",
+      "raw_response": "{\"stage\":\"claim_extraction\",\"claims\":[{\"claim_id\":\"c1\",\"claim\":\"White shirt\"},{\"claim_id\":\"c2\",\"claim\":\"Gray Under Armour logo on the wearer’s left chest\"},{\"claim_id\":\"c3\",\"claim\":\"Shoulder seams run diagonally from the crew neckline toward the short sleeves\"},{\"claim_id\":\"c4\",\"claim\":\"Crew neckline\"},{\"claim_id\":\"c5\",\"claim\":\"Short sleeves\"}],\"total_claims\":5}",
+      "parsed": {
+        "stage": "claim_extraction",
+        "claims": [
+          {
+            "claim_id": "c1",
+            "claim": "White shirt"
+          },
+          {
+            "claim_id": "c2",
+            "claim": "Gray Under Armour logo on the wearer’s left chest"
+          },
+          {
+            "claim_id": "c3",
+            "claim": "Shoulder seams run diagonally from the crew neckline toward the short sleeves"
+          },
+          {
+            "claim_id": "c4",
+            "claim": "Crew neckline"
+          },
+          {
+            "claim_id": "c5",
+            "claim": "Short sleeves"
+          }
+        ],
+        "total_claims": 5
+      },
+      "duration_ms": 4563,
+      "status": "ok",
+      "backend": "openai_api",
+      "token_usage": {
+        "prompt_tokens": 993,
+        "completion_tokens": 520,
+        "total_tokens": 1513
+      }
+    }
+  }
+}

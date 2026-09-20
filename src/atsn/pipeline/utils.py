@@ -53,10 +53,26 @@ def image_filename_from_url(image_url: str) -> str:
     return "downloaded_image.jpg"
 
 
-def download_image(image_url: str, downloads_dir: Path) -> Path:
+def find_local_product_image(product_dir: Path, *, basename: str = "image") -> Path | None:
+    for ext in IMAGE_EXTENSIONS:
+        path = product_dir / f"{basename}{ext}"
+        if path.exists() and path.stat().st_size > 0:
+            return path.resolve()
+    return None
+
+
+def download_image(
+    image_url: str,
+    downloads_dir: Path,
+    *,
+    target_path: Path | None = None,
+) -> Path:
     downloads_dir.mkdir(parents=True, exist_ok=True)
-    filename = image_filename_from_url(image_url)
-    image_path = downloads_dir / filename
+    if target_path is not None:
+        image_path = target_path
+    else:
+        filename = image_filename_from_url(image_url)
+        image_path = downloads_dir / filename
 
     if image_path.exists() and image_path.stat().st_size > 0:
         print(f"Using cached image: {image_path}")
@@ -65,6 +81,7 @@ def download_image(image_url: str, downloads_dir: Path) -> Path:
     print(f"Downloading image: {image_url}")
     response = requests.get(image_url, timeout=60)
     response.raise_for_status()
+    image_path.parent.mkdir(parents=True, exist_ok=True)
     image_path.write_bytes(response.content)
     print(f"Saved image to: {image_path}")
     return image_path.resolve()
@@ -187,7 +204,12 @@ def validate_product_record(data: dict) -> None:
         raise ValueError(f"Invalid main_image URL: {main_image!r}")
 
 
-def load_product(product_file: Path, downloads_dir: Path | None = None) -> ProductData:
+def load_product(
+    product_file: Path,
+    downloads_dir: Path | None = None,
+    *,
+    local_image_path: Path | None = None,
+) -> ProductData:
     if not product_file.exists():
         raise FileNotFoundError(f"Product file not found: {product_file}")
 
@@ -203,10 +225,24 @@ def load_product(product_file: Path, downloads_dir: Path | None = None) -> Produ
     if not image_url.startswith(("http://", "https://")):
         raise ValueError(f"Invalid main_image URL in {product_file}: {image_url!r}")
 
-    if downloads_dir is None:
-        downloads_dir = project_root() / DOWNLOADS_DIR
+    if local_image_path is not None:
+        resolved = local_image_path.resolve()
+        if resolved.exists() and resolved.stat().st_size > 0:
+            print(f"Using local image: {resolved}")
+            image_path = resolved
+        else:
+            raise FileNotFoundError(f"Local image not found: {resolved}")
+    else:
+        product_dir = product_file.parent
+        local_image = find_local_product_image(product_dir)
+        if local_image is not None:
+            print(f"Using local image: {local_image}")
+            image_path = local_image
+        else:
+            if downloads_dir is None:
+                downloads_dir = project_root() / DOWNLOADS_DIR
+            image_path = download_image(image_url, downloads_dir)
 
-    image_path = download_image(image_url, downloads_dir)
     return ProductData(
         product_file=product_file.resolve(),
         image_url=image_url,

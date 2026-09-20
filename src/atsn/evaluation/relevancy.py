@@ -30,6 +30,7 @@ from openai import OpenAI
 
 from .utils import (
     configure_stdout,
+    discover_claim_files,
     load_existing_output,
     resolve_image_reference,
     save_output,
@@ -203,7 +204,7 @@ def discover_our_jobs(claims_dir: Path, products_dir: Path) -> list[RelevancyJob
         raise FileNotFoundError(f"Our claim-list directory not found: {claims_dir}")
 
     jobs: list[RelevancyJob] = []
-    for claim_file in sorted(claims_dir.glob("*_claims.json")):
+    for claim_file in discover_claim_files(claims_dir):
         record = json.loads(claim_file.read_text(encoding="utf-8"))
         product_stem = str(record.get("product_stem") or claim_file.stem.removesuffix("_claims"))
         category = resolve_category(product_stem, record)

@@ -97,19 +97,38 @@ Default model for all stages is **`gpt-5.6-luna`** (configured in [`src/atsn/bac
 
 ## Quick start: one Amazon URL → full run
 
-Runs DOM extraction, alt-text generation, claim extraction, and all four evaluation metrics:
+Runs DOM extraction, alt-text generation, claim export, and all four evaluation metrics:
 
 ```bash
 python -m atsn.run_from_url --url "https://www.amazon.fr/dp/B077XM3DV5"
 ```
 
-Outputs go to `output/runs/B077XM3DV5/` (DOM JSON, image, evaluation JSONs). Pipeline output is saved to `output/B077XM3DV5_pipeline.json`.
+Each run is written to a numbered folder with fixed filenames:
+
+```
+output/runs/
+  1/
+    dom.json
+    image.jpg
+    meta.json
+    pipeline.json
+    claims.json
+    relevancy.json
+    redundancy.json
+    objectivity.json
+    efficiency.json
+  2/
+    ...
+```
+
+The next free run number is chosen automatically (`1`, then `2`, …).
 
 Options:
 
 ```bash
-python -m atsn.run_from_url --url "..." --work-dir output/runs/my_product
-python -m atsn.run_from_url --html saved_page.html --work-dir output/runs/B077XM3DV5
+python -m atsn.run_from_url --url "..." --run-id 5           # use output/runs/5/
+python -m atsn.run_from_url --url "..." --work-dir output/runs/custom
+python -m atsn.run_from_url --html saved_page.html --work-dir output/runs/3
 python -m atsn.run_from_url --url "..." --skip-eval          # pipeline only
 python -m atsn.run_from_url --url "..." --single-model gpt-5.6-luna
 ```
@@ -125,17 +144,18 @@ Build a product JSON from an Amazon URL. Downloads the main product image into t
 ```bash
 python -m atsn.extract_dom \
   --url "https://www.amazon.fr/dp/B077XM3DV5" \
-  --output-dir output/runs/B077XM3DV5
+  --output-dir output/runs/1
 ```
 
 Creates:
-- `output/runs/B077XM3DV5/B077XM3DV5.json` — title, brand, description, feature bullets, product details, `main_image`
-- `output/runs/B077XM3DV5/B077XM3DV5.jpg` — downloaded product image
+- `output/runs/1/dom.json` — title, brand, description, feature bullets, product details, `main_image`
+- `output/runs/1/image.jpg` — downloaded product image (single file, no duplicate)
+- `output/runs/1/meta.json` — run id, ASIN, source URL
 
 If Amazon blocks automated requests, save the page HTML in your browser and parse locally:
 
 ```bash
-python -m atsn.extract_dom --html saved_page.html --output-dir output/runs/B077XM3DV5
+python -m atsn.extract_dom --html saved_page.html --output-dir output/runs/1
 ```
 
 You can also use a product JSON from the paper dataset: `evaluation_dataset/1/dom.json` (each folder `1/` … `30/` contains metadata for one product).
@@ -155,7 +175,7 @@ One command runs all generation stages via OpenAI:
 | 7 | Fuser | `prompts/fuser.txt` | validator outputs |
 
 ```bash
-python -m atsn.pipeline --product output/runs/B077XM3DV5/B077XM3DV5.json
+python -m atsn.pipeline --product output/runs/1/dom.json --output output/runs/1/pipeline.json
 ```
 
 Or with a paper-dataset product:

@@ -11,6 +11,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from ..pipeline.utils import build_product_dom
+from ..run_layout import CLAIMS_FILENAME, DOM_FILENAME, IMAGE_BASENAME
 
 IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp", ".gif")
 
@@ -60,6 +61,10 @@ def summarize_results(results: list[dict]) -> dict:
 
 
 def image_path_for_stem(product_stem: str, images_dir: Path) -> Path | None:
+    run_folder_image = find_run_folder_image(images_dir)
+    if run_folder_image is not None:
+        return run_folder_image
+
     for ext in IMAGE_EXTENSIONS:
         path = images_dir / f"{product_stem}{ext}"
         if path.exists() and path.stat().st_size > 0:
@@ -67,10 +72,29 @@ def image_path_for_stem(product_stem: str, images_dir: Path) -> Path | None:
     return None
 
 
+def find_run_folder_image(images_dir: Path) -> Path | None:
+    for ext in IMAGE_EXTENSIONS:
+        path = images_dir / f"{IMAGE_BASENAME}{ext}"
+        if path.exists() and path.stat().st_size > 0:
+            return path.resolve()
+    return None
+
+
+def product_json_for_stem(product_stem: str, products_dir: Path) -> Path | None:
+    dom_path = products_dir / DOM_FILENAME
+    if dom_path.exists():
+        return dom_path.resolve()
+
+    stem_path = products_dir / f"{product_stem}.json"
+    if stem_path.exists():
+        return stem_path.resolve()
+    return None
+
+
 def image_url_from_product_json(product_stem: str, products_dir: Path) -> str:
-    product_file = products_dir / f"{product_stem}.json"
-    if not product_file.exists():
-        raise FileNotFoundError(f"Product JSON not found: {product_file}")
+    product_file = product_json_for_stem(product_stem, products_dir)
+    if product_file is None:
+        raise FileNotFoundError(f"Product JSON not found for stem {product_stem!r} in {products_dir}")
 
     data = json.loads(product_file.read_text(encoding="utf-8"))
     image_url = str(data.get("main_image") or "").strip()
@@ -108,6 +132,9 @@ def load_product_dom(
     candidates: list[Path] = []
     if product_file:
         candidates.append(Path(product_file))
+    dom_path = products_dir / DOM_FILENAME
+    if dom_path.exists():
+        candidates.append(dom_path)
     candidates.append(products_dir / f"{product_stem}.json")
 
     for path in candidates:
@@ -303,3 +330,58 @@ def calculate_efficiency(relevant_novel_claims: int, word_count: int) -> float |
     if word_count == 0:
         return None
     return (relevant_novel_claims / word_count) * 100
+
+
+def export_claims_from_pipeline(
+    pipeline_path: Path,
+    output_path: Path,
+    *,
+    product_stem: str | None = None,
+) -> Path:
+    if not pipeline_path.exists():
+        raise FileNotFoundError(f"Pipeline output not found: {pipeline_path}")
+
+    pipeline = json.loads(pipeline_path.read_text(encoding="utf-8"))
+    final_alt = pipeline.get("final_alt_text")
+    if not isinstance(final_alt, str) or not final_alt.strip():
+        raise ValueError(f"Missing or empty final_alt_text in {pipeline_path}")
+
+    final_claims = pipeline.get("final_claims")
+    if not isinstance(final_claims, dict):
+        raise ValueError(f"Missing final_claims in {pipeline_path}")
+
+    claims = final_claims.get("claims")
+    if not isinstance(claims, list) or not claims:
+        raise ValueError(f"Missing claims in final_claims for {pipeline_path}")
+
+    stem = product_stem or pipeline_path.parent.name
+    record = {
+        "source_kind": "pipeline",
+        "source_pipeline": str(pipeline_path.resolve()),
+        "source": str(pipeline_path.resolve()),
+        "stem": stem,
+        "product_stem": stem,
+        "alt_text": final_alt.strip(),
+        "final_alt_text": final_alt.strip(),
+        "classification_category": pipeline.get("classification_category"),
+        "product_file": pipeline.get("product_file"),
+        "status": "ok",
+        "processed_at": utc_now_iso(),
+        "parsed": {
+            "stage": "claim_extraction",
+            "claims": claims,
+            "total_claims": len(claims),
+        },
+        "final_claims_source": final_claims.get("source"),
+    }
+    save_output(output_path, record)
+    print(f"Exported claims to: {output_path.resolve()}")
+    return output_path.resolve()
+
+
+def discover_claim_files(claims_dir: Path) -> list[Path]:
+    files = sorted(claims_dir.glob("*_claims.json"))
+    fixed = claims_dir / CLAIMS_FILENAME
+    if fixed.exists() and fixed not in files:
+        files.append(fixed)
+    return files

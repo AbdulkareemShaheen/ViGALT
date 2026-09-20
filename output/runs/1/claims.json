@@ -1,0 +1,40 @@
+{
+  "source_kind": "pipeline",
+  "source_pipeline": "C:\\Users\\modme\\Desktop\\All\\Projects\\ATSN-2026\\gemini automater\\ViGLAT\\output\\runs\\1\\pipeline.json",
+  "source": "C:\\Users\\modme\\Desktop\\All\\Projects\\ATSN-2026\\gemini automater\\ViGLAT\\output\\runs\\1\\pipeline.json",
+  "stem": "1",
+  "product_stem": "1",
+  "alt_text": "White shirt with a gray Under Armour logo on the wearer’s left chest. Shoulder seams run diagonally from the crew neckline toward the short sleeves.",
+  "final_alt_text": "White shirt with a gray Under Armour logo on the wearer’s left chest. Shoulder seams run diagonally from the crew neckline toward the short sleeves.",
+  "classification_category": "CLOTHING",
+  "product_file": "C:\\Users\\modme\\Desktop\\All\\Projects\\ATSN-2026\\gemini automater\\ViGLAT\\output\\runs\\1\\dom.json",
+  "status": "ok",
+  "processed_at": "2026-09-20T09:12:46.855215+00:00",
+  "parsed": {
+    "stage": "claim_extraction",
+    "claims": [
+      {
+        "claim_id": "c1",
+        "claim": "White shirt"
+      },
+      {
+        "claim_id": "c2",
+        "claim": "Gray Under Armour logo on the wearer’s left chest"
+      },
+      {
+        "claim_id": "c3",
+        "claim": "Shoulder seams run diagonally from the crew neckline toward the short sleeves"
+      },
+      {
+        "claim_id": "c4",
+        "claim": "Crew neckline"
+      },
+      {
+        "claim_id": "c5",
+        "claim": "Short sleeves"
+      }
+    ],
+    "total_claims": 5
+  },
+  "final_claims_source": "extracted"
+}
